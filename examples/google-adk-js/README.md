@@ -47,6 +47,6 @@ The hosted Weavz personal MCP resource at `/mcp/weavz` uses OAuth. This starter'
 
 ## Framework entry points
 
-- Adapter: ``@google/adk` (`MCPToolset`)`
+- Adapter: `@google/adk` (`MCPToolset`)
 - Live agent: `src/index.ts`
 - Local authenticated server fixture: `test/fixture.ts`

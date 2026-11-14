@@ -4,9 +4,11 @@ import { ToolLoopAgent } from 'ai';
 
 export function validateLiveConnection(url: string, token: string): void {
   const endpoint = new URL(url);
+  if (endpoint.username || endpoint.password || endpoint.search || endpoint.hash) throw new Error('Use an MCP URL without embedded credentials, query parameters, or fragments.');
   if (endpoint.protocol !== 'https:') throw new Error('Live MCP endpoints must use HTTPS.');
+  if (!token || /\s/.test(token)) throw new Error('Use a non-empty MCP access token without whitespace.');
   if (token.startsWith('wvz_')) throw new Error('WEAVZ_MCP_TOKEN must be an MCP access token, not a Weavz REST API key.');
-  if (endpoint.hostname === 'platform.weavz.io' && endpoint.pathname.replace(/\/$/, '') === '/mcp/weavz') {
+  if (endpoint.pathname.replace(/\/$/, '') === '/mcp/weavz') {
     throw new Error('The hosted /mcp/weavz resource uses OAuth. Use the custom MCP endpoint and access token returned by setup.');
   }
 }

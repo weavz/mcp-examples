@@ -47,5 +47,10 @@ test('live connection validation rejects unsafe or incompatible bearer setup', (
   assert.throws(() => validateLiveConnection('http://remote.example/mcp', 'mcp_example-token'), /HTTPS/);
   assert.throws(() => validateLiveConnection('https://remote.example/mcp', 'wvz_example-rest-key'), /MCP access token/);
   assert.throws(() => validateLiveConnection('https://platform.weavz.io/mcp/weavz', 'mcp_example-token'), /uses OAuth/);
+  for (const url of ['https://user:secret@tenant.example/mcp', 'https://tenant.example/mcp?token=secret', 'https://tenant.example/mcp#secret']) {
+    assert.throws(() => validateLiveConnection(url, 'mcp_example-token'), /without embedded/);
+  }
+  assert.throws(() => validateLiveConnection('https://selfhosted.example/mcp/weavz', 'mcp_example-token'), /uses OAuth/);
+  assert.throws(() => validateLiveConnection('https://tenant.example/mcp', 'mcp_bad token'), /without whitespace/);
   assert.doesNotThrow(() => validateLiveConnection('https://tenant.example/mcp', 'mcp_example-token'));
 });
