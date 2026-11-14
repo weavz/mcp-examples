@@ -1,0 +1,102 @@
+{
+  "id": "intercom-conversation-brief",
+  "title": "Intercom Conversation Brief",
+  "prompt": "Brief the selected open billing conversation using its full conversation record. Summarize the customer’s stated issue, prior support context, and unresolved question without replying.",
+  "instructions": "Find open conversations by subject text and read the selected conversation with get-conversation. Ground the brief only in returned content, distinguish what the customer stated from inferred cause, and say when a detail is absent. Do not reply, add a note, tag the contact, or create a ticket.",
+  "fixture_summary": "Synthetic search finds one open invoice conversation. Full retrieval shows a duplicate invoice concern and a question about whether a charge is a renewal; no payment record is included.",
+  "inputs": {
+    "searchField": "source.subject",
+    "matchType": "contains",
+    "searchTerm": "invoice",
+    "status": "open"
+  },
+  "steps": [
+    {
+      "id": "find_invoice_conversation",
+      "alias": "billing_support",
+      "integration": "intercom",
+      "action": "find-conversation",
+      "tool": "billing_support__find-conversation",
+      "arguments": {
+        "searchField": "source.subject",
+        "matchType": "contains",
+        "searchTerm": "invoice",
+        "status": "open"
+      },
+      "records": [
+        {
+          "id": "ic-convo-501",
+          "app": "Intercom",
+          "title": "Question about duplicate invoice",
+          "detail": "Synthetic search result for an open invoice conversation.",
+          "url": "https://example.com/records/ic-convo-501",
+          "conversation_id": "ic-convo-501",
+          "status": "open",
+          "topic": "invoice",
+          "customer_identity": "synthetic-user-17"
+        },
+        {
+          "id": "ic-convo-502",
+          "app": "Intercom",
+          "title": "Invoice due-date question",
+          "detail": "Synthetic search result for a second open conversation about invoice timing.",
+          "url": "https://example.com/records/ic-convo-502",
+          "conversation_id": "ic-convo-502",
+          "status": "open",
+          "topic": "invoice",
+          "customer_identity": "synthetic-user-18"
+        }
+      ]
+    },
+    {
+      "id": "read_invoice_conversation",
+      "alias": "billing_support",
+      "integration": "intercom",
+      "action": "get-conversation",
+      "tool": "billing_support__get-conversation",
+      "arguments": {
+        "conversationId": "ic-convo-501"
+      },
+      "records": [
+        {
+          "id": "ic-convo-501",
+          "app": "Intercom",
+          "title": "Question about duplicate invoice",
+          "detail": "Full synthetic conversation: customer sees two invoice emails dated November 12 and asks whether one is a renewal. Support requested the invoice numbers; they have not been provided. No payment data appears in this conversation.",
+          "url": "https://example.com/records/ic-convo-501",
+          "conversation_id": "ic-convo-501",
+          "status": "open",
+          "topic": "invoice",
+          "customer_identity": "synthetic-user-17",
+          "invoice_numbers_provided": false,
+          "unanswered_question": true
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "conversation_records",
+      "op": "count"
+    },
+    {
+      "name": "unanswered_customer_questions",
+      "op": "count",
+      "where": {
+        "unanswered_question": true
+      }
+    },
+    {
+      "name": "records_with_invoice_numbers",
+      "op": "count",
+      "where": {
+        "invoice_numbers_provided": true
+      }
+    }
+  ],
+  "expected_metrics": {
+    "conversation_records": 2,
+    "unanswered_customer_questions": 1,
+    "records_with_invoice_numbers": 0
+  }
+}

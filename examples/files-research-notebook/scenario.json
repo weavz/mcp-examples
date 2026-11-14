@@ -1,0 +1,137 @@
+{
+  "id": "files-research-notebook",
+  "title": "Files Research Notebook",
+  "prompt": "Read the selected product-research notes and produce a concise evidence notebook with findings, caveats, and linked source records.",
+  "instructions": "List files only under the supplied research prefix. Read the two selected UTF-8 paths with read_file before citing their content. Do not browse outside the prefix, write or delete files, or treat fixture observations as representative customer evidence. Clearly distinguish stated findings from unanswered questions.",
+  "fixture_summary": "Synthetic storage prefix contains an experiment brief, interview synthesis, and unrelated archive note. Two selected files contain bounded research findings and caveats.",
+  "inputs": {
+    "prefix": "research/launch/",
+    "paths": [
+      "research/launch/experiment-brief.md",
+      "research/launch/interview-synthesis.md"
+    ]
+  },
+  "steps": [
+    {
+      "id": "list_research_notes",
+      "alias": "research_files",
+      "integration": "storage",
+      "action": "list_files",
+      "tool": "research_files__list_files",
+      "arguments": {
+        "prefix": "research/launch/"
+      },
+      "records": [
+        {
+          "id": "storage-exp-brief",
+          "app": "Storage",
+          "title": "experiment-brief.md",
+          "detail": "Synthetic file listing entry under research/launch/.",
+          "url": "https://example.com/records/storage-exp-brief",
+          "path": "research/launch/experiment-brief.md",
+          "file_kind": "research_note"
+        },
+        {
+          "id": "storage-interviews",
+          "app": "Storage",
+          "title": "interview-synthesis.md",
+          "detail": "Synthetic file listing entry under research/launch/.",
+          "url": "https://example.com/records/storage-interviews",
+          "path": "research/launch/interview-synthesis.md",
+          "file_kind": "research_note"
+        },
+        {
+          "id": "storage-old-archive",
+          "app": "Storage",
+          "title": "archive-2024.md",
+          "detail": "Synthetic file listing entry; not selected because it is outside the requested study window.",
+          "url": "https://example.com/records/storage-old-archive",
+          "path": "research/launch/archive-2024.md",
+          "file_kind": "archive"
+        }
+      ]
+    },
+    {
+      "id": "read_experiment_brief",
+      "alias": "research_files",
+      "integration": "storage",
+      "action": "read_file",
+      "tool": "research_files__read_file",
+      "arguments": {
+        "path": "research/launch/experiment-brief.md",
+        "outputEncoding": "utf8"
+      },
+      "records": [
+        {
+          "id": "storage-exp-brief",
+          "app": "Storage",
+          "title": "experiment-brief.md",
+          "detail": "Synthetic file content: in a five-session prototype test, four participants found the primary action without assistance. Sessions were recruited from an internal volunteer list; this is not a representative sample.",
+          "url": "https://example.com/records/storage-exp-brief",
+          "path": "research/launch/experiment-brief.md",
+          "file_kind": "research_note",
+          "content_read": true,
+          "participant_count": 5,
+          "unassisted_success_count": 4,
+          "representative_sample": false
+        }
+      ]
+    },
+    {
+      "id": "read_interview_synthesis",
+      "alias": "research_files",
+      "integration": "storage",
+      "action": "read_file",
+      "tool": "research_files__read_file",
+      "arguments": {
+        "path": "research/launch/interview-synthesis.md",
+        "outputEncoding": "utf8"
+      },
+      "records": [
+        {
+          "id": "storage-interviews",
+          "app": "Storage",
+          "title": "interview-synthesis.md",
+          "detail": "Synthetic file content: three interviewees asked for a visible progress indicator. The notes do not include a preference test or retention evidence.",
+          "url": "https://example.com/records/storage-interviews",
+          "path": "research/launch/interview-synthesis.md",
+          "file_kind": "research_note",
+          "content_read": true,
+          "interviewee_count": 3,
+          "requested_progress_indicator": true,
+          "retention_evidence": false,
+          "unassisted_success_count": 0
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "selected_notes_read",
+      "op": "count",
+      "where": {
+        "content_read": true
+      }
+    },
+    {
+      "name": "observed_unassisted_successes",
+      "op": "sum",
+      "field": "unassisted_success_count",
+      "where": {
+        "content_read": true
+      }
+    },
+    {
+      "name": "notes_with_retention_evidence",
+      "op": "count",
+      "where": {
+        "retention_evidence": true
+      }
+    }
+  ],
+  "expected_metrics": {
+    "selected_notes_read": 2,
+    "observed_unassisted_successes": 4,
+    "notes_with_retention_evidence": 0
+  }
+}

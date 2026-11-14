@@ -1,0 +1,126 @@
+{
+  "id": "asana-weekly-status",
+  "title": "Asana Weekly Status",
+  "prompt": "Summarize this project’s sampled tasks for the weekly status review. Separate completed, overdue, and upcoming work, and highlight tasks that lack an assignee.",
+  "instructions": "Read only the named workspace and project. Use the requested task fields and inspect the selected overdue task with get_task before describing its notes. Keep date interpretation bounded to the stated as-of date; do not update tasks, comment, or assign owners. If a field is absent, report it as unknown.",
+  "fixture_summary": "Synthetic Asana project sample contains four tasks as of 2026-11-14, including one overdue task and one unassigned upcoming task.",
+  "inputs": {
+    "workspace": "sample-workspace",
+    "project": "launch-project",
+    "as_of_date": "2026-11-14"
+  },
+  "steps": [
+    {
+      "id": "list_project_tasks",
+      "alias": "launch_tasks",
+      "integration": "asana",
+      "action": "list_tasks",
+      "tool": "launch_tasks__list_tasks",
+      "arguments": {
+        "workspace": "sample-workspace",
+        "project": "launch-project",
+        "opt_fields": "name,completed,due_on,assignee.name,notes"
+      },
+      "records": [
+        {
+          "id": "asana-task-1",
+          "app": "Asana",
+          "title": "Confirm release rollback steps",
+          "detail": "Synthetic task due 2026-11-13; incomplete and assigned to Riley.",
+          "url": "https://example.com/records/asana-task-1",
+          "task_id": "asana-task-1",
+          "completed": false,
+          "due_on": "2026-11-13",
+          "assignee_present": true,
+          "task_state": "overdue"
+        },
+        {
+          "id": "asana-task-2",
+          "app": "Asana",
+          "title": "Review onboarding copy",
+          "detail": "Synthetic task due 2026-11-16; incomplete and assigned to Morgan.",
+          "url": "https://example.com/records/asana-task-2",
+          "task_id": "asana-task-2",
+          "completed": false,
+          "due_on": "2026-11-16",
+          "assignee_present": true,
+          "task_state": "upcoming"
+        },
+        {
+          "id": "asana-task-3",
+          "app": "Asana",
+          "title": "Run accessibility spot check",
+          "detail": "Synthetic task completed 2026-11-12.",
+          "url": "https://example.com/records/asana-task-3",
+          "task_id": "asana-task-3",
+          "completed": true,
+          "due_on": "2026-11-12",
+          "assignee_present": true,
+          "task_state": "complete"
+        },
+        {
+          "id": "asana-task-4",
+          "app": "Asana",
+          "title": "Verify export audit event",
+          "detail": "Synthetic task due 2026-11-18; no assignee is set.",
+          "url": "https://example.com/records/asana-task-4",
+          "task_id": "asana-task-4",
+          "completed": false,
+          "due_on": "2026-11-18",
+          "assignee_present": false,
+          "task_state": "upcoming"
+        }
+      ]
+    },
+    {
+      "id": "read_overdue_task",
+      "alias": "launch_tasks",
+      "integration": "asana",
+      "action": "get_task",
+      "tool": "launch_tasks__get_task",
+      "arguments": {
+        "taskId": "asana-task-1"
+      },
+      "records": [
+        {
+          "id": "asana-task-1",
+          "app": "Asana",
+          "title": "Confirm release rollback steps",
+          "detail": "Full synthetic task notes: confirm the rollback owner and document the test result before the Friday review. No completion update is recorded.",
+          "url": "https://example.com/records/asana-task-1",
+          "task_id": "asana-task-1",
+          "completed": false,
+          "due_on": "2026-11-13",
+          "assignee_present": true,
+          "task_state": "overdue",
+          "notes_present": true
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "sampled_tasks",
+      "op": "count"
+    },
+    {
+      "name": "overdue_tasks",
+      "op": "count",
+      "where": {
+        "task_state": "overdue"
+      }
+    },
+    {
+      "name": "unassigned_tasks",
+      "op": "count",
+      "where": {
+        "assignee_present": false
+      }
+    }
+  ],
+  "expected_metrics": {
+    "sampled_tasks": 4,
+    "overdue_tasks": 1,
+    "unassigned_tasks": 1
+  }
+}

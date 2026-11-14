@@ -1,0 +1,157 @@
+{
+  "id": "sheets-sales-report",
+  "title": "Google Sheets Sales Report",
+  "prompt": "Summarize booked sales and open pipeline from this spreadsheet range. State the range and scope, count closed-won rows, and keep open opportunities separate from booked value.",
+  "instructions": "Use list_spreadsheets to locate the requested file, then read only the supplied spreadsheet ID and A1 range. This range defines the report scope; do not infer rows outside it or call the result an account-wide total. Keep closed-won and open amounts separate. Do not write cells, append rows, or forecast from fixture data.",
+  "fixture_summary": "A synthetic spreadsheet search returns one regional sales workbook. The selected Deals!A1:F6 range has three closed-won rows and two open opportunities, all in USD.",
+  "inputs": {
+    "spreadsheetId": "sample-fy26-regional-sales",
+    "range": "Deals!A1:F6",
+    "period": "FY2026 Q4 sample rows",
+    "currency": "USD"
+  },
+  "steps": [
+    {
+      "id": "find_sales_workbook",
+      "alias": "sales_sheet",
+      "integration": "google-sheets",
+      "action": "list_spreadsheets",
+      "tool": "sales_sheet__list_spreadsheets",
+      "arguments": {
+        "query": "FY26 Regional Sales",
+        "pageSize": 5
+      },
+      "records": [
+        {
+          "id": "sheet-fy26-regional-sales",
+          "app": "Google Sheets",
+          "title": "FY26 Regional Sales",
+          "detail": "Synthetic workbook with a Deals tab. Demo reads only Deals!A1:F6.",
+          "url": "https://example.com/sheets/sheet-fy26-regional-sales",
+          "spreadsheet_id": "sample-fy26-regional-sales",
+          "tab": "Deals",
+          "reporting_period": "FY2026 Q4 sample rows"
+        }
+      ]
+    },
+    {
+      "id": "read_deals_range",
+      "alias": "sales_sheet",
+      "integration": "google-sheets",
+      "action": "read_range",
+      "tool": "sales_sheet__read_range",
+      "arguments": {
+        "spreadsheetId": "sample-fy26-regional-sales",
+        "range": "Deals!A1:F6",
+        "majorDimension": "ROWS",
+        "valueRenderOption": "UNFORMATTED_VALUE"
+      },
+      "records": [
+        {
+          "id": "sales-row-2",
+          "app": "Google Sheets",
+          "title": "Northwind renewal",
+          "detail": "Synthetic row 2 from Deals!A1:F6.",
+          "url": "https://example.com/sheets/sheet-fy26-regional-sales#range=Deals!A2:F2",
+          "spreadsheet_id": "sample-fy26-regional-sales",
+          "range": "Deals!A2:F2",
+          "deal": "Northwind renewal",
+          "region": "North",
+          "owner": "A. Rivera",
+          "status": "closed_won",
+          "amount_usd": 24000,
+          "close_date": "2026-10-06"
+        },
+        {
+          "id": "sales-row-3",
+          "app": "Google Sheets",
+          "title": "Juniper expansion",
+          "detail": "Synthetic row 3 from Deals!A1:F6.",
+          "url": "https://example.com/sheets/sheet-fy26-regional-sales#range=Deals!A3:F3",
+          "spreadsheet_id": "sample-fy26-regional-sales",
+          "range": "Deals!A3:F3",
+          "deal": "Juniper expansion",
+          "region": "West",
+          "owner": "M. Chen",
+          "status": "closed_won",
+          "amount_usd": 18500,
+          "close_date": "2026-10-19"
+        },
+        {
+          "id": "sales-row-4",
+          "app": "Google Sheets",
+          "title": "Acme migration",
+          "detail": "Synthetic row 4 from Deals!A1:F6.",
+          "url": "https://example.com/sheets/sheet-fy26-regional-sales#range=Deals!A4:F4",
+          "spreadsheet_id": "sample-fy26-regional-sales",
+          "range": "Deals!A4:F4",
+          "deal": "Acme migration",
+          "region": "East",
+          "owner": "J. Patel",
+          "status": "open",
+          "amount_usd": 12500,
+          "close_date": "2026-11-27"
+        },
+        {
+          "id": "sales-row-5",
+          "app": "Google Sheets",
+          "title": "Bluebird annual plan",
+          "detail": "Synthetic row 5 from Deals!A1:F6.",
+          "url": "https://example.com/sheets/sheet-fy26-regional-sales#range=Deals!A5:F5",
+          "spreadsheet_id": "sample-fy26-regional-sales",
+          "range": "Deals!A5:F5",
+          "deal": "Bluebird annual plan",
+          "region": "South",
+          "owner": "A. Rivera",
+          "status": "closed_won",
+          "amount_usd": 9200,
+          "close_date": "2026-11-03"
+        },
+        {
+          "id": "sales-row-6",
+          "app": "Google Sheets",
+          "title": "Summit analytics",
+          "detail": "Synthetic row 6 from Deals!A1:F6.",
+          "url": "https://example.com/sheets/sheet-fy26-regional-sales#range=Deals!A6:F6",
+          "spreadsheet_id": "sample-fy26-regional-sales",
+          "range": "Deals!A6:F6",
+          "deal": "Summit analytics",
+          "region": "North",
+          "owner": "M. Chen",
+          "status": "open",
+          "amount_usd": 7800,
+          "close_date": "2026-12-02"
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "closed_won_deal_count",
+      "op": "count",
+      "where": {
+        "status": "closed_won"
+      }
+    },
+    {
+      "name": "booked_amount_usd",
+      "op": "sum",
+      "field": "amount_usd",
+      "where": {
+        "status": "closed_won"
+      }
+    },
+    {
+      "name": "open_opportunity_count",
+      "op": "count",
+      "where": {
+        "status": "open"
+      }
+    }
+  ],
+  "expected_metrics": {
+    "closed_won_deal_count": 3,
+    "booked_amount_usd": 51700,
+    "open_opportunity_count": 2
+  }
+}

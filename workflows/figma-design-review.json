@@ -2,7 +2,7 @@
   "id": "figma-design-review",
   "title": "Figma Design Review",
   "prompt": "Review the requested Figma outline, then inspect selected nodes for bounded layout and accessibility concerns. Cite findings to nodes and distinguish measured properties from recommendations.",
-  "instructions": "Start with get_file_outline using the supplied file key and bounded node count. Inspect only selected returned IDs with get_node_design_context; keep depth at 1 or 2 and pass nodeIds as the action comma-separated string. Do not imply review of the whole design system, resolve all variables, post comments, or modify the file. Treat fixture measurements as synthetic and cite each finding to its node URL.",
+  "instructions": "Start with get_file_outline using the supplied file key and bounded node count. Inspect only selected returned IDs with get_node_design_context; keep depth at 1 or 2 and pass nodeIds as the action comma-separated string. Do not imply review of the whole design system, resolve all variables, post comments, or modify the file. Treat fixture measurements as synthetic and cite each finding to a returned node ID. Include a URL only if the tool returned one; do not invent a clickable link.",
   "fixture_summary": "A synthetic product settings outline contains a mobile primary-action frame and desktop account-summary section. The selected-node helper returns bounded details including one small touch target and one text-contrast concern.",
   "inputs": {
     "fileKey": "sample-product-settings-file",

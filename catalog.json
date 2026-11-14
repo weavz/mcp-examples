@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 1,
+  "organization": "weavz",
+  "hubRepository": "mcp-examples",
+  "examples": [
+    {
+      "id": "openai-agents-python",
+      "repository": "weavz-openai-agents-python",
+      "title": "OpenAI Agents SDK with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "OpenAI Agents SDK",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/openai-agents-python"
+    },
+    {
+      "id": "pydantic-ai",
+      "repository": "weavz-pydantic-ai",
+      "title": "PydanticAI with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "PydanticAI",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/pydantic-ai"
+    },
+    {
+      "id": "google-adk-python",
+      "repository": "weavz-google-adk-python",
+      "title": "Google ADK with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "Google ADK",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/google-adk-python"
+    },
+    {
+      "id": "langchain-python",
+      "repository": "weavz-langchain-python",
+      "title": "LangChain with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "LangChain",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/langchain-python"
+    },
+    {
+      "id": "langgraph-python",
+      "repository": "weavz-langgraph-python",
+      "title": "LangGraph with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "LangGraph",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/langgraph-python"
+    },
+    {
+      "id": "llamaindex",
+      "repository": "weavz-llamaindex",
+      "title": "LlamaIndex with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "LlamaIndex",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/llamaindex"
+    },
+    {
+      "id": "crewai",
+      "repository": "weavz-crewai",
+      "title": "CrewAI with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "CrewAI",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/crewai"
+    },
+    {
+      "id": "agno",
+      "repository": "weavz-agno",
+      "title": "Agno with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "Agno",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/agno"
+    },
+    {
+      "id": "strands",
+      "repository": "weavz-strands",
+      "title": "Strands Agents with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "Strands Agents",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/strands"
+    },
+    {
+      "id": "smolagents",
+      "repository": "weavz-smolagents",
+      "title": "smolagents with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "smolagents",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/smolagents"
+    },
+    {
+      "id": "autogen",
+      "repository": "weavz-autogen",
+      "title": "AutoGen with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "AutoGen",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/autogen"
+    },
+    {
+      "id": "semantic-kernel",
+      "repository": "weavz-semantic-kernel",
+      "title": "Semantic Kernel with Weavz MCP",
+      "category": "framework",
+      "language": "python",
+      "framework": "Semantic Kernel",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/semantic-kernel"
+    },
+    {
+      "id": "vercel-ai-sdk",
+      "repository": "weavz-vercel-ai-sdk",
+      "title": "Vercel AI SDK with Weavz MCP",
+      "category": "framework",
+      "language": "typescript",
+      "framework": "Vercel AI SDK",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/vercel-ai-sdk"
+    },
+    {
+      "id": "mastra",
+      "repository": "weavz-mastra",
+      "title": "Mastra with Weavz MCP",
+      "category": "framework",
+      "language": "typescript",
+      "framework": "Mastra",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/mastra"
+    },
+    {
+      "id": "langchain-js",
+      "repository": "weavz-langchain-js",
+      "title": "LangChain.js with Weavz MCP",
+      "category": "framework",
+      "language": "typescript",
+      "framework": "LangChain.js",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/langchain-js"
+    },
+    {
+      "id": "langgraph-js",
+      "repository": "weavz-langgraph-js",
+      "title": "LangGraph.js with Weavz MCP",
+      "category": "framework",
+      "language": "typescript",
+      "framework": "LangGraph.js",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/langgraph-js"
+    },
+    {
+      "id": "openai-agents-js",
+      "repository": "weavz-openai-agents-js",
+      "title": "OpenAI Agents SDK for TypeScript with Weavz MCP",
+      "category": "framework",
+      "language": "typescript",
+      "framework": "OpenAI Agents SDK for TypeScript",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/openai-agents-js"
+    },
+    {
+      "id": "google-adk-js",
+      "repository": "weavz-google-adk-js",
+      "title": "Google ADK for TypeScript with Weavz MCP",
+      "category": "framework",
+      "language": "typescript",
+      "framework": "Google ADK for TypeScript",
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/google-adk-js"
+    },
+    {
+      "id": "opencode",
+      "repository": "weavz-opencode",
+      "title": "Weavz for OpenCode",
+      "category": "client",
+      "language": "configuration",
+      "framework": "OpenCode",
+      "modes": [
+        "code",
+        "tools"
+      ],
+      "path": "examples/opencode"
+    },
+    {
+      "id": "hermes",
+      "repository": "weavz-hermes",
+      "title": "Weavz for Hermes Agent",
+      "category": "client",
+      "language": "configuration",
+      "framework": "Hermes Agent",
+      "modes": [
+        "code",
+        "tools"
+      ],
+      "path": "examples/hermes"
+    },
+    {
+      "id": "openclaw",
+      "repository": "weavz-openclaw",
+      "title": "Weavz for OpenClaw",
+      "category": "client",
+      "language": "configuration",
+      "framework": "OpenClaw",
+      "modes": [
+        "code",
+        "tools"
+      ],
+      "path": "examples/openclaw"
+    },
+    {
+      "id": "pi",
+      "repository": "weavz-pi",
+      "title": "Weavz for Pi",
+      "category": "client",
+      "language": "configuration",
+      "framework": "Pi",
+      "modes": [
+        "code",
+        "tools"
+      ],
+      "path": "examples/pi"
+    },
+    {
+      "id": "claude-code",
+      "repository": "weavz-claude-code",
+      "title": "Weavz for Claude Code",
+      "category": "client",
+      "language": "configuration",
+      "framework": "Claude Code",
+      "modes": [
+        "code",
+        "tools"
+      ],
+      "path": "examples/claude-code"
+    },
+    {
+      "id": "codex",
+      "repository": "weavz-codex",
+      "title": "Weavz for Codex",
+      "category": "client",
+      "language": "configuration",
+      "framework": "Codex",
+      "modes": [
+        "code",
+        "tools"
+      ],
+      "path": "examples/codex"
+    },
+    {
+      "id": "cursor",
+      "repository": "weavz-cursor",
+      "title": "Weavz for Cursor",
+      "category": "client",
+      "language": "configuration",
+      "framework": "Cursor",
+      "modes": [
+        "code",
+        "tools"
+      ],
+      "path": "examples/cursor"
+    },
+    {
+      "id": "morning-brief",
+      "repository": "weavz-morning-brief",
+      "title": "Morning Brief",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "gmail",
+        "google-calendar"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/morning-brief"
+    },
+    {
+      "id": "gmail-inbox-briefing",
+      "repository": "weavz-gmail-inbox-briefing",
+      "title": "Gmail Inbox Briefing",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "gmail"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/gmail-inbox-briefing"
+    },
+    {
+      "id": "meeting-prep",
+      "repository": "weavz-meeting-prep",
+      "title": "Meeting Preparation",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "google-calendar",
+        "gmail"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/meeting-prep"
+    },
+    {
+      "id": "slack-channel-digest",
+      "repository": "weavz-slack-channel-digest",
+      "title": "Slack Channel Digest",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "slack"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/slack-channel-digest"
+    },
+    {
+      "id": "github-issue-triage",
+      "repository": "weavz-github-issue-triage",
+      "title": "GitHub Issue Triage",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "github"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/github-issue-triage"
+    },
+    {
+      "id": "notion-knowledge-research",
+      "repository": "weavz-notion-knowledge-research",
+      "title": "Notion Knowledge Research",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "notion"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/notion-knowledge-research"
+    },
+    {
+      "id": "drive-document-finder",
+      "repository": "weavz-drive-document-finder",
+      "title": "Google Drive Document Finder",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "google-drive"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/drive-document-finder"
+    },
+    {
+      "id": "sheets-sales-report",
+      "repository": "weavz-sheets-sales-report",
+      "title": "Google Sheets Sales Report",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "google-sheets"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/sheets-sales-report"
+    },
+    {
+      "id": "hubspot-pipeline-review",
+      "repository": "weavz-hubspot-pipeline-review",
+      "title": "HubSpot Pipeline Review",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "hubspot"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/hubspot-pipeline-review"
+    },
+    {
+      "id": "salesforce-account-brief",
+      "repository": "weavz-salesforce-account-brief",
+      "title": "Salesforce Account Brief",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "salesforce"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/salesforce-account-brief"
+    },
+    {
+      "id": "linear-backlog-review",
+      "repository": "weavz-linear-backlog-review",
+      "title": "Linear Backlog Review",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "linear"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/linear-backlog-review"
+    },
+    {
+      "id": "jira-sprint-summary",
+      "repository": "weavz-jira-sprint-summary",
+      "title": "Jira Sprint Summary",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "jira-cloud"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/jira-sprint-summary"
+    },
+    {
+      "id": "zendesk-ticket-handoff",
+      "repository": "weavz-zendesk-ticket-handoff",
+      "title": "Zendesk Ticket Handoff",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "zendesk"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/zendesk-ticket-handoff"
+    },
+    {
+      "id": "intercom-conversation-brief",
+      "repository": "weavz-intercom-conversation-brief",
+      "title": "Intercom Conversation Brief",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "intercom"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/intercom-conversation-brief"
+    },
+    {
+      "id": "airtable-inventory-report",
+      "repository": "weavz-airtable-inventory-report",
+      "title": "Airtable Inventory Report",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "airtable"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/airtable-inventory-report"
+    },
+    {
+      "id": "trello-project-health",
+      "repository": "weavz-trello-project-health",
+      "title": "Trello Project Health",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "trello"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/trello-project-health"
+    },
+    {
+      "id": "asana-weekly-status",
+      "repository": "weavz-asana-weekly-status",
+      "title": "Asana Weekly Status",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "asana"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/asana-weekly-status"
+    },
+    {
+      "id": "figma-design-review",
+      "repository": "weavz-figma-design-review",
+      "title": "Figma Design Review",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "figma"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/figma-design-review"
+    },
+    {
+      "id": "stripe-subscription-review",
+      "repository": "weavz-stripe-subscription-review",
+      "title": "Stripe Subscription Review",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "stripe"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/stripe-subscription-review"
+    },
+    {
+      "id": "shopify-orders-report",
+      "repository": "weavz-shopify-orders-report",
+      "title": "Shopify Orders Report",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "shopify"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/shopify-orders-report"
+    },
+    {
+      "id": "support-knowledge-assistant",
+      "repository": "weavz-support-knowledge-assistant",
+      "title": "Support Knowledge Assistant",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "gmail",
+        "notion"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/support-knowledge-assistant"
+    },
+    {
+      "id": "files-research-notebook",
+      "repository": "weavz-files-research-notebook",
+      "title": "Files Research Notebook",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "storage"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/files-research-notebook"
+    },
+    {
+      "id": "todoist-day-plan",
+      "repository": "weavz-todoist-day-plan",
+      "title": "Todoist Day Plan",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "todoist"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/todoist-day-plan"
+    },
+    {
+      "id": "google-docs-document-review",
+      "repository": "weavz-google-docs-document-review",
+      "title": "Google Docs Document Review",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "google-docs"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/google-docs-document-review"
+    },
+    {
+      "id": "github-pull-request-review",
+      "repository": "weavz-github-pull-request-review",
+      "title": "GitHub Pull Request Review",
+      "category": "workflow",
+      "language": "python",
+      "framework": "PydanticAI",
+      "integrations": [
+        "github"
+      ],
+      "modes": [
+        "tools",
+        "code"
+      ],
+      "path": "examples/github-pull-request-review"
+    }
+  ]
+}
