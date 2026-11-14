@@ -7,9 +7,9 @@ import os
 import sys
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from connection import validate_catalog, validate_live_connection
 
 from pydantic_ai import Agent
 from pydantic_ai.mcp import MCPToolset
@@ -35,6 +35,8 @@ async def exercise(mode: str, url: str, token: str, *, fixture: bool = False,
     toolset = MCPToolset(url, headers={"Authorization": f"Bearer {token}"})
     async with toolset:
         tools = await toolset.list_tools()
+        names = {tool.name for tool in tools}
+        validate_catalog(mode, names)
         if fixture:
             validate_tools(mode, tools)
         elif prompt is None:
@@ -86,11 +88,10 @@ async def main() -> None:
         token = os.getenv("WEAVZ_MCP_TOKEN")
         if not url or not token:
             raise SystemExit("Set WEAVZ_MCP_URL and WEAVZ_MCP_TOKEN from your custom Weavz MCP setup")
-        if token.startswith("wvz_"):
-            raise SystemExit("WEAVZ_MCP_TOKEN must be an MCP access token, not a Weavz REST API key")
-        parsed = urlparse(url)
-        if parsed.scheme != "https" and parsed.hostname not in {"localhost", "127.0.0.1", "::1"}:
-            raise SystemExit("Use an HTTPS WEAVZ_MCP_URL except for a loopback development server")
+        try:
+            url, token = validate_live_connection(url, token)
+        except ValueError as error:
+            raise SystemExit(str(error)) from error
         await exercise(args.mode, url, token, prompt=args.prompt)
 
 
