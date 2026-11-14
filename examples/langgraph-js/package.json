@@ -1,0 +1,29 @@
+{
+  "name": "@weavz-examples/langgraph-js",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test test/*.test.ts",
+    "smoke": "tsx src/index.ts",
+    "start": "node --env-file-if-exists=.env --import tsx src/index.ts"
+  },
+  "dependencies": {
+    "@langchain/core": "1.4.1",
+    "@langchain/langgraph": "1.7.4",
+    "@langchain/mcp-adapters": "2.0.3",
+    "@langchain/openai": "1.8.4"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/node": "2.1.2",
+    "@modelcontextprotocol/server": "2.4.0",
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "zod": "4.6.7"
+  }
+}
