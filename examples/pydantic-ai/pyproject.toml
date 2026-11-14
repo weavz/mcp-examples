@@ -1,0 +1,16 @@
+[project]
+name = "weavz-pydantic-ai-mcp-example"
+version = "0.1.0"
+description = "PydanticAI agent connected to a Weavz-compatible MCP server"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "pydantic-ai-slim[mcp,openai]==2.68.0",
+  "pytest>=8,<9",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.uv]
+package = false
