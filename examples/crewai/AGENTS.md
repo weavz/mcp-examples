@@ -1,0 +1,4 @@
+- This example uses CrewAI's native `MCPServerHTTP` config and `Agent.get_mcp_tools`; retain its built-in per-tool connection lifecycle and do not substitute raw HTTP calls.
+- CrewAI prefixes native MCP tool names; map to original tool names only for fixture assertions and display.
+- Fixture data is synthetic and local. It does not prove live Weavz or model behavior.
+- Keep `.env` and tokens out of git. `WEAVZ_MCP_TOKEN` is an MCP access token, not a Weavz REST API key.

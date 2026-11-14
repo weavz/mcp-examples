@@ -1,0 +1,3 @@
+- This example uses Agno's `MCPTools` and MCP Streamable HTTP client; keep the MCP connection inside its async context and close it before exiting.
+- The fixture is synthetic and local. Passing fixture checks proves adapter interoperability, not live Weavz access or a model response.
+- Keep `.env` and tokens out of git. `WEAVZ_MCP_TOKEN` is an MCP access token, never a Weavz REST API key.

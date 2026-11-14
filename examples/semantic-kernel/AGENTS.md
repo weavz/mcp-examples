@@ -1,0 +1,4 @@
+- Use Semantic Kernel's native `MCPStreamableHttpPlugin` and keep its async context open for the discovery, tool calls, or agent run. Close it on exit.
+- This pinned Semantic Kernel version requires MCP SDK 1.x (`mcp<2`); keep its lockfile aligned.
+- Fixture data is synthetic and local. It does not prove hosted Weavz access or model behavior.
+- Keep `.env` and tokens out of git. `WEAVZ_MCP_TOKEN` is an MCP access token, never a Weavz REST API key.

@@ -1,0 +1,13 @@
+[project]
+name = "weavz-semantic-kernel-mcp-example"
+version = "0.1.0"
+description = "Semantic Kernel agents connected to Weavz over MCP"
+requires-python = ">=3.11,<3.14"
+dependencies = ["semantic-kernel[mcp]>=1,<2", "openai>=2,<4", "pytest>=8,<9"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.uv]
+package = false
