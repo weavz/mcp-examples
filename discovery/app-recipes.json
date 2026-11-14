@@ -1,0 +1,611 @@
+{
+  "airtable": {
+    "purpose": "Find inventory rows at or below their reorder points in one selected base, table, formula filter, and result cap.",
+    "requirements": [
+      "Connect the Airtable account that can read the chosen base and table.",
+      "Choose the exact base and table; `sample-warehouse-base` and `Inventory` are examples only.",
+      "Keep the formula filter and `max_records` bounded; the returned rows are not a complete inventory audit."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `inventory` Airtable alias, read the selected table rows that meet the supplied reorder filter. Identify rows where stock is at or below the reorder point and total units only across the returned rows. Cite each flagged row by its returned record ID. Example only: base `sample-warehouse-base`, table `Inventory`, returned IDs `air-row-1` through `air-row-5`; replace them with IDs returned by this account. Do not edit stock, create records, or infer supplier lead times.",
+    "readBoundary": "`list_records` returns records from the chosen base/table, optionally filtered by an Airtable formula and capped by `max_records`. Work from the rows actually returned and report the cap; do not treat them as the full table or assume additional pages were read.",
+    "workflowId": "airtable-inventory-report",
+    "name": "Airtable",
+    "alias": "inventory",
+    "actions": [
+      {
+        "name": "list_records",
+        "inputs": [
+          "base",
+          "filter_by_formula",
+          "max_records",
+          "table"
+        ]
+      }
+    ]
+  },
+  "asana": {
+    "purpose": "Review a bounded task sample from one Asana project, then inspect one selected task's details and notes.",
+    "requirements": [
+      "Connect an Asana account that can view the selected workspace and project.",
+      "Supply the workspace and project identifiers; `sample-workspace` and `launch-project` are examples only.",
+      "Use only the returned task IDs and fields; do not assign, edit, or comment."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `launch_tasks` Asana alias, summarize the selected project's returned tasks as completed, overdue, and upcoming, and flag missing assignees. Read the selected overdue task before describing its notes. Example only: workspace `sample-workspace`, project `launch-project`, task IDs `asana-task-1` through `asana-task-4`; replace with this user's IDs. State the as-of date and sample boundary. Do not assign owners, update tasks, or comment.",
+    "readBoundary": "`list_tasks` reads the named workspace/project and only the comma-separated `opt_fields` requested; this action has no page token input. `get_task` reads one exact task ID. Report absent fields as unknown and do not claim a complete project history.",
+    "workflowId": "asana-weekly-status",
+    "name": "Asana",
+    "alias": "launch_tasks",
+    "actions": [
+      {
+        "name": "list_tasks",
+        "inputs": [
+          "opt_fields",
+          "project",
+          "workspace"
+        ]
+      },
+      {
+        "name": "get_task",
+        "inputs": [
+          "taskId"
+        ]
+      }
+    ]
+  },
+  "google-drive": {
+    "purpose": "Search a bounded Google Drive result page, then verify one selected file's metadata.",
+    "requirements": [
+      "Connect a Google account with read access to the requested Drive files.",
+      "Provide a specific search query and use a returned `fileId` for metadata lookup.",
+      "`get_file` does not read the file body; open content only through an explicitly authorized content-reading tool."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `project_drive` Google Drive alias, search only the supplied query and result page. Rank matching project documents with a short reason, then call `get_file` for one returned candidate and distinguish verified metadata from search-result summaries. Example only: query for release documents, page size 3, candidate IDs `drive-file-401` through `drive-file-403`. Replace these with returned IDs. Do not open or share unrelated files or imply that metadata search read document contents.",
+    "readBoundary": "`search_files` returns a result page controlled by `pageSize` and `pageToken`; it is search metadata, not document content. `get_file` fetches metadata for one exact `fileId`. Use only the requested page and state when a file body was not read.",
+    "workflowId": "drive-document-finder",
+    "name": "Google Drive",
+    "alias": "project_drive",
+    "actions": [
+      {
+        "name": "search_files",
+        "inputs": [
+          "pageSize",
+          "query"
+        ]
+      },
+      {
+        "name": "get_file",
+        "inputs": [
+          "fields",
+          "fileId"
+        ]
+      }
+    ]
+  },
+  "figma": {
+    "purpose": "Map a compact Figma file outline and inspect a small set of returned nodes for bounded design concerns.",
+    "requirements": [
+      "Connect a Figma account with read access to the selected file.",
+      "Provide the exact file key or an HTTPS Figma file URL; choose node IDs from the returned outline.",
+      "Keep selected node IDs to 1–10 and depth to 1 or 2; this is REST design context, not Code Connect or native editing."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `product_design` Figma alias, first read a compact outline for the selected file, then inspect only the selected returned node IDs. Report measured layout or accessibility properties separately from recommendations and cite returned node IDs. Example only: file key `sample-product-settings-file`, nodes `1:10,1:20`; use only IDs returned for the current file. Do not resolve an entire library, comment, or change the design.",
+    "readBoundary": "`get_file_outline` returns a compact tree capped by `maxNodes` (1–200); its expansion via `parentNodeId` is caller-directed, not API pagination. `get_node_design_context` accepts 1–10 selected nodes with depth 1 or 2 and returns bounded REST properties/reference IDs, not resolved libraries, Code Connect mappings, generated code, or expiring image assets. Request assets separately only when needed.",
+    "workflowId": "figma-design-review",
+    "name": "Figma",
+    "alias": "product_design",
+    "actions": [
+      {
+        "name": "get_file_outline",
+        "inputs": [
+          "depth",
+          "fileKey",
+          "maxNodes"
+        ]
+      },
+      {
+        "name": "get_node_design_context",
+        "inputs": [
+          "depth",
+          "fileKey",
+          "nodeIds"
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "purpose": "List files under one storage prefix and read selected UTF-8 research notes as a cited evidence notebook.",
+    "requirements": [
+      "Connect to the intended Weavz workspace and end-user storage scope that contains the files.",
+      "Use the supplied prefix and exact paths returned under that prefix; `research/launch/` is an example only.",
+      "Use UTF-8 for text; use Base64 only when a selected file is binary. Do not write or delete files."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `research_files` Filesystem alias, list only files under the selected research prefix and read the two requested note paths before summarizing their contents. Build an evidence notebook with findings, caveats, and source file IDs; distinguish statements in the notes from open questions. Example only: prefix `research/launch/`, paths `research/launch/experiment-brief.md` and `research/launch/interview-synthesis.md`, returned IDs `storage-exp-brief` and `storage-interviews`. Replace with current returned paths. Do not browse outside the prefix or write/delete files.",
+    "readBoundary": "`list_files` is filtered by `prefix` and returns paths in the current storage scope; it does not establish evidence outside that prefix. `read_file` returns the exact path's content as text or Base64 according to `outputEncoding`. Read only selected returned paths and avoid treating synthetic or user-provided notes as representative customer evidence.",
+    "workflowId": "files-research-notebook",
+    "name": "Filesystem",
+    "alias": "research_files",
+    "actions": [
+      {
+        "name": "list_files",
+        "inputs": [
+          "prefix"
+        ]
+      },
+      {
+        "name": "read_file",
+        "inputs": [
+          "outputEncoding",
+          "path"
+        ]
+      }
+    ]
+  },
+  "github": {
+    "purpose": "Review one selected pull request and a bounded sample of its returned file patches, keeping PR review distinct from issue search.",
+    "requirements": [
+      "Connect a GitHub account or installation that can read the selected repository and pull request.",
+      "Provide an exact `owner/repository` and pull number; example repository `example-org/demo-api`, PR `42` is synthetic.",
+      "Use the read-only GET pull-files endpoint; do not create a review, comment, commit, or merge."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `code_review` GitHub alias, read the selected pull request and then retrieve its changed-file patches through the GET pull-files endpoint. Summarize behavior changes, test evidence, and concrete risks tied to returned paths. State if patches are missing or truncated; do not claim a full repository review. Example only: `example-org/demo-api` PR `42`, patch record IDs `pr-file-validator` and `pr-file-retry`; replace with this user's selected PR and returned files. This recipe reviews pull requests, not issue triage. Do not comment, submit a review, commit, or merge.",
+    "readBoundary": "`get_pull_request` reads one exact repository/pull-number pair. `custom_api_call` should be limited to `GET /repos/{owner}/{repo}/pulls/{number}/files` with a bounded `per_page` query; inspect only returned patches, note missing/truncated patch text, and do not paginate unless the user explicitly requests more. This is not a general codebase scan.",
+    "workflowId": "github-pull-request-review",
+    "name": "GitHub",
+    "alias": "code_review",
+    "actions": [
+      {
+        "name": "get_pull_request",
+        "inputs": [
+          "pull_number",
+          "repository"
+        ]
+      },
+      {
+        "name": "custom_api_call",
+        "inputs": [
+          "method",
+          "path",
+          "query_params"
+        ]
+      }
+    ]
+  },
+  "gmail": {
+    "purpose": "Search one bounded Gmail message page, read each selected message body, and separate explicit requests/deadlines from informational mail.",
+    "requirements": [
+      "Connect the Gmail account whose mailbox may be read for this task.",
+      "Supply a narrow Gmail query and result cap; example query `in:inbox newer_than:3d` is illustrative.",
+      "Use returned message IDs for full-body reads; never send, draft, label, or archive mail."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `inbox` Gmail alias, search only the supplied query and result limit. `list_messages` gives summaries, so read each returned message ID with `get_message` in full format before summarizing. Prioritize explicit requests and dates, separating them from recommendations and informational updates. Example only: query `in:inbox newer_than:3d`, message IDs `gmail-msg-101` and `gmail-msg-102`; replace with returned IDs. Do not paginate, send, draft, or change labels.",
+    "readBoundary": "`list_messages` returns message summaries from the selected Gmail query and page; `pageToken` is available but this task should not fetch additional pages. `get_message` reads one exact message and can return full content; attachment data is URL-safe Base64 and is not automatically interpreted. Cite only messages actually read.",
+    "workflowId": "gmail-inbox-briefing",
+    "name": "Gmail",
+    "alias": "inbox",
+    "actions": [
+      {
+        "name": "list_messages",
+        "inputs": [
+          "maxResults",
+          "query"
+        ]
+      },
+      {
+        "name": "get_message",
+        "inputs": [
+          "format",
+          "messageId"
+        ]
+      }
+    ]
+  },
+  "google-calendar": {
+    "purpose": "Prepare one meeting briefing from a selected calendar event and a bounded related Gmail sample.",
+    "requirements": [
+      "Connect a Google account with read access to the chosen calendar and event.",
+      "Provide the exact calendar ID, event ID, and a bounded time or search window; `primary` is an example calendar ID.",
+      "Use the `calendar` alias for event data; do not alter the event or invite attendees."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `calendar` Google Calendar alias, read only the exact selected event and its returned agenda/details. Prepare a concise meeting brief that separates stated decisions, open questions, dates, and owners. Cite the event ID and flag missing fields instead of filling them by inference. Example only: calendar `primary`, event ID `event-aurora-44`; replace with the intended meeting and an event returned for this account. Do not invite attendees, send mail, or alter the event.",
+    "readBoundary": "`list_events` is restricted by `calendarId`, time bounds, and `maxResults`; it may return a `pageToken`, but this task uses only the requested bounded page. `get_event` reads one exact event ID on that calendar. This recipe reads calendar event data only; related email requires a separate Gmail connection and task scope.",
+    "workflowId": "meeting-prep",
+    "name": "Google Calendar",
+    "alias": "calendar",
+    "actions": [
+      {
+        "name": "list_events",
+        "inputs": [
+          "calendarId",
+          "maxResults",
+          "orderBy",
+          "query",
+          "singleEvents",
+          "timeMax",
+          "timeMin"
+        ]
+      },
+      {
+        "name": "get_event",
+        "inputs": [
+          "calendarId",
+          "eventId"
+        ]
+      }
+    ]
+  },
+  "notion": {
+    "purpose": "Find pages by title, retrieve selected page content, and answer only from the returned text.",
+    "requirements": [
+      "Connect a Notion account that can read the chosen pages.",
+      "Search with title terms, then use the exact returned page/block ID as `parentId` to read content.",
+      "A title-search match or snippet is not evidence of page contents; do not write or comment."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `knowledge` Notion alias, search for the requested pages by title and read each selected result's actual page content using its returned `parentId` before answering. Cite the page IDs and distinguish source statements from synthesis. Example only: title `On-call escalation playbook`, page IDs `notion-page-301` and `notion-page-302`; replace these with current search results. If the page is missing or its returned content is empty, say so. Do not edit pages or add comments.",
+    "readBoundary": "`find_page` returns a capped set of title matches (limit 1–100), not authoritative page text. For each selected result, call `getPageOrBlockChildren` with the returned `parentId`, `markdown: true`, and `dynamic: {}`. Report only content in the returned block tree; do not assume unreturned descendants or additional pages were read.",
+    "workflowId": "notion-knowledge-research",
+    "name": "Notion",
+    "alias": "knowledge",
+    "actions": [
+      {
+        "name": "find_page",
+        "inputs": [
+          "exact_match",
+          "limit",
+          "title"
+        ]
+      },
+      {
+        "name": "getPageOrBlockChildren",
+        "inputs": [
+          "dynamic",
+          "markdown",
+          "parentId"
+        ]
+      }
+    ]
+  },
+  "google-sheets": {
+    "purpose": "Locate a spreadsheet, read one explicit A1 range by its actual spreadsheet ID, and separate closed-won rows from open pipeline.",
+    "requirements": [
+      "Connect a Google account with read access to the selected spreadsheet.",
+      "Use the actual spreadsheet ID returned by search or supplied by the user, plus an explicit A1 range.",
+      "Example ID `sample-fy26-regional-sales` and range `Deals!A1:F6` are synthetic; do not write cells or extrapolate beyond the range."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `sales_sheet` Google Sheets alias, locate the requested spreadsheet if needed, then read only the user-selected spreadsheet ID and A1 range. Count closed-won rows and report their booked amount separately from open opportunities. State the range and its scope. Example only: spreadsheet ID `sample-fy26-regional-sales`, range `Deals!A1:F6`, rows `sales-row-2` through `sales-row-6`; replace with returned IDs. Do not write cells, include rows outside the range, or forecast from the sample.",
+    "readBoundary": "`list_spreadsheets` returns a searchable file page; `read_range` reads only the exact `spreadsheetId` and A1 `range`. Values are returned as a matrix in the requested `majorDimension` and rendering mode; no cells outside that range are included. Keep closed-won and open values separate and do not treat the sample as an account-wide total.",
+    "workflowId": "sheets-sales-report",
+    "name": "Google Sheets",
+    "alias": "sales_sheet",
+    "actions": [
+      {
+        "name": "list_spreadsheets",
+        "inputs": [
+          "pageSize",
+          "query"
+        ]
+      },
+      {
+        "name": "read_range",
+        "inputs": [
+          "majorDimension",
+          "range",
+          "spreadsheetId",
+          "valueRenderOption"
+        ]
+      }
+    ]
+  },
+  "hubspot": {
+    "purpose": "Review the first bounded page of HubSpot deals using only selected stage, amount, pipeline, and close-date properties.",
+    "requirements": [
+      "Connect a HubSpot account with read access to the intended deals.",
+      "Choose a small `limit` and explicit deal `properties`; the example property list is not a revenue-reporting authorization.",
+      "Do not update deals or contact owners; distinguish open pipeline from closed-won records."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `sales_pipeline` HubSpot alias, read only the requested first page of deals and selected properties. Identify near-term open deals and missing close dates while separating them from closed-won records. State the limit and that the sample is bounded. Example only: limit 3, properties `dealname,amount,dealstage,closedate,pipeline`, returned deal IDs `hs-deal-11` through `hs-deal-13`. Replace with returned records; do not calculate recognized revenue, forecast totals, update deals, or contact owners.",
+    "readBoundary": "`list_deals` returns structured deal properties for the requested `limit`, `properties`, and optional page cursor (`after`). This task reads one page only. The data is deal state, not a complete pipeline or recognized revenue; report missing or unrequested fields as unknown.",
+    "workflowId": "hubspot-pipeline-review",
+    "name": "HubSpot",
+    "alias": "sales_pipeline",
+    "actions": [
+      {
+        "name": "list_deals",
+        "inputs": [
+          "limit",
+          "properties"
+        ]
+      }
+    ]
+  },
+  "salesforce": {
+    "purpose": "Build a short brief from Account records matching one explicit SOQL WHERE condition.",
+    "requirements": [
+      "Connect a Salesforce account with read access to Account records and the fields returned by this action.",
+      "Specify `object: Account` and a narrow WHERE condition; example `%Northwind%` is synthetic.",
+      "Keep similar-name records separate and do not infer missing fields or update records."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `accounts` Salesforce alias, run only the selected read-only Account query condition. Summarize each returned matching record separately with its segment and service context, citing the returned account ID or URL. Example only: Account condition `Name LIKE '%Northwind%'`, returned IDs `sf-account-71` through `sf-account-73`; use the user's selected condition and current results. State that matches are a bounded query result, not a complete CRM review. Do not update Salesforce or send email.",
+    "readBoundary": "`find_records_by_query` searches the specified Salesforce object using the supplied SOQL WHERE clause (omit the `WHERE` keyword). The action exposes no explicit pagination or result-limit input, so do not promise exhaustive coverage or imply a full object export. Use only returned records and fields; report missing values as unknown.",
+    "workflowId": "salesforce-account-brief",
+    "name": "Salesforce",
+    "alias": "accounts",
+    "actions": [
+      {
+        "name": "find_records_by_query",
+        "inputs": [
+          "object",
+          "where_clause"
+        ]
+      }
+    ]
+  },
+  "linear": {
+    "purpose": "Search a bounded Linear issue sample and read one selected issue before recommending a review order.",
+    "requirements": [
+      "Connect a Linear account with read access to the selected team/project issues.",
+      "Use a narrow query and small `limit`; get the exact `issue_id` returned by the search.",
+      "Do not edit issue state, assign work, create comments, or infer dependencies not present in the result."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `project_issues` Linear alias, search with the selected project terms and a bounded result limit. Group the returned issues by status and urgency, note explicit blockers, then read one selected issue by its returned identifier before describing it. Separate issue facts from your suggested review order. Example only: query `Project Atlas`, limit 3, issue IDs `LIN-201` through `LIN-203`; replace with returned results. Do not edit issues, assign work, or comment.",
+    "readBoundary": "`search_issues` returns matches for the supplied query and `limit` (optionally scoped to a team). `get_issue` reads one exact returned Linear ID. The response may omit details not selected by the action; use only returned fields and do not infer dependencies or complete backlog coverage.",
+    "workflowId": "linear-backlog-review",
+    "name": "Linear",
+    "alias": "project_issues",
+    "actions": [
+      {
+        "name": "search_issues",
+        "inputs": [
+          "limit",
+          "query"
+        ]
+      },
+      {
+        "name": "get_issue",
+        "inputs": [
+          "issue_id"
+        ]
+      }
+    ]
+  },
+  "jira-cloud": {
+    "purpose": "Summarize the bounded issues returned by one JQL query for an active sprint, separating status, priority, blockers, and missing assignees.",
+    "requirements": [
+      "Connect a Jira Cloud account that can browse the selected project and sprint.",
+      "Use a scoped JQL query and a conservative `max_results`; example project key `DEMO` is synthetic.",
+      "Do not assign, comment, transition, or edit issues; do not claim a sprint forecast."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `sprint_board` Jira alias, run the selected JQL with its explicit result cap. Summarize only returned issues by status and priority, identify blocker labels/fields, and flag missing assignees. State the query and result limit. Example only: `project = DEMO AND sprint in openSprints() ORDER BY priority DESC`, cap 4, issue IDs `DEMO-41` through `DEMO-44`; use the actual project's query and returned issues. Do not forecast completion or change issues.",
+    "readBoundary": "`search_issues` returns Jira issue fields matching the supplied JQL up to `max_results`. This action exposes no continuation token, so treat the result as a bounded sample and do not infer that unreturned sprint issues do not exist. Use status, priority, and assignee values as returned.",
+    "workflowId": "jira-sprint-summary",
+    "name": "Jira Cloud",
+    "alias": "sprint_board",
+    "actions": [
+      {
+        "name": "search_issues",
+        "inputs": [
+          "jql",
+          "max_results"
+        ]
+      }
+    ]
+  },
+  "zendesk": {
+    "purpose": "Search one bounded page of open Zendesk tickets and read selected ticket details/comments for a safe handoff brief.",
+    "requirements": [
+      "Connect a Zendesk account with read access to the selected support tickets.",
+      "Use a ticket-only query, status filter, and small `limit`; use returned numeric ticket IDs for detail reads.",
+      "Request comments only when needed; do not add comments, assign tickets, or change status."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `support` Zendesk alias, search only the requested ticket page. Read the selected tickets' details and opt-in comments before preparing a handoff. Summarize the reported issue, current status/priority, and next information needed; distinguish reported symptoms from diagnosis. Example only: query `type:ticket status<solved tag:handoff`, status `open`, limit 3, IDs `zd-7001` through `zd-7003`; replace with current results. Do not comment, assign, or change ticket status.",
+    "readBoundary": "`search_tickets` enforces `type:ticket` and returns one bounded page (limit capped at 100). Search results are summaries; `get_ticket` reads one exact numeric ID and returns comments only if `include_comments` is enabled, with `comments_limit`. Do not claim all support tickets were reviewed.",
+    "workflowId": "zendesk-ticket-handoff",
+    "name": "Zendesk",
+    "alias": "support",
+    "actions": [
+      {
+        "name": "search_tickets",
+        "inputs": [
+          "limit",
+          "query",
+          "status"
+        ]
+      },
+      {
+        "name": "get_ticket",
+        "inputs": [
+          "comments_limit",
+          "include_comments",
+          "ticket_id"
+        ]
+      }
+    ]
+  },
+  "intercom": {
+    "purpose": "Find one bounded set of open Intercom conversations and read a selected conversation before preparing a support brief.",
+    "requirements": [
+      "Connect an Intercom account with read access to the chosen conversations.",
+      "Use a specific subject/text field, match mode, term, and open status; choose a returned conversation ID for detail lookup.",
+      "Do not reply, add notes/tags, or create tickets."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `billing_support` Intercom alias, find open conversations matching the selected subject text, then read the exact selected conversation by its returned ID. Summarize the customer's stated issue, prior support context, and unresolved question, labeling any inferred cause as inference. Example only: search `source.subject` contains `invoice`, status `open`, conversation IDs `ic-convo-501` and `ic-convo-502`; replace with returned matches. Do not reply, add a note/tag, or create a ticket.",
+    "readBoundary": "`find-conversation` searches by the specified field, match type, term, and optional status/date filters. It returns a matching conversation sample, not a full support history. `get-conversation` reads one exact returned `conversationId`; cite only content present in that result.",
+    "workflowId": "intercom-conversation-brief",
+    "name": "Intercom",
+    "alias": "billing_support",
+    "actions": [
+      {
+        "name": "find-conversation",
+        "inputs": [
+          "matchType",
+          "searchField",
+          "searchTerm",
+          "status"
+        ]
+      },
+      {
+        "name": "get-conversation",
+        "inputs": [
+          "conversationId"
+        ]
+      }
+    ]
+  },
+  "slack": {
+    "purpose": "Summarize a small recent Slack channel sample and one selected thread, separating decisions, questions, and attributed statements.",
+    "requirements": [
+      "Connect the Slack workspace and channel the user selected, with read access to history and thread replies.",
+      "Supply the exact channel ID and one returned parent `thread_ts`; `C-LAUNCH-OPS` is a synthetic example.",
+      "Do not post messages, reactions, or status changes; a five-message sample is not full channel history."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `launch_ops` Slack alias, read only the selected channel's latest bounded message sample and one selected thread's replies. Group explicit decisions, open questions, and owners; attribute statements to their returned authors and preserve timestamps. Example only: channel `C-LAUNCH-OPS`, limit 5, parent timestamp `1731514200.000100`; replace with the chosen channel and a returned thread timestamp. Do not post, react, or update status.",
+    "readBoundary": "`get_channel_history` returns up to the requested `limit` (maximum 100) of recent messages in one channel. `get_thread_replies` reads replies for the exact channel and parent timestamp. The sample does not represent complete channel history; do not infer agreement from reactions or omitted messages.",
+    "workflowId": "slack-channel-digest",
+    "name": "Slack",
+    "alias": "launch_ops",
+    "actions": [
+      {
+        "name": "get_channel_history",
+        "inputs": [
+          "channel",
+          "limit"
+        ]
+      },
+      {
+        "name": "get_thread_replies",
+        "inputs": [
+          "channel",
+          "thread_ts"
+        ]
+      }
+    ]
+  },
+  "trello": {
+    "purpose": "Review open cards on one Trello board and inspect one selected card plus a bounded comments sample.",
+    "requirements": [
+      "Connect a Trello account with read access to the selected board and cards.",
+      "Provide a board ID and open-card filter; use the returned card ID for exact detail and comment reads.",
+      "Do not move, archive, assign, or comment on cards."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `launch_board` Trello alias, list only the selected board's open cards using the requested fields. Inspect the selected blocked card and its comments, then summarize blocked work, due-date risk, and the latest stated owner update. Example only: board `board-launch-demo`, open filter, card `card-demo-22`; replace with this user's board and returned card. State the sample size and distinguish a due date from a commitment. Do not change cards or write comments.",
+    "readBoundary": "`list_cards` filters by the supplied board/list and filter, and returns only requested fields. `get_card` reads one exact card ID; `list_comments` reads its comment actions with an optional limit/cursor. Do not assume the card sample or comments cover all board activity.",
+    "workflowId": "trello-project-health",
+    "name": "Trello",
+    "alias": "launch_board",
+    "actions": [
+      {
+        "name": "list_cards",
+        "inputs": [
+          "boardId",
+          "fields",
+          "filter"
+        ]
+      },
+      {
+        "name": "get_card",
+        "inputs": [
+          "cardId",
+          "fields",
+          "includeChecklists"
+        ]
+      },
+      {
+        "name": "list_comments",
+        "inputs": [
+          "cardId",
+          "limit"
+        ]
+      }
+    ]
+  },
+  "stripe": {
+    "purpose": "Review a bounded page of subscription statuses and flag records needing human review, without calculating revenue.",
+    "requirements": [
+      "Connect a Stripe account authorized to read subscriptions for the intended workspace/user.",
+      "Choose a narrow status/date/customer filter and a small positive `limit`; keep `fetch_all` false.",
+      "Subscription status review only: do not read charges, invoices, or payment intents, and do not create/update/cancel/retry subscriptions."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `subscriptions` Stripe alias, read a bounded sample of subscriptions and count only their returned statuses. Flag `past_due` or `incomplete` rows for a human review, and state the limit and filters. Example only: subscription IDs `sub-demo-1` through `sub-demo-4`, with one synthetic past-due record; replace with current returned IDs. Do not calculate revenue, infer a payment result, read charges/invoices/payment intents, or change subscriptions.",
+    "readBoundary": "`search_subscriptions` accepts optional status, price, customer, and created-date filters, a result `limit`, `fetch_all`, and an optional customer-detail flag. Keep `fetch_all` false and the limit bounded; this is a sample, not an account-wide census. Use status counts only, not revenue or inferred payment outcomes.",
+    "workflowId": "stripe-subscription-review",
+    "name": "Stripe",
+    "alias": "subscriptions",
+    "actions": [
+      {
+        "name": "search_subscriptions",
+        "inputs": [
+          "fetch_all",
+          "include_customer_details",
+          "limit",
+          "status"
+        ]
+      }
+    ]
+  },
+  "shopify": {
+    "purpose": "Summarize one customer's bounded Shopify order page by returned order status.",
+    "requirements": [
+      "Connect a Shopify account allowed to read the selected customer's orders.",
+      "Provide the exact customer ID and small order `limit`; example `customer-demo-104` is synthetic.",
+      "Do not infer store-wide sales or lifetime value, or change orders, customer data, inventory, fulfillment, or refunds."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `orders` Shopify alias, read only the selected customer's bounded order page and requested status filter. Separate open, closed, and canceled orders using the returned statuses and cite order IDs. Example only: customer `customer-demo-104`, limit 4, order IDs `shop-order-701` through `shop-order-704`; replace with the chosen customer and current results. Do not infer store-wide sales or lifetime value, or modify orders or inventory.",
+    "readBoundary": "`get_customer_orders` is scoped to one exact `customer_id`, optional status filter, and `limit`. It returns only that customer's matching order sample; do not treat it as a store-wide report or assume unseen pages were read. Currency and fulfillment claims must come from returned fields.",
+    "workflowId": "shopify-orders-report",
+    "name": "Shopify",
+    "alias": "orders",
+    "actions": [
+      {
+        "name": "get_customer_orders",
+        "inputs": [
+          "customer_id",
+          "limit",
+          "status"
+        ]
+      }
+    ]
+  },
+  "todoist": {
+    "purpose": "Make a read-only day plan from one Todoist project and due/overdue filter, using an explicit as-of date.",
+    "requirements": [
+      "Connect a Todoist account with read access to the selected project and tasks.",
+      "Supply the project ID or a narrow filter and conservative limit; `todoist-project-demo` is synthetic.",
+      "Use the stated as-of date; do not edit, complete, reopen, move, or comment on tasks."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `personal_tasks` Todoist alias, list only tasks in the selected project matching the user's due/overdue filter. Order a suggested plan by urgency and available time, and flag missing due dates/owners if those fields are returned. Example only: project `todoist-project-demo`, filter `today | overdue`, limit 10, as-of date `2026-11-14`, task IDs `todo-task-1` through `todo-task-4`. Replace with the user's project and current date. Keep recommendations distinct from task facts; do not edit tasks.",
+    "readBoundary": "`list_tasks` supports project, section, label, IDs or filter parameters and a result `limit`/cursor. Use only the selected project/filter page and state the as-of date. An empty response does not prove that tasks outside the query or current page do not exist.",
+    "workflowId": "todoist-day-plan",
+    "name": "Todoist",
+    "alias": "personal_tasks",
+    "actions": [
+      {
+        "name": "list_tasks",
+        "inputs": [
+          "filter",
+          "limit",
+          "projectId"
+        ]
+      }
+    ]
+  },
+  "google-docs": {
+    "purpose": "Review one exact Google Doc's returned content for decisions, open questions, dates, and named owners.",
+    "requirements": [
+      "Connect a Google account with read access to the specific document.",
+      "Provide an exact `documentId`; `google-doc-demo-501` is synthetic.",
+      "Do not imply access to linked docs or comments unless the returned content includes them; do not edit, comment, or share."
+    ],
+    "taskPrompt": "Using the connected Weavz MCP server and the `launch_docs` Google Docs alias, read only the selected document ID. Summarize stated decisions and unresolved questions, then list dates and owners exactly as returned. Mark missing owners or fields as unknown and distinguish suggestions from written decisions. Example only: document `google-doc-demo-501`, section IDs `doc-section-1` through `doc-section-3`; replace with the user-selected document. Do not edit, comment on, or share it.",
+    "readBoundary": "`get_document` returns content and metadata for one exact document ID. The tool does not imply that linked documents, comments, or external attachments were read. Base claims only on returned document content and cite the selected document/sections when identifiers are present.",
+    "workflowId": "google-docs-document-review",
+    "name": "Google Docs",
+    "alias": "launch_docs",
+    "actions": [
+      {
+        "name": "get_document",
+        "inputs": [
+          "documentId"
+        ]
+      }
+    ]
+  }
+}
