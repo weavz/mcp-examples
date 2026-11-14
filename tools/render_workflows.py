@@ -6,6 +6,7 @@ import json
 import shutil
 import subprocess
 from pathlib import Path
+from discovery import enhance_readme
 
 ROOT = Path(__file__).resolve().parents[1]
 TEMPLATE = ROOT / "shared/workflow-python"
@@ -162,6 +163,7 @@ This repository demonstrates {entry['title']} with PydanticAI and native Weavz M
 - Keep the example standalone: no parent-repository imports, editable private packages, or shared machine paths.
 ''')
     subprocess.run(["uv", "lock", "--offline", "--project", str(target)], check=True, capture_output=True)
+    enhance_readme(entry, ROOT)
 
 
 if __name__ == "__main__":

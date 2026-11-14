@@ -1,0 +1,1946 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Find a native MCP example by app integration, agent framework, language, and MCP mode.",
+  "modeDefinition": "mcpModes describes the server configuration covered by this example. Hosted OAuth client guides use Code Mode; custom framework and workflow examples cover both modes.",
+  "hubUrl": "https://github.com/weavz/mcp-examples",
+  "verificationUrl": "https://github.com/weavz/mcp-examples/blob/main/docs/verification.md",
+  "examples": [
+    {
+      "id": "openai-agents-python",
+      "title": "OpenAI Agents SDK (Python) MCP integration examples with Weavz",
+      "summary": "Connect OpenAI Agents SDK (Python) to Slack, Gmail, GitHub and Notion through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-openai-agents-python",
+      "readmeUrl": "https://github.com/weavz/weavz-openai-agents-python/blob/main/README.md",
+      "category": "framework",
+      "framework": "OpenAI Agents SDK",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-openai-agents-python/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-openai-agents-python/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "pydantic-ai",
+      "title": "PydanticAI MCP integration examples with Weavz",
+      "summary": "Connect PydanticAI to Gmail, Google Sheets, Notion and Figma through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-pydantic-ai",
+      "readmeUrl": "https://github.com/weavz/weavz-pydantic-ai/blob/main/README.md",
+      "category": "framework",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-sheets",
+          "name": "Google Sheets",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "figma",
+          "name": "Figma",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-pydantic-ai/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-pydantic-ai/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "google-adk-python",
+      "title": "Google ADK (Python) MCP integration examples with Weavz",
+      "summary": "Connect Google ADK (Python) to Gmail, Google Calendar, Google Drive and Google Sheets through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-google-adk-python",
+      "readmeUrl": "https://github.com/weavz/weavz-google-adk-python/blob/main/README.md",
+      "category": "framework",
+      "framework": "Google ADK",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-calendar",
+          "name": "Google Calendar",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-drive",
+          "name": "Google Drive",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-sheets",
+          "name": "Google Sheets",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-google-adk-python/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-google-adk-python/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "langchain-python",
+      "title": "LangChain (Python) MCP integration examples with Weavz",
+      "summary": "Connect LangChain (Python) to Slack, Gmail, Notion and GitHub through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-langchain-python",
+      "readmeUrl": "https://github.com/weavz/weavz-langchain-python/blob/main/README.md",
+      "category": "framework",
+      "framework": "LangChain",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-langchain-python/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-langchain-python/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "langgraph-python",
+      "title": "LangGraph (Python) MCP integration examples with Weavz",
+      "summary": "Connect LangGraph (Python) to Gmail, Slack, GitHub and Jira Cloud through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-langgraph-python",
+      "readmeUrl": "https://github.com/weavz/weavz-langgraph-python/blob/main/README.md",
+      "category": "framework",
+      "framework": "LangGraph",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "jira-cloud",
+          "name": "Jira Cloud",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-langgraph-python/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-langgraph-python/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "llamaindex",
+      "title": "LlamaIndex MCP integration examples with Weavz",
+      "summary": "Connect LlamaIndex to Notion, Google Drive, Google Docs and Google Sheets through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-llamaindex",
+      "readmeUrl": "https://github.com/weavz/weavz-llamaindex/blob/main/README.md",
+      "category": "framework",
+      "framework": "LlamaIndex",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-drive",
+          "name": "Google Drive",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-docs",
+          "name": "Google Docs",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-sheets",
+          "name": "Google Sheets",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-llamaindex/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-llamaindex/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "crewai",
+      "title": "CrewAI MCP integration examples with Weavz",
+      "summary": "Connect CrewAI to HubSpot, Gmail, Google Calendar and Slack through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-crewai",
+      "readmeUrl": "https://github.com/weavz/weavz-crewai/blob/main/README.md",
+      "category": "framework",
+      "framework": "CrewAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "hubspot",
+          "name": "HubSpot",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-calendar",
+          "name": "Google Calendar",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-crewai/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-crewai/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "agno",
+      "title": "Agno MCP integration examples with Weavz",
+      "summary": "Connect Agno to Slack, GitHub, Figma and HubSpot through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-agno",
+      "readmeUrl": "https://github.com/weavz/weavz-agno/blob/main/README.md",
+      "category": "framework",
+      "framework": "Agno",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "figma",
+          "name": "Figma",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "hubspot",
+          "name": "HubSpot",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-agno/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-agno/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "strands",
+      "title": "Strands Agents MCP integration examples with Weavz",
+      "summary": "Connect Strands Agents to Slack, Gmail, GitHub and Google Calendar through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-strands",
+      "readmeUrl": "https://github.com/weavz/weavz-strands/blob/main/README.md",
+      "category": "framework",
+      "framework": "Strands Agents",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-calendar",
+          "name": "Google Calendar",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-strands/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-strands/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "smolagents",
+      "title": "smolagents MCP integration examples with Weavz",
+      "summary": "Connect smolagents to GitHub, Figma, Google Sheets and Gmail through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-smolagents",
+      "readmeUrl": "https://github.com/weavz/weavz-smolagents/blob/main/README.md",
+      "category": "framework",
+      "framework": "smolagents",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "figma",
+          "name": "Figma",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-sheets",
+          "name": "Google Sheets",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-smolagents/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-smolagents/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "autogen",
+      "title": "AutoGen MCP integration examples with Weavz",
+      "summary": "Connect AutoGen to GitHub, Slack, Jira Cloud and Gmail through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-autogen",
+      "readmeUrl": "https://github.com/weavz/weavz-autogen/blob/main/README.md",
+      "category": "framework",
+      "framework": "AutoGen",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "jira-cloud",
+          "name": "Jira Cloud",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-autogen/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-autogen/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "semantic-kernel",
+      "title": "Semantic Kernel MCP integration examples with Weavz",
+      "summary": "Connect Semantic Kernel to Salesforce, Jira Cloud, Google Drive and Slack through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-semantic-kernel",
+      "readmeUrl": "https://github.com/weavz/weavz-semantic-kernel/blob/main/README.md",
+      "category": "framework",
+      "framework": "Semantic Kernel",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "salesforce",
+          "name": "Salesforce",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "jira-cloud",
+          "name": "Jira Cloud",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-drive",
+          "name": "Google Drive",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-semantic-kernel/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-semantic-kernel/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "vercel-ai-sdk",
+      "title": "Vercel AI SDK MCP integration examples with Weavz",
+      "summary": "Connect Vercel AI SDK to Slack, Gmail, HubSpot and GitHub through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-vercel-ai-sdk",
+      "readmeUrl": "https://github.com/weavz/weavz-vercel-ai-sdk/blob/main/README.md",
+      "category": "framework",
+      "framework": "Vercel AI SDK",
+      "language": "typescript",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "hubspot",
+          "name": "HubSpot",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-vercel-ai-sdk/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-vercel-ai-sdk/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "npm ci --no-audit --no-fund",
+        "npm run build",
+        "npm test",
+        "npm run smoke -- --fixture --mode tools",
+        "npm run smoke -- --fixture --mode code"
+      ]
+    },
+    {
+      "id": "mastra",
+      "title": "Mastra MCP integration examples with Weavz",
+      "summary": "Connect Mastra to GitHub, Slack, Notion and Gmail through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-mastra",
+      "readmeUrl": "https://github.com/weavz/weavz-mastra/blob/main/README.md",
+      "category": "framework",
+      "framework": "Mastra",
+      "language": "typescript",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-mastra/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-mastra/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "npm ci --no-audit --no-fund",
+        "npm run build",
+        "npm test",
+        "npm run smoke -- --fixture --mode tools",
+        "npm run smoke -- --fixture --mode code"
+      ]
+    },
+    {
+      "id": "langchain-js",
+      "title": "LangChain.js (TypeScript) MCP integration examples with Weavz",
+      "summary": "Connect LangChain.js (TypeScript) to Slack, Gmail, Notion and GitHub through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-langchain-js",
+      "readmeUrl": "https://github.com/weavz/weavz-langchain-js/blob/main/README.md",
+      "category": "framework",
+      "framework": "LangChain.js",
+      "language": "typescript",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-langchain-js/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-langchain-js/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "npm ci --no-audit --no-fund",
+        "npm run build",
+        "npm test",
+        "npm run smoke -- --fixture --mode tools",
+        "npm run smoke -- --fixture --mode code"
+      ]
+    },
+    {
+      "id": "langgraph-js",
+      "title": "LangGraph.js (TypeScript) MCP integration examples with Weavz",
+      "summary": "Connect LangGraph.js (TypeScript) to GitHub, Slack, Zendesk and Gmail through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-langgraph-js",
+      "readmeUrl": "https://github.com/weavz/weavz-langgraph-js/blob/main/README.md",
+      "category": "framework",
+      "framework": "LangGraph.js",
+      "language": "typescript",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "zendesk",
+          "name": "Zendesk",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-langgraph-js/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-langgraph-js/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "npm ci --no-audit --no-fund",
+        "npm run build",
+        "npm test",
+        "npm run smoke -- --fixture --mode tools",
+        "npm run smoke -- --fixture --mode code"
+      ]
+    },
+    {
+      "id": "openai-agents-js",
+      "title": "OpenAI Agents SDK for TypeScript MCP integration examples with Weavz",
+      "summary": "Connect OpenAI Agents SDK for TypeScript to Gmail, Slack, GitHub and Notion through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-openai-agents-js",
+      "readmeUrl": "https://github.com/weavz/weavz-openai-agents-js/blob/main/README.md",
+      "category": "framework",
+      "framework": "OpenAI Agents SDK for TypeScript",
+      "language": "typescript",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-openai-agents-js/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-openai-agents-js/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "npm ci --no-audit --no-fund",
+        "npm run build",
+        "npm test",
+        "npm run smoke -- --fixture --mode tools",
+        "npm run smoke -- --fixture --mode code"
+      ]
+    },
+    {
+      "id": "google-adk-js",
+      "title": "Google ADK for TypeScript MCP integration examples with Weavz",
+      "summary": "Connect Google ADK for TypeScript to Gmail, Google Calendar, Google Sheets and Google Drive through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "repositoryUrl": "https://github.com/weavz/weavz-google-adk-js",
+      "readmeUrl": "https://github.com/weavz/weavz-google-adk-js/blob/main/README.md",
+      "category": "framework",
+      "framework": "Google ADK for TypeScript",
+      "language": "typescript",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-calendar",
+          "name": "Google Calendar",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-sheets",
+          "name": "Google Sheets",
+          "exampleKind": "app setup recipe"
+        },
+        {
+          "id": "google-drive",
+          "name": "Google Drive",
+          "exampleKind": "app setup recipe"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-google-adk-js/actions",
+      "appRecipesUrl": "https://github.com/weavz/weavz-google-adk-js/blob/main/docs/app-recipes.md",
+      "localChecks": [
+        "npm ci --no-audit --no-fund",
+        "npm run build",
+        "npm test",
+        "npm run smoke -- --fixture --mode tools",
+        "npm run smoke -- --fixture --mode code"
+      ]
+    },
+    {
+      "id": "opencode",
+      "title": "OpenCode MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from OpenCode through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "repositoryUrl": "https://github.com/weavz/weavz-opencode",
+      "readmeUrl": "https://github.com/weavz/weavz-opencode/blob/main/README.md",
+      "category": "client",
+      "framework": "OpenCode",
+      "language": "configuration",
+      "mcpModes": [
+        "code"
+      ],
+      "authentication": "hosted OAuth connector",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "connected-app option"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-opencode/actions",
+      "localChecks": [
+        "bash scripts/validate.sh",
+        "bash scripts/test-native.sh"
+      ]
+    },
+    {
+      "id": "hermes",
+      "title": "Hermes Agent MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from Hermes Agent through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "repositoryUrl": "https://github.com/weavz/weavz-hermes",
+      "readmeUrl": "https://github.com/weavz/weavz-hermes/blob/main/README.md",
+      "category": "client",
+      "framework": "Hermes Agent",
+      "language": "configuration",
+      "mcpModes": [
+        "code"
+      ],
+      "authentication": "hosted OAuth connector",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "connected-app option"
+        }
+      ],
+      "verificationScope": "static client contract",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-hermes/actions",
+      "localChecks": [
+        "bash scripts/validate.sh"
+      ]
+    },
+    {
+      "id": "openclaw",
+      "title": "OpenClaw MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from OpenClaw through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "repositoryUrl": "https://github.com/weavz/weavz-openclaw",
+      "readmeUrl": "https://github.com/weavz/weavz-openclaw/blob/main/README.md",
+      "category": "client",
+      "framework": "OpenClaw",
+      "language": "configuration",
+      "mcpModes": [
+        "code"
+      ],
+      "authentication": "hosted OAuth connector",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "connected-app option"
+        }
+      ],
+      "verificationScope": "static client contract",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-openclaw/actions",
+      "localChecks": [
+        "bash scripts/validate.sh"
+      ]
+    },
+    {
+      "id": "pi",
+      "title": "Pi MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from Pi through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "repositoryUrl": "https://github.com/weavz/weavz-pi",
+      "readmeUrl": "https://github.com/weavz/weavz-pi/blob/main/README.md",
+      "category": "client",
+      "framework": "Pi",
+      "language": "configuration",
+      "mcpModes": [
+        "code"
+      ],
+      "authentication": "hosted OAuth connector",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "connected-app option"
+        }
+      ],
+      "verificationScope": "static client contract",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-pi/actions",
+      "localChecks": [
+        "bash scripts/validate.sh"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "title": "Claude Code MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from Claude Code through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "repositoryUrl": "https://github.com/weavz/weavz-claude-code",
+      "readmeUrl": "https://github.com/weavz/weavz-claude-code/blob/main/README.md",
+      "category": "client",
+      "framework": "Claude Code",
+      "language": "configuration",
+      "mcpModes": [
+        "code"
+      ],
+      "authentication": "hosted OAuth connector",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "connected-app option"
+        }
+      ],
+      "verificationScope": "static client contract",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-claude-code/actions",
+      "localChecks": [
+        "bash scripts/validate.sh"
+      ]
+    },
+    {
+      "id": "codex",
+      "title": "Codex MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from Codex through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "repositoryUrl": "https://github.com/weavz/weavz-codex",
+      "readmeUrl": "https://github.com/weavz/weavz-codex/blob/main/README.md",
+      "category": "client",
+      "framework": "Codex",
+      "language": "configuration",
+      "mcpModes": [
+        "code"
+      ],
+      "authentication": "hosted OAuth connector",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "connected-app option"
+        }
+      ],
+      "verificationScope": "static client contract",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-codex/actions",
+      "localChecks": [
+        "bash scripts/validate.sh"
+      ]
+    },
+    {
+      "id": "cursor",
+      "title": "Cursor MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from Cursor through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "repositoryUrl": "https://github.com/weavz/weavz-cursor",
+      "readmeUrl": "https://github.com/weavz/weavz-cursor/blob/main/README.md",
+      "category": "client",
+      "framework": "Cursor",
+      "language": "configuration",
+      "mcpModes": [
+        "code"
+      ],
+      "authentication": "hosted OAuth connector",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "connected-app option"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "connected-app option"
+        }
+      ],
+      "verificationScope": "static client contract",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-cursor/actions",
+      "localChecks": [
+        "bash scripts/validate.sh"
+      ]
+    },
+    {
+      "id": "morning-brief",
+      "title": "Gmail and Google Calendar MCP agent with PydanticAI: Morning Brief",
+      "summary": "Use Gmail and Google Calendar with PydanticAI through Weavz MCP. This morning brief example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-morning-brief",
+      "readmeUrl": "https://github.com/weavz/weavz-morning-brief/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "synthetic task workflow"
+        },
+        {
+          "id": "google-calendar",
+          "name": "Google Calendar",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-morning-brief/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "gmail-inbox-briefing",
+      "title": "Gmail MCP agent with PydanticAI: Gmail Inbox Briefing",
+      "summary": "Use Gmail with PydanticAI through Weavz MCP. This gmail inbox briefing example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-gmail-inbox-briefing",
+      "readmeUrl": "https://github.com/weavz/weavz-gmail-inbox-briefing/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-gmail-inbox-briefing/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "meeting-prep",
+      "title": "Google Calendar and Gmail MCP agent with PydanticAI: Meeting Preparation",
+      "summary": "Use Google Calendar and Gmail with PydanticAI through Weavz MCP. This meeting preparation example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-meeting-prep",
+      "readmeUrl": "https://github.com/weavz/weavz-meeting-prep/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "google-calendar",
+          "name": "Google Calendar",
+          "exampleKind": "synthetic task workflow"
+        },
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-meeting-prep/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "slack-channel-digest",
+      "title": "Slack MCP agent with PydanticAI: Slack Channel Digest",
+      "summary": "Use Slack with PydanticAI through Weavz MCP. This slack channel digest example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-slack-channel-digest",
+      "readmeUrl": "https://github.com/weavz/weavz-slack-channel-digest/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "slack",
+          "name": "Slack",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-slack-channel-digest/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "github-issue-triage",
+      "title": "GitHub MCP agent with PydanticAI: GitHub Issue Triage",
+      "summary": "Use GitHub with PydanticAI through Weavz MCP. This github issue triage example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-github-issue-triage",
+      "readmeUrl": "https://github.com/weavz/weavz-github-issue-triage/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-github-issue-triage/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "notion-knowledge-research",
+      "title": "Notion MCP agent with PydanticAI: Notion Knowledge Research",
+      "summary": "Use Notion with PydanticAI through Weavz MCP. This notion knowledge research example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-notion-knowledge-research",
+      "readmeUrl": "https://github.com/weavz/weavz-notion-knowledge-research/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-notion-knowledge-research/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "drive-document-finder",
+      "title": "Google Drive MCP agent with PydanticAI: Google Drive Document Finder",
+      "summary": "Use Google Drive with PydanticAI through Weavz MCP. This google drive document finder example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-drive-document-finder",
+      "readmeUrl": "https://github.com/weavz/weavz-drive-document-finder/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "google-drive",
+          "name": "Google Drive",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-drive-document-finder/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "sheets-sales-report",
+      "title": "Google Sheets MCP agent with PydanticAI: Google Sheets Sales Report",
+      "summary": "Use Google Sheets with PydanticAI through Weavz MCP. This google sheets sales report example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-sheets-sales-report",
+      "readmeUrl": "https://github.com/weavz/weavz-sheets-sales-report/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "google-sheets",
+          "name": "Google Sheets",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-sheets-sales-report/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "hubspot-pipeline-review",
+      "title": "HubSpot MCP agent with PydanticAI: HubSpot Pipeline Review",
+      "summary": "Use HubSpot with PydanticAI through Weavz MCP. This hubspot pipeline review example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-hubspot-pipeline-review",
+      "readmeUrl": "https://github.com/weavz/weavz-hubspot-pipeline-review/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "hubspot",
+          "name": "HubSpot",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-hubspot-pipeline-review/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "salesforce-account-brief",
+      "title": "Salesforce MCP agent with PydanticAI: Salesforce Account Brief",
+      "summary": "Use Salesforce with PydanticAI through Weavz MCP. This salesforce account brief example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-salesforce-account-brief",
+      "readmeUrl": "https://github.com/weavz/weavz-salesforce-account-brief/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "salesforce",
+          "name": "Salesforce",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-salesforce-account-brief/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "linear-backlog-review",
+      "title": "Linear MCP agent with PydanticAI: Linear Backlog Review",
+      "summary": "Use Linear with PydanticAI through Weavz MCP. This linear backlog review example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-linear-backlog-review",
+      "readmeUrl": "https://github.com/weavz/weavz-linear-backlog-review/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "linear",
+          "name": "Linear",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-linear-backlog-review/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "jira-sprint-summary",
+      "title": "Jira Cloud MCP agent with PydanticAI: Jira Cloud Sprint Summary",
+      "summary": "Use Jira Cloud with PydanticAI through Weavz MCP. This jira sprint summary example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-jira-sprint-summary",
+      "readmeUrl": "https://github.com/weavz/weavz-jira-sprint-summary/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "jira-cloud",
+          "name": "Jira Cloud",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-jira-sprint-summary/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "zendesk-ticket-handoff",
+      "title": "Zendesk MCP agent with PydanticAI: Zendesk Ticket Handoff",
+      "summary": "Use Zendesk with PydanticAI through Weavz MCP. This zendesk ticket handoff example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-zendesk-ticket-handoff",
+      "readmeUrl": "https://github.com/weavz/weavz-zendesk-ticket-handoff/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "zendesk",
+          "name": "Zendesk",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-zendesk-ticket-handoff/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "intercom-conversation-brief",
+      "title": "Intercom MCP agent with PydanticAI: Intercom Conversation Brief",
+      "summary": "Use Intercom with PydanticAI through Weavz MCP. This intercom conversation brief example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-intercom-conversation-brief",
+      "readmeUrl": "https://github.com/weavz/weavz-intercom-conversation-brief/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "intercom",
+          "name": "Intercom",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-intercom-conversation-brief/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "airtable-inventory-report",
+      "title": "Airtable MCP agent with PydanticAI: Airtable Inventory Report",
+      "summary": "Use Airtable with PydanticAI through Weavz MCP. This airtable inventory report example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-airtable-inventory-report",
+      "readmeUrl": "https://github.com/weavz/weavz-airtable-inventory-report/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "airtable",
+          "name": "Airtable",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-airtable-inventory-report/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "trello-project-health",
+      "title": "Trello MCP agent with PydanticAI: Trello Project Health",
+      "summary": "Use Trello with PydanticAI through Weavz MCP. This trello project health example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-trello-project-health",
+      "readmeUrl": "https://github.com/weavz/weavz-trello-project-health/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "trello",
+          "name": "Trello",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-trello-project-health/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "asana-weekly-status",
+      "title": "Asana MCP agent with PydanticAI: Asana Weekly Status",
+      "summary": "Use Asana with PydanticAI through Weavz MCP. This asana weekly status example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-asana-weekly-status",
+      "readmeUrl": "https://github.com/weavz/weavz-asana-weekly-status/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "asana",
+          "name": "Asana",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-asana-weekly-status/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "figma-design-review",
+      "title": "Figma MCP agent with PydanticAI: Figma Design Review",
+      "summary": "Use Figma with PydanticAI through Weavz MCP. This figma design review example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-figma-design-review",
+      "readmeUrl": "https://github.com/weavz/weavz-figma-design-review/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "figma",
+          "name": "Figma",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-figma-design-review/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "stripe-subscription-review",
+      "title": "Stripe MCP agent with PydanticAI: Stripe Subscription Review",
+      "summary": "Use Stripe with PydanticAI through Weavz MCP. This stripe subscription review example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-stripe-subscription-review",
+      "readmeUrl": "https://github.com/weavz/weavz-stripe-subscription-review/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "stripe",
+          "name": "Stripe",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-stripe-subscription-review/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "shopify-orders-report",
+      "title": "Shopify MCP agent with PydanticAI: Shopify Orders Report",
+      "summary": "Use Shopify with PydanticAI through Weavz MCP. This shopify orders report example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-shopify-orders-report",
+      "readmeUrl": "https://github.com/weavz/weavz-shopify-orders-report/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "shopify",
+          "name": "Shopify",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-shopify-orders-report/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "support-knowledge-assistant",
+      "title": "Gmail and Notion MCP agent with PydanticAI: Support Knowledge Assistant",
+      "summary": "Use Gmail and Notion with PydanticAI through Weavz MCP. This support knowledge assistant example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-support-knowledge-assistant",
+      "readmeUrl": "https://github.com/weavz/weavz-support-knowledge-assistant/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "gmail",
+          "name": "Gmail",
+          "exampleKind": "synthetic task workflow"
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-support-knowledge-assistant/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "files-research-notebook",
+      "title": "Filesystem MCP agent with PydanticAI: Files Research Notebook",
+      "summary": "Use Filesystem with PydanticAI through Weavz MCP. This files research notebook example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-files-research-notebook",
+      "readmeUrl": "https://github.com/weavz/weavz-files-research-notebook/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "storage",
+          "name": "Filesystem",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-files-research-notebook/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "todoist-day-plan",
+      "title": "Todoist MCP agent with PydanticAI: Todoist Day Plan",
+      "summary": "Use Todoist with PydanticAI through Weavz MCP. This todoist day plan example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-todoist-day-plan",
+      "readmeUrl": "https://github.com/weavz/weavz-todoist-day-plan/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "todoist",
+          "name": "Todoist",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-todoist-day-plan/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "google-docs-document-review",
+      "title": "Google Docs MCP agent with PydanticAI: Google Docs Document Review",
+      "summary": "Use Google Docs with PydanticAI through Weavz MCP. This google docs document review example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-google-docs-document-review",
+      "readmeUrl": "https://github.com/weavz/weavz-google-docs-document-review/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "google-docs",
+          "name": "Google Docs",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-google-docs-document-review/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    },
+    {
+      "id": "github-pull-request-review",
+      "title": "GitHub MCP agent with PydanticAI: GitHub Pull Request Review",
+      "summary": "Use GitHub with PydanticAI through Weavz MCP. This github pull request review example returns a report from bounded app reads with source references.",
+      "repositoryUrl": "https://github.com/weavz/weavz-github-pull-request-review",
+      "readmeUrl": "https://github.com/weavz/weavz-github-pull-request-review/blob/main/README.md",
+      "category": "workflow",
+      "framework": "PydanticAI",
+      "language": "python",
+      "mcpModes": [
+        "tools",
+        "code"
+      ],
+      "authentication": "custom server with end-user MCP access token",
+      "apps": [
+        {
+          "id": "github",
+          "name": "GitHub",
+          "exampleKind": "synthetic task workflow"
+        }
+      ],
+      "verificationScope": "native MCP synthetic fixture",
+      "liveAccountVerified": false,
+      "ciUrl": "https://github.com/weavz/weavz-github-pull-request-review/actions",
+      "localChecks": [
+        "uv sync --locked",
+        "uv run pytest",
+        "uv run python main.py --fixture --mode tools",
+        "uv run python main.py --fixture --mode code"
+      ]
+    }
+  ]
+}

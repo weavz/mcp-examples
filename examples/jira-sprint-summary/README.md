@@ -1,4 +1,20 @@
-# Jira Sprint Summary
+# Jira Cloud MCP agent with PydanticAI: Jira Cloud Sprint Summary
+
+<!-- weavz:discovery:start -->
+
+Use Jira Cloud with PydanticAI through Weavz MCP. This jira sprint summary example returns a report from bounded app reads with source references.
+
+**Framework:** PydanticAI · **Language:** Python · **MCP modes:** Tool Mode and Code Mode
+
+Use another framework:
+
+- [Jira Cloud MCP with LangGraph Python](https://github.com/weavz/weavz-langgraph-python/blob/main/docs/app-recipes.md#jira-cloud-mcp-with-langgraph-python)
+- [Jira Cloud MCP with AutoGen Python](https://github.com/weavz/weavz-autogen/blob/main/docs/app-recipes.md#jira-cloud-mcp-with-autogen-python)
+- [Jira Cloud MCP with Semantic Kernel Python](https://github.com/weavz/weavz-semantic-kernel/blob/main/docs/app-recipes.md#jira-cloud-mcp-with-semantic-kernel-python)
+
+[MCP app and framework directory](https://github.com/weavz/mcp-examples/blob/main/docs/integrations.md) · [All examples](https://github.com/weavz/mcp-examples) · [Weavz MCP guide](https://weavz.io/docs/guides/agent-framework-examples)
+
+<!-- weavz:discovery:end -->
 
 Summarize issues returned for the active DEMO sprint by status and priority. Identify blockers and work that lacks an assignee, using only this bounded JQL result.
 

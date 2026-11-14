@@ -1,4 +1,21 @@
-# Vercel AI SDK
+# Vercel AI SDK MCP integration examples with Weavz
+
+<!-- weavz:discovery:start -->
+
+Connect Vercel AI SDK to Slack, Gmail, HubSpot and GitHub through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.
+
+App setup recipes:
+
+- [Slack MCP with Vercel AI SDK TypeScript](docs/app-recipes.md#slack-mcp-with-vercel-ai-sdk-typescript)
+- [Gmail MCP with Vercel AI SDK TypeScript](docs/app-recipes.md#gmail-mcp-with-vercel-ai-sdk-typescript)
+- [HubSpot MCP with Vercel AI SDK TypeScript](docs/app-recipes.md#hubspot-mcp-with-vercel-ai-sdk-typescript)
+- [GitHub MCP with Vercel AI SDK TypeScript](docs/app-recipes.md#github-mcp-with-vercel-ai-sdk-typescript)
+
+The framework consumes app tools from your configured Weavz MCP server. App recipes require your own app connections; automated checks use synthetic records.
+
+[MCP app and framework directory](https://github.com/weavz/mcp-examples/blob/main/docs/integrations.md) · [All examples](https://github.com/weavz/mcp-examples) · [Weavz MCP guide](https://weavz.io/docs/guides/agent-framework-examples)
+
+<!-- weavz:discovery:end -->
 
 Vercel AI SDK `createMCPClient` exposes Weavz remote MCP tools to a reusable `ToolLoopAgent`. The local fixture exercises both Tool Mode and Code Mode without an inference provider.
 

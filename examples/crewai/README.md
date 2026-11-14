@@ -1,4 +1,21 @@
-# CrewAI + Weavz MCP
+# CrewAI MCP integration examples with Weavz
+
+<!-- weavz:discovery:start -->
+
+Connect CrewAI to HubSpot, Gmail, Google Calendar and Slack through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.
+
+App setup recipes:
+
+- [HubSpot MCP with CrewAI Python](docs/app-recipes.md#hubspot-mcp-with-crewai-python)
+- [Gmail MCP with CrewAI Python](docs/app-recipes.md#gmail-mcp-with-crewai-python)
+- [Google Calendar MCP with CrewAI Python](docs/app-recipes.md#google-calendar-mcp-with-crewai-python)
+- [Slack MCP with CrewAI Python](docs/app-recipes.md#slack-mcp-with-crewai-python)
+
+The framework consumes app tools from your configured Weavz MCP server. App recipes require your own app connections; automated checks use synthetic records.
+
+[MCP app and framework directory](https://github.com/weavz/mcp-examples/blob/main/docs/integrations.md) · [All examples](https://github.com/weavz/mcp-examples) · [Weavz MCP guide](https://weavz.io/docs/guides/agent-framework-examples)
+
+<!-- weavz:discovery:end -->
 
 Uses CrewAI's native `MCPServerHTTP` configuration and `Agent.get_mcp_tools`. CrewAI prefixes tool names internally; the example reports and calls their original MCP names. Configure a custom Weavz MCP server in Tools Mode or Code Mode first; `--mode` checks its actual tools and cannot switch a live server.
 

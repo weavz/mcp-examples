@@ -245,8 +245,7 @@
       "language": "configuration",
       "framework": "OpenCode",
       "modes": [
-        "code",
-        "tools"
+        "code"
       ],
       "path": "examples/opencode"
     },
@@ -258,8 +257,7 @@
       "language": "configuration",
       "framework": "Hermes Agent",
       "modes": [
-        "code",
-        "tools"
+        "code"
       ],
       "path": "examples/hermes"
     },
@@ -271,8 +269,7 @@
       "language": "configuration",
       "framework": "OpenClaw",
       "modes": [
-        "code",
-        "tools"
+        "code"
       ],
       "path": "examples/openclaw"
     },
@@ -284,8 +281,7 @@
       "language": "configuration",
       "framework": "Pi",
       "modes": [
-        "code",
-        "tools"
+        "code"
       ],
       "path": "examples/pi"
     },
@@ -297,8 +293,7 @@
       "language": "configuration",
       "framework": "Claude Code",
       "modes": [
-        "code",
-        "tools"
+        "code"
       ],
       "path": "examples/claude-code"
     },
@@ -310,8 +305,7 @@
       "language": "configuration",
       "framework": "Codex",
       "modes": [
-        "code",
-        "tools"
+        "code"
       ],
       "path": "examples/codex"
     },
@@ -323,8 +317,7 @@
       "language": "configuration",
       "framework": "Cursor",
       "modes": [
-        "code",
-        "tools"
+        "code"
       ],
       "path": "examples/cursor"
     },

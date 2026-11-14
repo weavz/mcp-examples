@@ -1,18 +1,23 @@
 """Generate the public directory from the reviewed example catalog."""
 import json
 from pathlib import Path
+from discovery import load
 
 ROOT = Path(__file__).resolve().parents[1]
 catalog = json.loads((ROOT / "catalog.json").read_text())
+_, discovery, _ = load(ROOT)
+metadata = {entry['id']: entry for entry in discovery['repositories']}
 sections = []
 for category, title in [("framework", "Build with your framework"), ("client", "Connect your AI client"), ("workflow", "Start with a task")]:
-    rows = [f"| [{entry['title']}](https://github.com/{catalog['organization']}/{entry['repository']}) | {entry['language']} | {', '.join(entry.get('integrations', [])) or entry['framework']} |" for entry in catalog["examples"] if entry["category"] == category]
+    rows = [f"| [{metadata[entry['id']]['heading']}](https://github.com/{catalog['organization']}/{entry['repository']}) | {entry['language']} | {', '.join(discovery['integrationNames'][app] for app in metadata[entry['id']]['recipeIntegrations'])} |" for entry in catalog["examples"] if entry["category"] == category]
     sections.append(f"## {title}\n\n| Example | Language | Framework or apps |\n| --- | --- | --- |\n" + "\n".join(rows))
-(ROOT / "README.md").write_text('''# Weavz MCP examples
+(ROOT / "README.md").write_text('''# MCP integration examples for AI agent frameworks
 
 Give your agent access to the apps people use. Choose your framework, connect an AI client, or start with a practical read-only workflow.
 
 Weavz manages app connections and exposes their tools over MCP. These examples use the framework or client's native MCP adapter, so app access stays separate from your model provider and agent logic.
+
+Connect Slack, Gmail, GitHub, Notion, Google Sheets and other apps to LangChain, LangGraph, Mastra, Google ADK, PydanticAI, OpenAI Agents SDK and more. Browse the [app and framework directory](docs/integrations.md) for specific combinations such as Slack MCP with LangChain or Gmail MCP with Google ADK. The [machine-readable example index](examples-index.json) includes framework, language, authentication, app recipes, and verification scope for each project.
 
 ## Choose your path
 

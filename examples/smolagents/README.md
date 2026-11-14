@@ -1,4 +1,21 @@
-# smolagents + Weavz MCP
+# smolagents MCP integration examples with Weavz
+
+<!-- weavz:discovery:start -->
+
+Connect smolagents to GitHub, Figma, Google Sheets and Gmail through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.
+
+App setup recipes:
+
+- [GitHub MCP with smolagents Python](docs/app-recipes.md#github-mcp-with-smolagents-python)
+- [Figma MCP with smolagents Python](docs/app-recipes.md#figma-mcp-with-smolagents-python)
+- [Google Sheets MCP with smolagents Python](docs/app-recipes.md#google-sheets-mcp-with-smolagents-python)
+- [Gmail MCP with smolagents Python](docs/app-recipes.md#gmail-mcp-with-smolagents-python)
+
+The framework consumes app tools from your configured Weavz MCP server. App recipes require your own app connections; automated checks use synthetic records.
+
+[MCP app and framework directory](https://github.com/weavz/mcp-examples/blob/main/docs/integrations.md) · [All examples](https://github.com/weavz/mcp-examples) · [Weavz MCP guide](https://weavz.io/docs/guides/agent-framework-examples)
+
+<!-- weavz:discovery:end -->
 
 Uses Hugging Face smolagents' native `MCPClient` for Streamable HTTP. Configure the Weavz MCP server in Tool Mode or Code Mode first; `--mode` checks the tools and does not switch a remote server.
 

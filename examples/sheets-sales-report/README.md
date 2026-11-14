@@ -1,4 +1,20 @@
-# Google Sheets Sales Report
+# Google Sheets MCP agent with PydanticAI: Google Sheets Sales Report
+
+<!-- weavz:discovery:start -->
+
+Use Google Sheets with PydanticAI through Weavz MCP. This google sheets sales report example returns a report from bounded app reads with source references.
+
+**Framework:** PydanticAI · **Language:** Python · **MCP modes:** Tool Mode and Code Mode
+
+Use another framework:
+
+- [Google Sheets MCP with PydanticAI Python](https://github.com/weavz/weavz-pydantic-ai/blob/main/docs/app-recipes.md#google-sheets-mcp-with-pydanticai-python)
+- [Google Sheets MCP with Google ADK Python](https://github.com/weavz/weavz-google-adk-python/blob/main/docs/app-recipes.md#google-sheets-mcp-with-google-adk-python)
+- [Google Sheets MCP with LlamaIndex Python](https://github.com/weavz/weavz-llamaindex/blob/main/docs/app-recipes.md#google-sheets-mcp-with-llamaindex-python)
+
+[MCP app and framework directory](https://github.com/weavz/mcp-examples/blob/main/docs/integrations.md) · [All examples](https://github.com/weavz/mcp-examples) · [Weavz MCP guide](https://weavz.io/docs/guides/agent-framework-examples)
+
+<!-- weavz:discovery:end -->
 
 Summarize booked sales and open pipeline from this spreadsheet range. State the range and scope, count closed-won rows, and keep open opportunities separate from booked value.
 

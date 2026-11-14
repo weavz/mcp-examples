@@ -15,4 +15,6 @@ jobs:
       - run: uv run python -m unittest discover -s tests -v
       - run: python3 tools/check_catalog.py
       - run: python3 tools/render_index.py
+      - run: python3 tools/discovery.py
       - run: git diff --exit-code -- README.md
+      - run: git diff --exit-code -- examples docs/integrations.md examples-index.json

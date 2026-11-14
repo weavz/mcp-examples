@@ -2,6 +2,8 @@
 
 Use the example README for its supported runtime, install command, and test command. Keep each example independently installable and locked.
 
+Use `examples-index.json` to find a project by app integration, framework, language, authentication, and MCP mode. Read its README and any `docs/app-recipes.md` before choosing a live task. The app recipe is setup guidance; the index identifies fixture and static configuration checks separately from live account verification.
+
 ## App access
 
 - Expose Weavz tools through the framework or client's MCP adapter. Keep the connection open until its tools finish and close it afterward.

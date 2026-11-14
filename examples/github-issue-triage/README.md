@@ -1,4 +1,20 @@
-# GitHub Issue Triage
+# GitHub MCP agent with PydanticAI: GitHub Issue Triage
+
+<!-- weavz:discovery:start -->
+
+Use GitHub with PydanticAI through Weavz MCP. This github issue triage example returns a report from bounded app reads with source references.
+
+**Framework:** PydanticAI · **Language:** Python · **MCP modes:** Tool Mode and Code Mode
+
+Use another framework:
+
+- [GitHub MCP with OpenAI Agents SDK Python](https://github.com/weavz/weavz-openai-agents-python/blob/main/docs/app-recipes.md#github-mcp-with-openai-agents-sdk-python)
+- [GitHub MCP with LangChain Python](https://github.com/weavz/weavz-langchain-python/blob/main/docs/app-recipes.md#github-mcp-with-langchain-python)
+- [GitHub MCP with LangGraph Python](https://github.com/weavz/weavz-langgraph-python/blob/main/docs/app-recipes.md#github-mcp-with-langgraph-python)
+
+[MCP app and framework directory](https://github.com/weavz/mcp-examples/blob/main/docs/integrations.md) · [All examples](https://github.com/weavz/mcp-examples) · [Weavz MCP guide](https://weavz.io/docs/guides/agent-framework-examples)
+
+<!-- weavz:discovery:end -->
 
 Triage the bounded set of open bug issues returned for the selected repository. Group by severity and impact, flag stale or blocked reports, and suggest reading order without changing issue state.
 

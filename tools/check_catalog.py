@@ -13,7 +13,7 @@ for entry in entries:
     for name in ['README.md', 'AGENTS.md', 'LICENSE', '.gitignore']:
         assert (directory / name).is_file(), f'{entry["id"]}: missing {name}'
     assert list((directory / '.github/workflows').glob('*.yml'))
-    assert set(entry['modes']) == {'tools', 'code'}
+    assert set(entry['modes']) == ({'code'} if entry['category'] == 'client' else {'tools', 'code'})
     if entry['category'] != 'workflow': continue
     scenario = json.loads((directory / 'scenario.json').read_text())
     assert scenario == json.loads((ROOT / 'workflows' / f'{entry["id"]}.json').read_text())

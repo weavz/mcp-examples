@@ -8,6 +8,8 @@ Run the example's README checks from a clean copy. For the hub, `python3 tools/v
 
 Workflow sources live in `workflows/` and `shared/workflow-python/`. After changing them, run `python3 tools/render_workflows.py <id>` and the example checks. Update `catalog.json` and run `python3 tools/render_index.py` when adding or renaming examples. Keep generated standalone files aligned with their templates.
 
+Discovery sources are `discovery.json` and `discovery/app-recipes.json`. Use accurate framework and app names, useful task instructions, and source-backed action inputs. After editing them, run `python3 tools/discovery.py`, `python3 tools/render_index.py`, and the hub tests. Keep repository descriptions below 350 characters and topics below GitHub's 20-topic limit. Do not add popularity, search-volume, ranking, or live-verification claims without corresponding evidence.
+
 Do not commit credentials, real customer data, local machine paths, private product internals, or raw provider traces. Synthetic records must be clearly labeled. Respect upstream licenses and write original examples and explanations.
 
 Make meaningful commits with accurate dates. Release only tested examples, and distinguish local checks from live-account proof.

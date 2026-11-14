@@ -1,4 +1,14 @@
-# Todoist Day Plan
+# Todoist MCP agent with PydanticAI: Todoist Day Plan
+
+<!-- weavz:discovery:start -->
+
+Use Todoist with PydanticAI through Weavz MCP. This todoist day plan example returns a report from bounded app reads with source references.
+
+**Framework:** PydanticAI · **Language:** Python · **MCP modes:** Tool Mode and Code Mode
+
+[MCP app and framework directory](https://github.com/weavz/mcp-examples/blob/main/docs/integrations.md) · [All examples](https://github.com/weavz/mcp-examples) · [Weavz MCP guide](https://weavz.io/docs/guides/agent-framework-examples)
+
+<!-- weavz:discovery:end -->
 
 Create a read-only plan from the selected project’s tasks due today or overdue. Order by urgency and available time, and identify tasks missing due dates or owners.
 

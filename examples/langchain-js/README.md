@@ -1,4 +1,21 @@
-# LangChain.js
+# LangChain.js (TypeScript) MCP integration examples with Weavz
+
+<!-- weavz:discovery:start -->
+
+Connect LangChain.js (TypeScript) to Slack, Gmail, Notion and GitHub through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.
+
+App setup recipes:
+
+- [Slack MCP with LangChain.js TypeScript](docs/app-recipes.md#slack-mcp-with-langchainjs-typescript)
+- [Gmail MCP with LangChain.js TypeScript](docs/app-recipes.md#gmail-mcp-with-langchainjs-typescript)
+- [Notion MCP with LangChain.js TypeScript](docs/app-recipes.md#notion-mcp-with-langchainjs-typescript)
+- [GitHub MCP with LangChain.js TypeScript](docs/app-recipes.md#github-mcp-with-langchainjs-typescript)
+
+The framework consumes app tools from your configured Weavz MCP server. App recipes require your own app connections; automated checks use synthetic records.
+
+[MCP app and framework directory](https://github.com/weavz/mcp-examples/blob/main/docs/integrations.md) · [All examples](https://github.com/weavz/mcp-examples) · [Weavz MCP guide](https://weavz.io/docs/guides/agent-framework-examples)
+
+<!-- weavz:discovery:end -->
 
 LangChain.js uses `MCPAdapter` to discover remote Weavz tools, expose executable LangChain tools, and run them through `createAgent`. The fixture needs no model credentials.
 

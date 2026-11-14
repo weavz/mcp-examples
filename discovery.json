@@ -1,0 +1,1540 @@
+{
+  "schemaVersion": 1,
+  "organization": "weavz",
+  "hubRepository": "mcp-examples",
+  "hub": {
+    "heading": "MCP integration examples for AI agent frameworks",
+    "description": "MCP integration examples for LangChain, LangGraph, Mastra, Google ADK and other agent frameworks. Connect Slack, Gmail, GitHub, Notion and more with native Python/TypeScript adapters. Includes client setups and tested workflows.",
+    "topics": [
+      "mcp",
+      "model-context-protocol",
+      "weavz",
+      "mcp-client",
+      "ai-agents",
+      "langchain",
+      "langgraph",
+      "mastra",
+      "google-adk",
+      "pydantic-ai",
+      "slack-mcp",
+      "gmail-mcp",
+      "github-mcp",
+      "python",
+      "typescript",
+      "agent-framework",
+      "examples"
+    ],
+    "homepage": "https://weavz.io/docs/guides/agent-framework-examples"
+  },
+  "integrationNames": {
+    "slack": "Slack",
+    "gmail": "Gmail",
+    "github": "GitHub",
+    "notion": "Notion",
+    "google-sheets": "Google Sheets",
+    "google-calendar": "Google Calendar",
+    "google-drive": "Google Drive",
+    "google-docs": "Google Docs",
+    "hubspot": "HubSpot",
+    "salesforce": "Salesforce",
+    "jira-cloud": "Jira Cloud",
+    "figma": "Figma",
+    "zendesk": "Zendesk",
+    "linear": "Linear",
+    "intercom": "Intercom",
+    "airtable": "Airtable",
+    "trello": "Trello",
+    "asana": "Asana",
+    "stripe": "Stripe",
+    "shopify": "Shopify",
+    "storage": "Filesystem",
+    "todoist": "Todoist"
+  },
+  "repositories": [
+    {
+      "id": "openai-agents-python",
+      "heading": "OpenAI Agents SDK (Python) MCP integration examples with Weavz",
+      "summary": "Connect OpenAI Agents SDK (Python) to Slack, Gmail, GitHub and Notion through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Slack, Gmail, GitHub and Notion MCP setup recipes for OpenAI Agents SDK (Python). Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "openai-agents-sdk",
+        "openai-mcp",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "github",
+        "github-mcp",
+        "notion",
+        "notion-mcp",
+        "ai-agents",
+        "openai-agents-python"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "github",
+        "notion"
+      ]
+    },
+    {
+      "id": "pydantic-ai",
+      "heading": "PydanticAI MCP integration examples with Weavz",
+      "summary": "Connect PydanticAI to Gmail, Google Sheets, Notion and Figma through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Gmail, Google Sheets, Notion and Figma MCP setup recipes for PydanticAI. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "gmail",
+        "gmail-mcp",
+        "google-sheets",
+        "google-sheets-mcp",
+        "notion",
+        "notion-mcp",
+        "figma",
+        "figma-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "gmail",
+        "google-sheets",
+        "notion",
+        "figma"
+      ]
+    },
+    {
+      "id": "google-adk-python",
+      "heading": "Google ADK (Python) MCP integration examples with Weavz",
+      "summary": "Connect Google ADK (Python) to Gmail, Google Calendar, Google Drive and Google Sheets through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Gmail, Google Calendar, Google Drive and Google Sheets MCP setup recipes for Google ADK (Python). Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "google-adk",
+        "adk",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "gmail",
+        "gmail-mcp",
+        "google-calendar",
+        "google-calendar-mcp",
+        "google-drive",
+        "google-drive-mcp",
+        "google-sheets",
+        "google-sheets-mcp",
+        "ai-agents",
+        "google-adk-python"
+      ],
+      "recipeIntegrations": [
+        "gmail",
+        "google-calendar",
+        "google-drive",
+        "google-sheets"
+      ]
+    },
+    {
+      "id": "langchain-python",
+      "heading": "LangChain (Python) MCP integration examples with Weavz",
+      "summary": "Connect LangChain (Python) to Slack, Gmail, Notion and GitHub through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Slack, Gmail, Notion and GitHub MCP setup recipes for LangChain (Python). Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "langchain",
+        "langchain-mcp",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "notion",
+        "notion-mcp",
+        "github",
+        "github-mcp",
+        "ai-agents",
+        "langchain-python"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "notion",
+        "github"
+      ]
+    },
+    {
+      "id": "langgraph-python",
+      "heading": "LangGraph (Python) MCP integration examples with Weavz",
+      "summary": "Connect LangGraph (Python) to Gmail, Slack, GitHub and Jira Cloud through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Gmail, Slack, GitHub and Jira Cloud MCP setup recipes for LangGraph (Python). Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "langgraph",
+        "langgraph-mcp",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "gmail",
+        "gmail-mcp",
+        "slack",
+        "slack-mcp",
+        "github",
+        "github-mcp",
+        "jira",
+        "jira-mcp",
+        "ai-agents",
+        "langgraph-python"
+      ],
+      "recipeIntegrations": [
+        "gmail",
+        "slack",
+        "github",
+        "jira-cloud"
+      ]
+    },
+    {
+      "id": "llamaindex",
+      "heading": "LlamaIndex MCP integration examples with Weavz",
+      "summary": "Connect LlamaIndex to Notion, Google Drive, Google Docs and Google Sheets through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Notion, Google Drive, Google Docs and Google Sheets MCP setup recipes for LlamaIndex. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "llamaindex",
+        "llama-index",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "notion",
+        "notion-mcp",
+        "google-drive",
+        "google-drive-mcp",
+        "google-docs",
+        "google-docs-mcp",
+        "google-sheets",
+        "google-sheets-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "notion",
+        "google-drive",
+        "google-docs",
+        "google-sheets"
+      ]
+    },
+    {
+      "id": "crewai",
+      "heading": "CrewAI MCP integration examples with Weavz",
+      "summary": "Connect CrewAI to HubSpot, Gmail, Google Calendar and Slack through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "HubSpot, Gmail, Google Calendar and Slack MCP setup recipes for CrewAI. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "crewai",
+        "crewai-mcp",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "hubspot",
+        "hubspot-mcp",
+        "gmail",
+        "gmail-mcp",
+        "google-calendar",
+        "google-calendar-mcp",
+        "slack",
+        "slack-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "hubspot",
+        "gmail",
+        "google-calendar",
+        "slack"
+      ]
+    },
+    {
+      "id": "agno",
+      "heading": "Agno MCP integration examples with Weavz",
+      "summary": "Connect Agno to Slack, GitHub, Figma and HubSpot through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Slack, GitHub, Figma and HubSpot MCP setup recipes for Agno. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "agno",
+        "agno-mcp",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "slack",
+        "slack-mcp",
+        "github",
+        "github-mcp",
+        "figma",
+        "figma-mcp",
+        "hubspot",
+        "hubspot-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "github",
+        "figma",
+        "hubspot"
+      ]
+    },
+    {
+      "id": "strands",
+      "heading": "Strands Agents MCP integration examples with Weavz",
+      "summary": "Connect Strands Agents to Slack, Gmail, GitHub and Google Calendar through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Slack, Gmail, GitHub and Google Calendar MCP setup recipes for Strands Agents. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "strands-agents",
+        "strands",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "github",
+        "github-mcp",
+        "google-calendar",
+        "google-calendar-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "github",
+        "google-calendar"
+      ]
+    },
+    {
+      "id": "smolagents",
+      "heading": "smolagents MCP integration examples with Weavz",
+      "summary": "Connect smolagents to GitHub, Figma, Google Sheets and Gmail through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "GitHub, Figma, Google Sheets and Gmail MCP setup recipes for smolagents. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "smolagents",
+        "huggingface",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "github",
+        "github-mcp",
+        "figma",
+        "figma-mcp",
+        "google-sheets",
+        "google-sheets-mcp",
+        "gmail",
+        "gmail-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "github",
+        "figma",
+        "google-sheets",
+        "gmail"
+      ]
+    },
+    {
+      "id": "autogen",
+      "heading": "AutoGen MCP integration examples with Weavz",
+      "summary": "Connect AutoGen to GitHub, Slack, Jira Cloud and Gmail through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "GitHub, Slack, Jira Cloud and Gmail MCP setup recipes for AutoGen. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "autogen",
+        "microsoft-autogen",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "github",
+        "github-mcp",
+        "slack",
+        "slack-mcp",
+        "jira",
+        "jira-mcp",
+        "gmail",
+        "gmail-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "github",
+        "slack",
+        "jira-cloud",
+        "gmail"
+      ]
+    },
+    {
+      "id": "semantic-kernel",
+      "heading": "Semantic Kernel MCP integration examples with Weavz",
+      "summary": "Connect Semantic Kernel to Salesforce, Jira Cloud, Google Drive and Slack through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Salesforce, Jira Cloud, Google Drive and Slack MCP setup recipes for Semantic Kernel. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "semantic-kernel",
+        "microsoft",
+        "python",
+        "code-mode",
+        "streamable-http",
+        "salesforce",
+        "salesforce-mcp",
+        "jira",
+        "jira-mcp",
+        "google-drive",
+        "google-drive-mcp",
+        "slack",
+        "slack-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "salesforce",
+        "jira-cloud",
+        "google-drive",
+        "slack"
+      ]
+    },
+    {
+      "id": "vercel-ai-sdk",
+      "heading": "Vercel AI SDK MCP integration examples with Weavz",
+      "summary": "Connect Vercel AI SDK to Slack, Gmail, HubSpot and GitHub through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Slack, Gmail, HubSpot and GitHub MCP setup recipes for Vercel AI SDK. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "vercel-ai-sdk",
+        "ai-sdk",
+        "typescript",
+        "code-mode",
+        "streamable-http",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "hubspot",
+        "hubspot-mcp",
+        "github",
+        "github-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "hubspot",
+        "github"
+      ]
+    },
+    {
+      "id": "mastra",
+      "heading": "Mastra MCP integration examples with Weavz",
+      "summary": "Connect Mastra to GitHub, Slack, Notion and Gmail through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "GitHub, Slack, Notion and Gmail MCP setup recipes for Mastra. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "mastra",
+        "mastra-mcp",
+        "typescript",
+        "code-mode",
+        "streamable-http",
+        "github",
+        "github-mcp",
+        "slack",
+        "slack-mcp",
+        "notion",
+        "notion-mcp",
+        "gmail",
+        "gmail-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "github",
+        "slack",
+        "notion",
+        "gmail"
+      ]
+    },
+    {
+      "id": "langchain-js",
+      "heading": "LangChain.js (TypeScript) MCP integration examples with Weavz",
+      "summary": "Connect LangChain.js (TypeScript) to Slack, Gmail, Notion and GitHub through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Slack, Gmail, Notion and GitHub MCP setup recipes for LangChain.js (TypeScript). Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "langchain",
+        "langchain-mcp",
+        "typescript",
+        "code-mode",
+        "streamable-http",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "notion",
+        "notion-mcp",
+        "github",
+        "github-mcp",
+        "ai-agents",
+        "langchain-js"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "notion",
+        "github"
+      ]
+    },
+    {
+      "id": "langgraph-js",
+      "heading": "LangGraph.js (TypeScript) MCP integration examples with Weavz",
+      "summary": "Connect LangGraph.js (TypeScript) to GitHub, Slack, Zendesk and Gmail through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "GitHub, Slack, Zendesk and Gmail MCP setup recipes for LangGraph.js (TypeScript). Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "langgraph",
+        "langgraph-mcp",
+        "typescript",
+        "code-mode",
+        "streamable-http",
+        "github",
+        "github-mcp",
+        "slack",
+        "slack-mcp",
+        "zendesk",
+        "zendesk-mcp",
+        "gmail",
+        "gmail-mcp",
+        "ai-agents",
+        "langgraph-js"
+      ],
+      "recipeIntegrations": [
+        "github",
+        "slack",
+        "zendesk",
+        "gmail"
+      ]
+    },
+    {
+      "id": "openai-agents-js",
+      "heading": "OpenAI Agents SDK for TypeScript MCP integration examples with Weavz",
+      "summary": "Connect OpenAI Agents SDK for TypeScript to Gmail, Slack, GitHub and Notion through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Gmail, Slack, GitHub and Notion MCP setup recipes for OpenAI Agents SDK for TypeScript. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "openai-agents-sdk",
+        "openai-mcp",
+        "typescript",
+        "code-mode",
+        "streamable-http",
+        "gmail",
+        "gmail-mcp",
+        "slack",
+        "slack-mcp",
+        "github",
+        "github-mcp",
+        "notion",
+        "notion-mcp",
+        "ai-agents",
+        "openai-agents-js"
+      ],
+      "recipeIntegrations": [
+        "gmail",
+        "slack",
+        "github",
+        "notion"
+      ]
+    },
+    {
+      "id": "google-adk-js",
+      "heading": "Google ADK for TypeScript MCP integration examples with Weavz",
+      "summary": "Connect Google ADK for TypeScript to Gmail, Google Calendar, Google Sheets and Google Drive through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.",
+      "description": "Gmail, Google Calendar, Google Sheets and Google Drive MCP setup recipes for Google ADK for TypeScript. Connect a remote Weavz MCP server with the native framework adapter, Tool Mode or Code Mode, scoped auth, and local fixture tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#framework-starters",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "google-adk",
+        "adk",
+        "typescript",
+        "code-mode",
+        "streamable-http",
+        "gmail",
+        "gmail-mcp",
+        "google-calendar",
+        "google-calendar-mcp",
+        "google-sheets",
+        "google-sheets-mcp",
+        "google-drive",
+        "google-drive-mcp",
+        "ai-agents",
+        "google-adk-js"
+      ],
+      "recipeIntegrations": [
+        "gmail",
+        "google-calendar",
+        "google-sheets",
+        "google-drive"
+      ]
+    },
+    {
+      "id": "opencode",
+      "heading": "OpenCode MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from OpenCode through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "description": "Connect OpenCode to Slack, Gmail, GitHub and Notion through the hosted Weavz MCP server. OAuth setup, client configuration, project instructions, and local configuration checks.",
+      "homepage": "https://weavz.io/docs/guides/weavz-mcp-app",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "opencode",
+        "oauth",
+        "mcp-configuration",
+        "remote-mcp",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "github",
+        "github-mcp",
+        "notion",
+        "notion-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "github",
+        "notion"
+      ]
+    },
+    {
+      "id": "hermes",
+      "heading": "Hermes Agent MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from Hermes Agent through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "description": "Connect Hermes Agent to Slack, Gmail, GitHub and Notion through the hosted Weavz MCP server. OAuth setup, client configuration, project instructions, and local configuration checks.",
+      "homepage": "https://weavz.io/docs/guides/weavz-mcp-app",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "hermes",
+        "oauth",
+        "mcp-configuration",
+        "remote-mcp",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "github",
+        "github-mcp",
+        "notion",
+        "notion-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "github",
+        "notion"
+      ]
+    },
+    {
+      "id": "openclaw",
+      "heading": "OpenClaw MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from OpenClaw through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "description": "Connect OpenClaw to Slack, Gmail, GitHub and Notion through the hosted Weavz MCP server. OAuth setup, client configuration, project instructions, and local configuration checks.",
+      "homepage": "https://weavz.io/docs/guides/weavz-mcp-app",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "openclaw",
+        "oauth",
+        "mcp-configuration",
+        "remote-mcp",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "github",
+        "github-mcp",
+        "notion",
+        "notion-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "github",
+        "notion"
+      ]
+    },
+    {
+      "id": "pi",
+      "heading": "Pi MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from Pi through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "description": "Connect Pi to Slack, Gmail, GitHub and Notion through the hosted Weavz MCP server. OAuth setup, client configuration, project instructions, and local configuration checks.",
+      "homepage": "https://weavz.io/docs/guides/weavz-mcp-app",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pi",
+        "oauth",
+        "mcp-configuration",
+        "remote-mcp",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "github",
+        "github-mcp",
+        "notion",
+        "notion-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "github",
+        "notion"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "heading": "Claude Code MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from Claude Code through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "description": "Connect Claude Code to Slack, Gmail, GitHub and Notion through the hosted Weavz MCP server. OAuth setup, client configuration, project instructions, and local configuration checks.",
+      "homepage": "https://weavz.io/docs/guides/weavz-mcp-app",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "claude-code",
+        "oauth",
+        "mcp-configuration",
+        "remote-mcp",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "github",
+        "github-mcp",
+        "notion",
+        "notion-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "github",
+        "notion"
+      ]
+    },
+    {
+      "id": "codex",
+      "heading": "Codex MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from Codex through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "description": "Connect Codex to Slack, Gmail, GitHub and Notion through the hosted Weavz MCP server. OAuth setup, client configuration, project instructions, and local configuration checks.",
+      "homepage": "https://weavz.io/docs/guides/weavz-mcp-app",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "codex",
+        "oauth",
+        "mcp-configuration",
+        "remote-mcp",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "github",
+        "github-mcp",
+        "notion",
+        "notion-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "github",
+        "notion"
+      ]
+    },
+    {
+      "id": "cursor",
+      "heading": "Cursor MCP setup for Weavz app integrations",
+      "summary": "Use Slack, Gmail, GitHub and Notion from Cursor through the hosted Weavz Model Context Protocol (MCP) connector. Sign in with OAuth, select your workspace, and connect the apps you want the client to use. The hosted connector uses Code Mode MCP.",
+      "description": "Connect Cursor to Slack, Gmail, GitHub and Notion through the hosted Weavz MCP server. OAuth setup, client configuration, project instructions, and local configuration checks.",
+      "homepage": "https://weavz.io/docs/guides/weavz-mcp-app",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "cursor",
+        "oauth",
+        "mcp-configuration",
+        "remote-mcp",
+        "slack",
+        "slack-mcp",
+        "gmail",
+        "gmail-mcp",
+        "github",
+        "github-mcp",
+        "notion",
+        "notion-mcp",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "slack",
+        "gmail",
+        "github",
+        "notion"
+      ]
+    },
+    {
+      "id": "morning-brief",
+      "heading": "Gmail and Google Calendar MCP agent with PydanticAI: Morning Brief",
+      "summary": "Use Gmail and Google Calendar with PydanticAI through Weavz MCP. This morning brief example returns a report from bounded app reads with source references.",
+      "description": "Morning Brief. Use Gmail and Google Calendar with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/gmail",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "morning-brief",
+        "gmail",
+        "gmail-mcp",
+        "google-calendar",
+        "google-calendar-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "gmail",
+        "google-calendar"
+      ]
+    },
+    {
+      "id": "gmail-inbox-briefing",
+      "heading": "Gmail MCP agent with PydanticAI: Gmail Inbox Briefing",
+      "summary": "Use Gmail with PydanticAI through Weavz MCP. This gmail inbox briefing example returns a report from bounded app reads with source references.",
+      "description": "Gmail Inbox Briefing. Use Gmail with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/gmail",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "gmail-inbox-briefing",
+        "gmail",
+        "gmail-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "gmail"
+      ]
+    },
+    {
+      "id": "meeting-prep",
+      "heading": "Google Calendar and Gmail MCP agent with PydanticAI: Meeting Preparation",
+      "summary": "Use Google Calendar and Gmail with PydanticAI through Weavz MCP. This meeting preparation example returns a report from bounded app reads with source references.",
+      "description": "Meeting Preparation. Use Google Calendar and Gmail with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/google-calendar",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "meeting-prep",
+        "google-calendar",
+        "google-calendar-mcp",
+        "gmail",
+        "gmail-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "google-calendar",
+        "gmail"
+      ]
+    },
+    {
+      "id": "slack-channel-digest",
+      "heading": "Slack MCP agent with PydanticAI: Slack Channel Digest",
+      "summary": "Use Slack with PydanticAI through Weavz MCP. This slack channel digest example returns a report from bounded app reads with source references.",
+      "description": "Slack Channel Digest. Use Slack with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/slack",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "slack-channel-digest",
+        "slack",
+        "slack-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "slack"
+      ]
+    },
+    {
+      "id": "github-issue-triage",
+      "heading": "GitHub MCP agent with PydanticAI: GitHub Issue Triage",
+      "summary": "Use GitHub with PydanticAI through Weavz MCP. This github issue triage example returns a report from bounded app reads with source references.",
+      "description": "GitHub Issue Triage. Use GitHub with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/github",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "github-issue-triage",
+        "github",
+        "github-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "github"
+      ]
+    },
+    {
+      "id": "notion-knowledge-research",
+      "heading": "Notion MCP agent with PydanticAI: Notion Knowledge Research",
+      "summary": "Use Notion with PydanticAI through Weavz MCP. This notion knowledge research example returns a report from bounded app reads with source references.",
+      "description": "Notion Knowledge Research. Use Notion with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/notion",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "notion-knowledge-research",
+        "notion",
+        "notion-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "notion"
+      ]
+    },
+    {
+      "id": "drive-document-finder",
+      "heading": "Google Drive MCP agent with PydanticAI: Google Drive Document Finder",
+      "summary": "Use Google Drive with PydanticAI through Weavz MCP. This google drive document finder example returns a report from bounded app reads with source references.",
+      "description": "Google Drive Document Finder. Use Google Drive with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/google-drive",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "drive-document-finder",
+        "google-drive",
+        "google-drive-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "google-drive"
+      ]
+    },
+    {
+      "id": "sheets-sales-report",
+      "heading": "Google Sheets MCP agent with PydanticAI: Google Sheets Sales Report",
+      "summary": "Use Google Sheets with PydanticAI through Weavz MCP. This google sheets sales report example returns a report from bounded app reads with source references.",
+      "description": "Google Sheets Sales Report. Use Google Sheets with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/google-sheets",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "sheets-sales-report",
+        "google-sheets",
+        "google-sheets-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "google-sheets"
+      ]
+    },
+    {
+      "id": "hubspot-pipeline-review",
+      "heading": "HubSpot MCP agent with PydanticAI: HubSpot Pipeline Review",
+      "summary": "Use HubSpot with PydanticAI through Weavz MCP. This hubspot pipeline review example returns a report from bounded app reads with source references.",
+      "description": "HubSpot Pipeline Review. Use HubSpot with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/hubspot",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "hubspot-pipeline-review",
+        "hubspot",
+        "hubspot-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "hubspot"
+      ]
+    },
+    {
+      "id": "salesforce-account-brief",
+      "heading": "Salesforce MCP agent with PydanticAI: Salesforce Account Brief",
+      "summary": "Use Salesforce with PydanticAI through Weavz MCP. This salesforce account brief example returns a report from bounded app reads with source references.",
+      "description": "Salesforce Account Brief. Use Salesforce with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/salesforce",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "salesforce-account-brief",
+        "salesforce",
+        "salesforce-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "salesforce"
+      ]
+    },
+    {
+      "id": "linear-backlog-review",
+      "heading": "Linear MCP agent with PydanticAI: Linear Backlog Review",
+      "summary": "Use Linear with PydanticAI through Weavz MCP. This linear backlog review example returns a report from bounded app reads with source references.",
+      "description": "Linear Backlog Review. Use Linear with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/linear",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "linear-backlog-review",
+        "linear",
+        "linear-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "linear"
+      ]
+    },
+    {
+      "id": "jira-sprint-summary",
+      "heading": "Jira Cloud MCP agent with PydanticAI: Jira Cloud Sprint Summary",
+      "summary": "Use Jira Cloud with PydanticAI through Weavz MCP. This jira sprint summary example returns a report from bounded app reads with source references.",
+      "description": "Jira Cloud Sprint Summary. Use Jira Cloud with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/jira-cloud",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "jira-sprint-summary",
+        "jira",
+        "jira-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "jira-cloud"
+      ]
+    },
+    {
+      "id": "zendesk-ticket-handoff",
+      "heading": "Zendesk MCP agent with PydanticAI: Zendesk Ticket Handoff",
+      "summary": "Use Zendesk with PydanticAI through Weavz MCP. This zendesk ticket handoff example returns a report from bounded app reads with source references.",
+      "description": "Zendesk Ticket Handoff. Use Zendesk with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/zendesk",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "zendesk-ticket-handoff",
+        "zendesk",
+        "zendesk-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "zendesk"
+      ]
+    },
+    {
+      "id": "intercom-conversation-brief",
+      "heading": "Intercom MCP agent with PydanticAI: Intercom Conversation Brief",
+      "summary": "Use Intercom with PydanticAI through Weavz MCP. This intercom conversation brief example returns a report from bounded app reads with source references.",
+      "description": "Intercom Conversation Brief. Use Intercom with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/intercom",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "intercom-conversation-brief",
+        "intercom",
+        "intercom-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "intercom"
+      ]
+    },
+    {
+      "id": "airtable-inventory-report",
+      "heading": "Airtable MCP agent with PydanticAI: Airtable Inventory Report",
+      "summary": "Use Airtable with PydanticAI through Weavz MCP. This airtable inventory report example returns a report from bounded app reads with source references.",
+      "description": "Airtable Inventory Report. Use Airtable with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/airtable",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "airtable-inventory-report",
+        "airtable",
+        "airtable-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "airtable"
+      ]
+    },
+    {
+      "id": "trello-project-health",
+      "heading": "Trello MCP agent with PydanticAI: Trello Project Health",
+      "summary": "Use Trello with PydanticAI through Weavz MCP. This trello project health example returns a report from bounded app reads with source references.",
+      "description": "Trello Project Health. Use Trello with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/trello",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "trello-project-health",
+        "trello",
+        "trello-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "trello"
+      ]
+    },
+    {
+      "id": "asana-weekly-status",
+      "heading": "Asana MCP agent with PydanticAI: Asana Weekly Status",
+      "summary": "Use Asana with PydanticAI through Weavz MCP. This asana weekly status example returns a report from bounded app reads with source references.",
+      "description": "Asana Weekly Status. Use Asana with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/asana",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "asana-weekly-status",
+        "asana",
+        "asana-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "asana"
+      ]
+    },
+    {
+      "id": "figma-design-review",
+      "heading": "Figma MCP agent with PydanticAI: Figma Design Review",
+      "summary": "Use Figma with PydanticAI through Weavz MCP. This figma design review example returns a report from bounded app reads with source references.",
+      "description": "Figma Design Review. Use Figma with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/figma",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "figma-design-review",
+        "figma",
+        "figma-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "figma"
+      ]
+    },
+    {
+      "id": "stripe-subscription-review",
+      "heading": "Stripe MCP agent with PydanticAI: Stripe Subscription Review",
+      "summary": "Use Stripe with PydanticAI through Weavz MCP. This stripe subscription review example returns a report from bounded app reads with source references.",
+      "description": "Stripe Subscription Review. Use Stripe with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/stripe",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "stripe-subscription-review",
+        "stripe",
+        "stripe-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "stripe"
+      ]
+    },
+    {
+      "id": "shopify-orders-report",
+      "heading": "Shopify MCP agent with PydanticAI: Shopify Orders Report",
+      "summary": "Use Shopify with PydanticAI through Weavz MCP. This shopify orders report example returns a report from bounded app reads with source references.",
+      "description": "Shopify Orders Report. Use Shopify with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/shopify",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "shopify-orders-report",
+        "shopify",
+        "shopify-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "shopify"
+      ]
+    },
+    {
+      "id": "support-knowledge-assistant",
+      "heading": "Gmail and Notion MCP agent with PydanticAI: Support Knowledge Assistant",
+      "summary": "Use Gmail and Notion with PydanticAI through Weavz MCP. This support knowledge assistant example returns a report from bounded app reads with source references.",
+      "description": "Support Knowledge Assistant. Use Gmail and Notion with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/gmail",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "support-knowledge-assistant",
+        "gmail",
+        "gmail-mcp",
+        "notion",
+        "notion-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "gmail",
+        "notion"
+      ]
+    },
+    {
+      "id": "files-research-notebook",
+      "heading": "Filesystem MCP agent with PydanticAI: Files Research Notebook",
+      "summary": "Use Filesystem with PydanticAI through Weavz MCP. This files research notebook example returns a report from bounded app reads with source references.",
+      "description": "Files Research Notebook. Use Filesystem with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/docs/guides/agent-framework-examples#task-workflows",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "files-research-notebook",
+        "file-storage",
+        "file-storage-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "storage"
+      ]
+    },
+    {
+      "id": "todoist-day-plan",
+      "heading": "Todoist MCP agent with PydanticAI: Todoist Day Plan",
+      "summary": "Use Todoist with PydanticAI through Weavz MCP. This todoist day plan example returns a report from bounded app reads with source references.",
+      "description": "Todoist Day Plan. Use Todoist with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/todoist",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "todoist-day-plan",
+        "todoist",
+        "todoist-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "todoist"
+      ]
+    },
+    {
+      "id": "google-docs-document-review",
+      "heading": "Google Docs MCP agent with PydanticAI: Google Docs Document Review",
+      "summary": "Use Google Docs with PydanticAI through Weavz MCP. This google docs document review example returns a report from bounded app reads with source references.",
+      "description": "Google Docs Document Review. Use Google Docs with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/google-docs",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "google-docs-document-review",
+        "google-docs",
+        "google-docs-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "google-docs"
+      ]
+    },
+    {
+      "id": "github-pull-request-review",
+      "heading": "GitHub MCP agent with PydanticAI: GitHub Pull Request Review",
+      "summary": "Use GitHub with PydanticAI through Weavz MCP. This github pull request review example returns a report from bounded app reads with source references.",
+      "description": "GitHub Pull Request Review. Use GitHub with PydanticAI and Weavz MCP for bounded app reads, typed reports with source references, and synthetic local tests.",
+      "homepage": "https://weavz.io/integrations/github",
+      "topics": [
+        "mcp",
+        "model-context-protocol",
+        "weavz",
+        "mcp-client",
+        "pydantic-ai",
+        "pydanticai",
+        "python",
+        "code-mode",
+        "read-only",
+        "github-pull-request-review",
+        "github",
+        "github-mcp",
+        "agent-workflow",
+        "ai-agents"
+      ],
+      "recipeIntegrations": [
+        "github"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,21 @@
-# LangGraph.js
+# LangGraph.js (TypeScript) MCP integration examples with Weavz
+
+<!-- weavz:discovery:start -->
+
+Connect LangGraph.js (TypeScript) to GitHub, Slack, Zendesk and Gmail through a remote Weavz Model Context Protocol (MCP) server. Use the native MCP adapter, then try the app setup recipes with your configured connections.
+
+App setup recipes:
+
+- [GitHub MCP with LangGraph.js TypeScript](docs/app-recipes.md#github-mcp-with-langgraphjs-typescript)
+- [Slack MCP with LangGraph.js TypeScript](docs/app-recipes.md#slack-mcp-with-langgraphjs-typescript)
+- [Zendesk MCP with LangGraph.js TypeScript](docs/app-recipes.md#zendesk-mcp-with-langgraphjs-typescript)
+- [Gmail MCP with LangGraph.js TypeScript](docs/app-recipes.md#gmail-mcp-with-langgraphjs-typescript)
+
+The framework consumes app tools from your configured Weavz MCP server. App recipes require your own app connections; automated checks use synthetic records.
+
+[MCP app and framework directory](https://github.com/weavz/mcp-examples/blob/main/docs/integrations.md) · [All examples](https://github.com/weavz/mcp-examples) · [Weavz MCP guide](https://weavz.io/docs/guides/agent-framework-examples)
+
+<!-- weavz:discovery:end -->
 
 LangGraph.js uses `MCPAdapter` tools in a custom `StateGraph` tool-calling loop. The local fixture checks the native adapter without an inference provider.
 

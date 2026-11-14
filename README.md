@@ -1,8 +1,10 @@
-# Weavz MCP examples
+# MCP integration examples for AI agent frameworks
 
 Give your agent access to the apps people use. Choose your framework, connect an AI client, or start with a practical read-only workflow.
 
 Weavz manages app connections and exposes their tools over MCP. These examples use the framework or client's native MCP adapter, so app access stays separate from your model provider and agent logic.
+
+Connect Slack, Gmail, GitHub, Notion, Google Sheets and other apps to LangChain, LangGraph, Mastra, Google ADK, PydanticAI, OpenAI Agents SDK and more. Browse the [app and framework directory](docs/integrations.md) for specific combinations such as Slack MCP with LangChain or Gmail MCP with Google ADK. The [machine-readable example index](examples-index.json) includes framework, language, authentication, app recipes, and verification scope for each project.
 
 ## Choose your path
 
@@ -16,66 +18,66 @@ Weavz manages app connections and exposes their tools over MCP. These examples u
 
 | Example | Language | Framework or apps |
 | --- | --- | --- |
-| [OpenAI Agents SDK with Weavz MCP](https://github.com/weavz/weavz-openai-agents-python) | python | OpenAI Agents SDK |
-| [PydanticAI with Weavz MCP](https://github.com/weavz/weavz-pydantic-ai) | python | PydanticAI |
-| [Google ADK with Weavz MCP](https://github.com/weavz/weavz-google-adk-python) | python | Google ADK |
-| [LangChain with Weavz MCP](https://github.com/weavz/weavz-langchain-python) | python | LangChain |
-| [LangGraph with Weavz MCP](https://github.com/weavz/weavz-langgraph-python) | python | LangGraph |
-| [LlamaIndex with Weavz MCP](https://github.com/weavz/weavz-llamaindex) | python | LlamaIndex |
-| [CrewAI with Weavz MCP](https://github.com/weavz/weavz-crewai) | python | CrewAI |
-| [Agno with Weavz MCP](https://github.com/weavz/weavz-agno) | python | Agno |
-| [Strands Agents with Weavz MCP](https://github.com/weavz/weavz-strands) | python | Strands Agents |
-| [smolagents with Weavz MCP](https://github.com/weavz/weavz-smolagents) | python | smolagents |
-| [AutoGen with Weavz MCP](https://github.com/weavz/weavz-autogen) | python | AutoGen |
-| [Semantic Kernel with Weavz MCP](https://github.com/weavz/weavz-semantic-kernel) | python | Semantic Kernel |
-| [Vercel AI SDK with Weavz MCP](https://github.com/weavz/weavz-vercel-ai-sdk) | typescript | Vercel AI SDK |
-| [Mastra with Weavz MCP](https://github.com/weavz/weavz-mastra) | typescript | Mastra |
-| [LangChain.js with Weavz MCP](https://github.com/weavz/weavz-langchain-js) | typescript | LangChain.js |
-| [LangGraph.js with Weavz MCP](https://github.com/weavz/weavz-langgraph-js) | typescript | LangGraph.js |
-| [OpenAI Agents SDK for TypeScript with Weavz MCP](https://github.com/weavz/weavz-openai-agents-js) | typescript | OpenAI Agents SDK for TypeScript |
-| [Google ADK for TypeScript with Weavz MCP](https://github.com/weavz/weavz-google-adk-js) | typescript | Google ADK for TypeScript |
+| [OpenAI Agents SDK (Python) MCP integration examples with Weavz](https://github.com/weavz/weavz-openai-agents-python) | python | Slack, Gmail, GitHub, Notion |
+| [PydanticAI MCP integration examples with Weavz](https://github.com/weavz/weavz-pydantic-ai) | python | Gmail, Google Sheets, Notion, Figma |
+| [Google ADK (Python) MCP integration examples with Weavz](https://github.com/weavz/weavz-google-adk-python) | python | Gmail, Google Calendar, Google Drive, Google Sheets |
+| [LangChain (Python) MCP integration examples with Weavz](https://github.com/weavz/weavz-langchain-python) | python | Slack, Gmail, Notion, GitHub |
+| [LangGraph (Python) MCP integration examples with Weavz](https://github.com/weavz/weavz-langgraph-python) | python | Gmail, Slack, GitHub, Jira Cloud |
+| [LlamaIndex MCP integration examples with Weavz](https://github.com/weavz/weavz-llamaindex) | python | Notion, Google Drive, Google Docs, Google Sheets |
+| [CrewAI MCP integration examples with Weavz](https://github.com/weavz/weavz-crewai) | python | HubSpot, Gmail, Google Calendar, Slack |
+| [Agno MCP integration examples with Weavz](https://github.com/weavz/weavz-agno) | python | Slack, GitHub, Figma, HubSpot |
+| [Strands Agents MCP integration examples with Weavz](https://github.com/weavz/weavz-strands) | python | Slack, Gmail, GitHub, Google Calendar |
+| [smolagents MCP integration examples with Weavz](https://github.com/weavz/weavz-smolagents) | python | GitHub, Figma, Google Sheets, Gmail |
+| [AutoGen MCP integration examples with Weavz](https://github.com/weavz/weavz-autogen) | python | GitHub, Slack, Jira Cloud, Gmail |
+| [Semantic Kernel MCP integration examples with Weavz](https://github.com/weavz/weavz-semantic-kernel) | python | Salesforce, Jira Cloud, Google Drive, Slack |
+| [Vercel AI SDK MCP integration examples with Weavz](https://github.com/weavz/weavz-vercel-ai-sdk) | typescript | Slack, Gmail, HubSpot, GitHub |
+| [Mastra MCP integration examples with Weavz](https://github.com/weavz/weavz-mastra) | typescript | GitHub, Slack, Notion, Gmail |
+| [LangChain.js (TypeScript) MCP integration examples with Weavz](https://github.com/weavz/weavz-langchain-js) | typescript | Slack, Gmail, Notion, GitHub |
+| [LangGraph.js (TypeScript) MCP integration examples with Weavz](https://github.com/weavz/weavz-langgraph-js) | typescript | GitHub, Slack, Zendesk, Gmail |
+| [OpenAI Agents SDK for TypeScript MCP integration examples with Weavz](https://github.com/weavz/weavz-openai-agents-js) | typescript | Gmail, Slack, GitHub, Notion |
+| [Google ADK for TypeScript MCP integration examples with Weavz](https://github.com/weavz/weavz-google-adk-js) | typescript | Gmail, Google Calendar, Google Sheets, Google Drive |
 
 ## Connect your AI client
 
 | Example | Language | Framework or apps |
 | --- | --- | --- |
-| [Weavz for OpenCode](https://github.com/weavz/weavz-opencode) | configuration | OpenCode |
-| [Weavz for Hermes Agent](https://github.com/weavz/weavz-hermes) | configuration | Hermes Agent |
-| [Weavz for OpenClaw](https://github.com/weavz/weavz-openclaw) | configuration | OpenClaw |
-| [Weavz for Pi](https://github.com/weavz/weavz-pi) | configuration | Pi |
-| [Weavz for Claude Code](https://github.com/weavz/weavz-claude-code) | configuration | Claude Code |
-| [Weavz for Codex](https://github.com/weavz/weavz-codex) | configuration | Codex |
-| [Weavz for Cursor](https://github.com/weavz/weavz-cursor) | configuration | Cursor |
+| [OpenCode MCP setup for Weavz app integrations](https://github.com/weavz/weavz-opencode) | configuration | Slack, Gmail, GitHub, Notion |
+| [Hermes Agent MCP setup for Weavz app integrations](https://github.com/weavz/weavz-hermes) | configuration | Slack, Gmail, GitHub, Notion |
+| [OpenClaw MCP setup for Weavz app integrations](https://github.com/weavz/weavz-openclaw) | configuration | Slack, Gmail, GitHub, Notion |
+| [Pi MCP setup for Weavz app integrations](https://github.com/weavz/weavz-pi) | configuration | Slack, Gmail, GitHub, Notion |
+| [Claude Code MCP setup for Weavz app integrations](https://github.com/weavz/weavz-claude-code) | configuration | Slack, Gmail, GitHub, Notion |
+| [Codex MCP setup for Weavz app integrations](https://github.com/weavz/weavz-codex) | configuration | Slack, Gmail, GitHub, Notion |
+| [Cursor MCP setup for Weavz app integrations](https://github.com/weavz/weavz-cursor) | configuration | Slack, Gmail, GitHub, Notion |
 
 ## Start with a task
 
 | Example | Language | Framework or apps |
 | --- | --- | --- |
-| [Morning Brief](https://github.com/weavz/weavz-morning-brief) | python | gmail, google-calendar |
-| [Gmail Inbox Briefing](https://github.com/weavz/weavz-gmail-inbox-briefing) | python | gmail |
-| [Meeting Preparation](https://github.com/weavz/weavz-meeting-prep) | python | google-calendar, gmail |
-| [Slack Channel Digest](https://github.com/weavz/weavz-slack-channel-digest) | python | slack |
-| [GitHub Issue Triage](https://github.com/weavz/weavz-github-issue-triage) | python | github |
-| [Notion Knowledge Research](https://github.com/weavz/weavz-notion-knowledge-research) | python | notion |
-| [Google Drive Document Finder](https://github.com/weavz/weavz-drive-document-finder) | python | google-drive |
-| [Google Sheets Sales Report](https://github.com/weavz/weavz-sheets-sales-report) | python | google-sheets |
-| [HubSpot Pipeline Review](https://github.com/weavz/weavz-hubspot-pipeline-review) | python | hubspot |
-| [Salesforce Account Brief](https://github.com/weavz/weavz-salesforce-account-brief) | python | salesforce |
-| [Linear Backlog Review](https://github.com/weavz/weavz-linear-backlog-review) | python | linear |
-| [Jira Sprint Summary](https://github.com/weavz/weavz-jira-sprint-summary) | python | jira-cloud |
-| [Zendesk Ticket Handoff](https://github.com/weavz/weavz-zendesk-ticket-handoff) | python | zendesk |
-| [Intercom Conversation Brief](https://github.com/weavz/weavz-intercom-conversation-brief) | python | intercom |
-| [Airtable Inventory Report](https://github.com/weavz/weavz-airtable-inventory-report) | python | airtable |
-| [Trello Project Health](https://github.com/weavz/weavz-trello-project-health) | python | trello |
-| [Asana Weekly Status](https://github.com/weavz/weavz-asana-weekly-status) | python | asana |
-| [Figma Design Review](https://github.com/weavz/weavz-figma-design-review) | python | figma |
-| [Stripe Subscription Review](https://github.com/weavz/weavz-stripe-subscription-review) | python | stripe |
-| [Shopify Orders Report](https://github.com/weavz/weavz-shopify-orders-report) | python | shopify |
-| [Support Knowledge Assistant](https://github.com/weavz/weavz-support-knowledge-assistant) | python | gmail, notion |
-| [Files Research Notebook](https://github.com/weavz/weavz-files-research-notebook) | python | storage |
-| [Todoist Day Plan](https://github.com/weavz/weavz-todoist-day-plan) | python | todoist |
-| [Google Docs Document Review](https://github.com/weavz/weavz-google-docs-document-review) | python | google-docs |
-| [GitHub Pull Request Review](https://github.com/weavz/weavz-github-pull-request-review) | python | github |
+| [Gmail and Google Calendar MCP agent with PydanticAI: Morning Brief](https://github.com/weavz/weavz-morning-brief) | python | Gmail, Google Calendar |
+| [Gmail MCP agent with PydanticAI: Gmail Inbox Briefing](https://github.com/weavz/weavz-gmail-inbox-briefing) | python | Gmail |
+| [Google Calendar and Gmail MCP agent with PydanticAI: Meeting Preparation](https://github.com/weavz/weavz-meeting-prep) | python | Google Calendar, Gmail |
+| [Slack MCP agent with PydanticAI: Slack Channel Digest](https://github.com/weavz/weavz-slack-channel-digest) | python | Slack |
+| [GitHub MCP agent with PydanticAI: GitHub Issue Triage](https://github.com/weavz/weavz-github-issue-triage) | python | GitHub |
+| [Notion MCP agent with PydanticAI: Notion Knowledge Research](https://github.com/weavz/weavz-notion-knowledge-research) | python | Notion |
+| [Google Drive MCP agent with PydanticAI: Google Drive Document Finder](https://github.com/weavz/weavz-drive-document-finder) | python | Google Drive |
+| [Google Sheets MCP agent with PydanticAI: Google Sheets Sales Report](https://github.com/weavz/weavz-sheets-sales-report) | python | Google Sheets |
+| [HubSpot MCP agent with PydanticAI: HubSpot Pipeline Review](https://github.com/weavz/weavz-hubspot-pipeline-review) | python | HubSpot |
+| [Salesforce MCP agent with PydanticAI: Salesforce Account Brief](https://github.com/weavz/weavz-salesforce-account-brief) | python | Salesforce |
+| [Linear MCP agent with PydanticAI: Linear Backlog Review](https://github.com/weavz/weavz-linear-backlog-review) | python | Linear |
+| [Jira Cloud MCP agent with PydanticAI: Jira Cloud Sprint Summary](https://github.com/weavz/weavz-jira-sprint-summary) | python | Jira Cloud |
+| [Zendesk MCP agent with PydanticAI: Zendesk Ticket Handoff](https://github.com/weavz/weavz-zendesk-ticket-handoff) | python | Zendesk |
+| [Intercom MCP agent with PydanticAI: Intercom Conversation Brief](https://github.com/weavz/weavz-intercom-conversation-brief) | python | Intercom |
+| [Airtable MCP agent with PydanticAI: Airtable Inventory Report](https://github.com/weavz/weavz-airtable-inventory-report) | python | Airtable |
+| [Trello MCP agent with PydanticAI: Trello Project Health](https://github.com/weavz/weavz-trello-project-health) | python | Trello |
+| [Asana MCP agent with PydanticAI: Asana Weekly Status](https://github.com/weavz/weavz-asana-weekly-status) | python | Asana |
+| [Figma MCP agent with PydanticAI: Figma Design Review](https://github.com/weavz/weavz-figma-design-review) | python | Figma |
+| [Stripe MCP agent with PydanticAI: Stripe Subscription Review](https://github.com/weavz/weavz-stripe-subscription-review) | python | Stripe |
+| [Shopify MCP agent with PydanticAI: Shopify Orders Report](https://github.com/weavz/weavz-shopify-orders-report) | python | Shopify |
+| [Gmail and Notion MCP agent with PydanticAI: Support Knowledge Assistant](https://github.com/weavz/weavz-support-knowledge-assistant) | python | Gmail, Notion |
+| [Filesystem MCP agent with PydanticAI: Files Research Notebook](https://github.com/weavz/weavz-files-research-notebook) | python | Filesystem |
+| [Todoist MCP agent with PydanticAI: Todoist Day Plan](https://github.com/weavz/weavz-todoist-day-plan) | python | Todoist |
+| [Google Docs MCP agent with PydanticAI: Google Docs Document Review](https://github.com/weavz/weavz-google-docs-document-review) | python | Google Docs |
+| [GitHub MCP agent with PydanticAI: GitHub Pull Request Review](https://github.com/weavz/weavz-github-pull-request-review) | python | GitHub |
 
 ## Custom server setup
 

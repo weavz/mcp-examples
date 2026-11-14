@@ -1,4 +1,20 @@
-# Slack Channel Digest
+# Slack MCP agent with PydanticAI: Slack Channel Digest
+
+<!-- weavz:discovery:start -->
+
+Use Slack with PydanticAI through Weavz MCP. This slack channel digest example returns a report from bounded app reads with source references.
+
+**Framework:** PydanticAI · **Language:** Python · **MCP modes:** Tool Mode and Code Mode
+
+Use another framework:
+
+- [Slack MCP with OpenAI Agents SDK Python](https://github.com/weavz/weavz-openai-agents-python/blob/main/docs/app-recipes.md#slack-mcp-with-openai-agents-sdk-python)
+- [Slack MCP with LangChain Python](https://github.com/weavz/weavz-langchain-python/blob/main/docs/app-recipes.md#slack-mcp-with-langchain-python)
+- [Slack MCP with LangGraph Python](https://github.com/weavz/weavz-langgraph-python/blob/main/docs/app-recipes.md#slack-mcp-with-langgraph-python)
+
+[MCP app and framework directory](https://github.com/weavz/mcp-examples/blob/main/docs/integrations.md) · [All examples](https://github.com/weavz/mcp-examples) · [Weavz MCP guide](https://weavz.io/docs/guides/agent-framework-examples)
+
+<!-- weavz:discovery:end -->
 
 Summarize the recent messages in the selected Slack channel, including the supplied thread replies. Group decisions, open questions, and owners without drafting a response.
 

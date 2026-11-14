@@ -1,4 +1,14 @@
-# Asana Weekly Status
+# Asana MCP agent with PydanticAI: Asana Weekly Status
+
+<!-- weavz:discovery:start -->
+
+Use Asana with PydanticAI through Weavz MCP. This asana weekly status example returns a report from bounded app reads with source references.
+
+**Framework:** PydanticAI · **Language:** Python · **MCP modes:** Tool Mode and Code Mode
+
+[MCP app and framework directory](https://github.com/weavz/mcp-examples/blob/main/docs/integrations.md) · [All examples](https://github.com/weavz/mcp-examples) · [Weavz MCP guide](https://weavz.io/docs/guides/agent-framework-examples)
+
+<!-- weavz:discovery:end -->
 
 Summarize this project’s sampled tasks for the weekly status review. Separate completed, overdue, and upcoming work, and highlight tasks that lack an assignee.
 
