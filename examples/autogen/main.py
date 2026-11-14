@@ -10,6 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from autogen_agentchat.agents import AssistantAgent
 from autogen_agentchat.messages import TextMessage
+from autogen_core.models import ModelInfo
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogen_ext.tools.mcp import McpWorkbench, StreamableHttpServerParams
 from connection import validate_catalog, validate_live_connection
@@ -20,16 +21,33 @@ def names_for(mode: str) -> set[str]:
     return {"demo__lookup_record"} if mode == "tools" else {"weavz_search", "weavz_read_api", "weavz_execute"}
 
 
+def configured_model_info() -> ModelInfo | None:
+    raw_value = os.getenv("WEAVZ_MODEL_INFO")
+    if not raw_value:
+        return None
+    try:
+        value = json.loads(raw_value)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError("WEAVZ_MODEL_INFO must be valid JSON matching AutoGen ModelInfo") from exc
+    if not isinstance(value, dict):
+        raise RuntimeError("WEAVZ_MODEL_INFO must be a JSON object matching AutoGen ModelInfo")
+    return value  # AutoGen validates the required ModelInfo fields in its client constructor.
+
+
 async def run_agent(prompt: str, workbench: McpWorkbench) -> object:
     model_id = os.getenv("WEAVZ_MODEL")
     api_key = os.getenv("OPENAI_API_KEY")
     if not model_id or not api_key:
         raise RuntimeError("Set WEAVZ_MODEL and OPENAI_API_KEY for the optional AutoGen run")
-    model_client = OpenAIChatCompletionClient(
-        model=model_id,
-        api_key=api_key,
-        base_url=os.getenv("OPENAI_BASE_URL"),
-    )
+    client_config: dict[str, object] = {
+        "model": model_id,
+        "api_key": api_key,
+        "base_url": os.getenv("OPENAI_BASE_URL"),
+    }
+    model_info = configured_model_info()
+    if model_info is not None:
+        client_config["model_info"] = model_info
+    model_client = OpenAIChatCompletionClient(**client_config)
     try:
         agent = AssistantAgent(
             name="weavz_assistant",
