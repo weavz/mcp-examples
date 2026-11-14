@@ -1,6 +1,10 @@
 from __future__ import annotations
 
 import pytest
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from connection import validate_catalog, validate_live_connection
 
