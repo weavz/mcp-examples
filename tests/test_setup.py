@@ -1,13 +1,18 @@
 from __future__ import annotations
 
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from contextlib import redirect_stdout, redirect_stderr
+import io
 import json
+from pathlib import Path
+import tempfile
 from threading import Thread
 import unittest
+from unittest.mock import patch
 
 from weavz_sdk import WeavzClient
 
-from tools.setup_weavz import configure, validate_url
+from tools.setup_weavz import configure, main, validate_url
 
 
 WORKSPACE = "00000000-0000-4000-8000-000000000001"
@@ -124,6 +129,42 @@ class SetupTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     configure(self.client, workspace_id=workspace, end_user_id=end_user, mode=mode)
         self.assertEqual(self.requests, [])
+
+    def cli_arguments(self, output):
+        return ["setup_weavz.py", "--workspace-id", WORKSPACE, "--end-user-id", END_USER, "--api-url", f"http://127.0.0.1:{self.http.server_port}", "--output", str(output)]
+
+    def test_cli_writes_private_dotenv_without_printing_credentials(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / ".env.weavz"
+            transcript = io.StringIO()
+            with patch("sys.argv", self.cli_arguments(output)), patch.dict("os.environ", {"WEAVZ_API_KEY": "wvz_example_fixture_only"}), redirect_stdout(transcript):
+                self.assertEqual(main(), 0)
+            self.assertEqual(output.stat().st_mode & 0o777, 0o600)
+            settings = dict(line.split("=", 1) for line in output.read_text().splitlines())
+            self.assertEqual(json.loads(settings["WEAVZ_MCP_TOKEN"]), "mcp_scoped_fixture_only")
+            self.assertNotIn("wvz_", output.read_text())
+            self.assertNotIn("mcp_scoped_fixture_only", transcript.getvalue())
+
+    def test_cli_existing_output_is_preserved_before_any_network_call(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / ".env.weavz"
+            output.write_text("existing settings")
+            with patch("sys.argv", self.cli_arguments(output)), patch.dict("os.environ", {"WEAVZ_API_KEY": "wvz_example_fixture_only"}), redirect_stderr(io.StringIO()), self.assertRaises(SystemExit) as error:
+                main()
+            self.assertEqual(error.exception.code, 2)
+            self.assertEqual(output.read_text(), "existing settings")
+            self.assertEqual(self.requests, [])
+
+    def test_cli_token_failure_removes_empty_output_and_prints_reusable_server_id(self):
+        self.fail_token = True
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / ".env.weavz"
+            transcript = io.StringIO()
+            with patch("sys.argv", self.cli_arguments(output)), patch.dict("os.environ", {"WEAVZ_API_KEY": "wvz_example_fixture_only"}), redirect_stdout(transcript):
+                self.assertEqual(main(), 1)
+            self.assertFalse(output.exists())
+            self.assertIn(f"--server-id {SERVER}", transcript.getvalue())
+            self.assertNotIn("mcp_scoped_fixture_only", transcript.getvalue())
 
 
 class UrlTests(unittest.TestCase):
