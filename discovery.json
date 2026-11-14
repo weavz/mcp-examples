@@ -4,7 +4,7 @@
   "hubRepository": "mcp-examples",
   "hub": {
     "heading": "MCP integration examples for AI agent frameworks",
-    "description": "MCP integration examples for LangChain, LangGraph, Mastra, Google ADK and other agent frameworks. Connect Slack, Gmail, GitHub, Notion and more with native Python/TypeScript adapters. Includes client setups and tested workflows.",
+    "description": "MCP integration examples for LangChain, LangGraph, Mastra, Google ADK and more. Try Slack MCP with LangChain or Gmail MCP with Google ADK. Connect Slack, Gmail, GitHub, Notion and more using native Python/TypeScript adapters, client setups and tested workflows.",
     "topics": [
       "mcp",
       "model-context-protocol",
@@ -19,6 +19,9 @@
       "slack-mcp",
       "gmail-mcp",
       "github-mcp",
+      "notion-mcp",
+      "google-sheets-mcp",
+      "google-calendar-mcp",
       "python",
       "typescript",
       "agent-framework",
