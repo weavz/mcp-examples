@@ -1,0 +1,1257 @@
+{
+  "updatedAt": "2026-11-14T16:48:51.627031+00:00",
+  "scope": "Independent clean-copy checks; synthetic fixture and static client scopes are identified separately. No live connected-app verification.",
+  "examples": [
+    {
+      "id": "openai-agents-python",
+      "repository": "weavz-openai-agents-python",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:20:56.146263+00:00"
+    },
+    {
+      "id": "pydantic-ai",
+      "repository": "weavz-pydantic-ai",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:20:56.146263+00:00"
+    },
+    {
+      "id": "google-adk-python",
+      "repository": "weavz-google-adk-python",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:22:39.993261+00:00"
+    },
+    {
+      "id": "langchain-python",
+      "repository": "weavz-langchain-python",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:20:56.146263+00:00"
+    },
+    {
+      "id": "langgraph-python",
+      "repository": "weavz-langgraph-python",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:20:56.146263+00:00"
+    },
+    {
+      "id": "llamaindex",
+      "repository": "weavz-llamaindex",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:20:56.146263+00:00"
+    },
+    {
+      "id": "crewai",
+      "repository": "weavz-crewai",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:21:43.631699+00:00"
+    },
+    {
+      "id": "agno",
+      "repository": "weavz-agno",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:21:43.631699+00:00"
+    },
+    {
+      "id": "strands",
+      "repository": "weavz-strands",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:20:56.146263+00:00"
+    },
+    {
+      "id": "smolagents",
+      "repository": "weavz-smolagents",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:20:56.146263+00:00"
+    },
+    {
+      "id": "autogen",
+      "repository": "weavz-autogen",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:24:00.185419+00:00"
+    },
+    {
+      "id": "semantic-kernel",
+      "repository": "weavz-semantic-kernel",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:21:43.631699+00:00"
+    },
+    {
+      "id": "vercel-ai-sdk",
+      "repository": "weavz-vercel-ai-sdk",
+      "checks": [
+        {
+          "command": "npm ci --no-audit --no-fund",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run build",
+          "exitCode": 0
+        },
+        {
+          "command": "npm test",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T15:57:06.343756+00:00"
+    },
+    {
+      "id": "mastra",
+      "repository": "weavz-mastra",
+      "checks": [
+        {
+          "command": "npm ci --no-audit --no-fund",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run build",
+          "exitCode": 0
+        },
+        {
+          "command": "npm test",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T15:57:06.343756+00:00"
+    },
+    {
+      "id": "langchain-js",
+      "repository": "weavz-langchain-js",
+      "checks": [
+        {
+          "command": "npm ci --no-audit --no-fund",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run build",
+          "exitCode": 0
+        },
+        {
+          "command": "npm test",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T15:57:06.343756+00:00"
+    },
+    {
+      "id": "langgraph-js",
+      "repository": "weavz-langgraph-js",
+      "checks": [
+        {
+          "command": "npm ci --no-audit --no-fund",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run build",
+          "exitCode": 0
+        },
+        {
+          "command": "npm test",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T15:57:06.343756+00:00"
+    },
+    {
+      "id": "openai-agents-js",
+      "repository": "weavz-openai-agents-js",
+      "checks": [
+        {
+          "command": "npm ci --no-audit --no-fund",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run build",
+          "exitCode": 0
+        },
+        {
+          "command": "npm test",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T15:57:06.343756+00:00"
+    },
+    {
+      "id": "google-adk-js",
+      "repository": "weavz-google-adk-js",
+      "checks": [
+        {
+          "command": "npm ci --no-audit --no-fund",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run build",
+          "exitCode": 0
+        },
+        {
+          "command": "npm test",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "npm run smoke -- --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T15:57:06.343756+00:00"
+    },
+    {
+      "id": "opencode",
+      "repository": "weavz-opencode",
+      "checks": [
+        {
+          "command": "bash scripts/validate.sh",
+          "exitCode": 0
+        },
+        {
+          "command": "bash scripts/test-native.sh",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T15:51:17.693656+00:00"
+    },
+    {
+      "id": "hermes",
+      "repository": "weavz-hermes",
+      "checks": [
+        {
+          "command": "bash scripts/validate.sh",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "static client contract",
+      "checkedAt": "2026-11-14T15:51:17.693656+00:00"
+    },
+    {
+      "id": "openclaw",
+      "repository": "weavz-openclaw",
+      "checks": [
+        {
+          "command": "bash scripts/validate.sh",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "static client contract",
+      "checkedAt": "2026-11-14T15:51:17.693656+00:00"
+    },
+    {
+      "id": "pi",
+      "repository": "weavz-pi",
+      "checks": [
+        {
+          "command": "bash scripts/validate.sh",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "static client contract",
+      "checkedAt": "2026-11-14T15:51:17.693656+00:00"
+    },
+    {
+      "id": "claude-code",
+      "repository": "weavz-claude-code",
+      "checks": [
+        {
+          "command": "bash scripts/validate.sh",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "static client contract",
+      "checkedAt": "2026-11-14T15:51:17.693656+00:00"
+    },
+    {
+      "id": "codex",
+      "repository": "weavz-codex",
+      "checks": [
+        {
+          "command": "bash scripts/validate.sh",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "static client contract",
+      "checkedAt": "2026-11-14T15:51:17.693656+00:00"
+    },
+    {
+      "id": "cursor",
+      "repository": "weavz-cursor",
+      "checks": [
+        {
+          "command": "bash scripts/validate.sh",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "static client contract",
+      "checkedAt": "2026-11-14T15:51:17.693656+00:00"
+    },
+    {
+      "id": "morning-brief",
+      "repository": "weavz-morning-brief",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "gmail-inbox-briefing",
+      "repository": "weavz-gmail-inbox-briefing",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "meeting-prep",
+      "repository": "weavz-meeting-prep",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "slack-channel-digest",
+      "repository": "weavz-slack-channel-digest",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "github-issue-triage",
+      "repository": "weavz-github-issue-triage",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "notion-knowledge-research",
+      "repository": "weavz-notion-knowledge-research",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "drive-document-finder",
+      "repository": "weavz-drive-document-finder",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "sheets-sales-report",
+      "repository": "weavz-sheets-sales-report",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "hubspot-pipeline-review",
+      "repository": "weavz-hubspot-pipeline-review",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "salesforce-account-brief",
+      "repository": "weavz-salesforce-account-brief",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "linear-backlog-review",
+      "repository": "weavz-linear-backlog-review",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "jira-sprint-summary",
+      "repository": "weavz-jira-sprint-summary",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "zendesk-ticket-handoff",
+      "repository": "weavz-zendesk-ticket-handoff",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "intercom-conversation-brief",
+      "repository": "weavz-intercom-conversation-brief",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "airtable-inventory-report",
+      "repository": "weavz-airtable-inventory-report",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "trello-project-health",
+      "repository": "weavz-trello-project-health",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "asana-weekly-status",
+      "repository": "weavz-asana-weekly-status",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "figma-design-review",
+      "repository": "weavz-figma-design-review",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "stripe-subscription-review",
+      "repository": "weavz-stripe-subscription-review",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "shopify-orders-report",
+      "repository": "weavz-shopify-orders-report",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "support-knowledge-assistant",
+      "repository": "weavz-support-knowledge-assistant",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "files-research-notebook",
+      "repository": "weavz-files-research-notebook",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "todoist-day-plan",
+      "repository": "weavz-todoist-day-plan",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "google-docs-document-review",
+      "repository": "weavz-google-docs-document-review",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    },
+    {
+      "id": "github-pull-request-review",
+      "repository": "weavz-github-pull-request-review",
+      "checks": [
+        {
+          "command": "uv sync --locked",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run pytest",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode tools",
+          "exitCode": 0
+        },
+        {
+          "command": "uv run python main.py --fixture --mode code",
+          "exitCode": 0
+        }
+      ],
+      "liveAccountVerified": false,
+      "status": "passed",
+      "scope": "native MCP synthetic fixture",
+      "checkedAt": "2026-11-14T16:03:52.895154+00:00"
+    }
+  ],
+  "independentAgent": {
+    "client": "OpenCode 1.17.6",
+    "model": "deepseek/deepseek-flash",
+    "syntheticMcpToolCall": true,
+    "workflowSetupCommandsCompleted": 4,
+    "liveAccountVerified": false
+  }
+}
