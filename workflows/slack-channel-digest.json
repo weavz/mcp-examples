@@ -1,0 +1,128 @@
+{
+  "id": "slack-channel-digest",
+  "title": "Slack Channel Digest",
+  "prompt": "Summarize the recent messages in the selected Slack channel, including the supplied thread replies. Group decisions, open questions, and owners without drafting a response.",
+  "instructions": "Read only the named channel’s latest five-message sample and one selected thread. Do not treat this sample as a full channel history or infer agreement from reactions. Preserve message timestamps and attribute each statement to its synthetic author. Do not post, react, or update status.",
+  "fixture_summary": "Synthetic #launch-ops history includes an approved checklist, a blocked dependency, and one thread clarifying the owner and next check-in.",
+  "inputs": {
+    "channel": "C-LAUNCH-OPS",
+    "limit": 5,
+    "thread_ts": "1731514200.000100"
+  },
+  "steps": [
+    {
+      "id": "recent_channel_messages",
+      "alias": "launch_ops",
+      "integration": "slack",
+      "action": "get_channel_history",
+      "tool": "launch_ops__get_channel_history",
+      "arguments": {
+        "channel": "C-LAUNCH-OPS",
+        "limit": 5
+      },
+      "records": [
+        {
+          "id": "slack-msg-501",
+          "app": "Slack",
+          "title": "Checklist approved for staged rollout",
+          "detail": "Synthetic channel note: QA has approved the staged checklist; next checkpoint is Monday.",
+          "url": "https://example.com/records/slack-msg-501",
+          "channel": "C-LAUNCH-OPS",
+          "timestamp": "1731510000.000100",
+          "decision_state": "confirmed",
+          "author": "Morgan"
+        },
+        {
+          "id": "slack-msg-502",
+          "app": "Slack",
+          "title": "Regional data export still blocks the launch",
+          "detail": "Synthetic channel note: the export dependency remains blocked pending a permissions review.",
+          "url": "https://example.com/records/slack-msg-502",
+          "channel": "C-LAUNCH-OPS",
+          "timestamp": "1731511200.000100",
+          "decision_state": "blocked",
+          "owner": "Riley",
+          "blocked": true
+        },
+        {
+          "id": "slack-msg-503",
+          "app": "Slack",
+          "title": "Can we keep the pilot to one region?",
+          "detail": "Synthetic thread parent asking whether the initial pilot is limited to one region.",
+          "url": "https://example.com/records/slack-msg-503",
+          "channel": "C-LAUNCH-OPS",
+          "timestamp": "1731514200.000100",
+          "thread_ts": "1731514200.000100",
+          "decision_state": "open",
+          "author": "Sam"
+        }
+      ]
+    },
+    {
+      "id": "read_pilot_thread",
+      "alias": "launch_ops",
+      "integration": "slack",
+      "action": "get_thread_replies",
+      "tool": "launch_ops__get_thread_replies",
+      "arguments": {
+        "channel": "C-LAUNCH-OPS",
+        "thread_ts": "1731514200.000100"
+      },
+      "records": [
+        {
+          "id": "slack-msg-503",
+          "app": "Slack",
+          "title": "Can we keep the pilot to one region?",
+          "detail": "Synthetic thread: the owner confirms the pilot remains one region; a final export-permission check is due Monday.",
+          "url": "https://example.com/records/slack-msg-503",
+          "channel": "C-LAUNCH-OPS",
+          "timestamp": "1731514200.000100",
+          "thread_ts": "1731514200.000100",
+          "decision_state": "confirmed",
+          "author": "Sam",
+          "reply_count": 2
+        },
+        {
+          "id": "slack-msg-504",
+          "app": "Slack",
+          "title": "Re: one-region pilot",
+          "detail": "Synthetic reply: Morgan confirms the one-region scope, while Riley retains the export blocker.",
+          "url": "https://example.com/records/slack-msg-504",
+          "channel": "C-LAUNCH-OPS",
+          "timestamp": "1731514600.000100",
+          "thread_ts": "1731514200.000100",
+          "decision_state": "confirmed",
+          "author": "Morgan"
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "confirmed_decisions",
+      "op": "count",
+      "where": {
+        "decision_state": "confirmed"
+      }
+    },
+    {
+      "name": "blocked_items",
+      "op": "count",
+      "where": {
+        "blocked": true
+      }
+    },
+    {
+      "name": "open_decisions",
+      "op": "count",
+      "where": {
+        "decision_state": "open"
+      }
+    }
+  ],
+  "expected_metrics": {
+    "confirmed_decisions": 3,
+    "blocked_items": 1,
+    "open_decisions": 0
+  }
+}

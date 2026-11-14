@@ -1,0 +1,98 @@
+{
+  "id": "stripe-subscription-review",
+  "title": "Stripe Subscription Review",
+  "prompt": "Review a bounded sample of subscription statuses and flag records in past-due or incomplete states for human review. Do not estimate revenue or infer payment outcomes.",
+  "instructions": "Use search_subscriptions with a bounded result limit and no charge, invoice, or payment-intent reads. The sample is not the full customer base unless the returned page explicitly proves it; state the limit. Report status counts only. Do not create, cancel, update, or retry subscriptions, and do not calculate revenue from these records.",
+  "fixture_summary": "Synthetic subscription search returns four records with active, past_due, trialing, and canceled statuses. No charge or revenue amounts are part of this review.",
+  "inputs": {
+    "limit": 10,
+    "fetch_all": false,
+    "include_customer_details": true
+  },
+  "steps": [
+    {
+      "id": "search_subscription_statuses",
+      "alias": "subscriptions",
+      "integration": "stripe",
+      "action": "search_subscriptions",
+      "tool": "subscriptions__search_subscriptions",
+      "arguments": {
+        "status": "",
+        "limit": 10,
+        "fetch_all": false,
+        "include_customer_details": true
+      },
+      "records": [
+        {
+          "id": "sub-demo-1",
+          "app": "Stripe",
+          "title": "Northwind annual subscription",
+          "detail": "Synthetic subscription record; status active.",
+          "url": "https://example.com/records/sub-demo-1",
+          "subscription_id": "sub-demo-1",
+          "status": "active",
+          "customer_id": "cus-demo-1",
+          "review_attention": false
+        },
+        {
+          "id": "sub-demo-2",
+          "app": "Stripe",
+          "title": "Juniper monthly subscription",
+          "detail": "Synthetic subscription record; status past due.",
+          "url": "https://example.com/records/sub-demo-2",
+          "subscription_id": "sub-demo-2",
+          "status": "past_due",
+          "customer_id": "cus-demo-2",
+          "review_attention": true
+        },
+        {
+          "id": "sub-demo-3",
+          "app": "Stripe",
+          "title": "Bluebird trial subscription",
+          "detail": "Synthetic subscription record; status trialing.",
+          "url": "https://example.com/records/sub-demo-3",
+          "subscription_id": "sub-demo-3",
+          "status": "trialing",
+          "customer_id": "cus-demo-3",
+          "review_attention": false
+        },
+        {
+          "id": "sub-demo-4",
+          "app": "Stripe",
+          "title": "Summit legacy subscription",
+          "detail": "Synthetic subscription record; status canceled.",
+          "url": "https://example.com/records/sub-demo-4",
+          "subscription_id": "sub-demo-4",
+          "status": "canceled",
+          "customer_id": "cus-demo-4",
+          "review_attention": false
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "sampled_subscriptions",
+      "op": "count"
+    },
+    {
+      "name": "past_due_subscriptions",
+      "op": "count",
+      "where": {
+        "status": "past_due"
+      }
+    },
+    {
+      "name": "subscriptions_flagged_for_review",
+      "op": "count",
+      "where": {
+        "review_attention": true
+      }
+    }
+  ],
+  "expected_metrics": {
+    "sampled_subscriptions": 4,
+    "past_due_subscriptions": 1,
+    "subscriptions_flagged_for_review": 1
+  }
+}

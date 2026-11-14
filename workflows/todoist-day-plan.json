@@ -1,0 +1,112 @@
+{
+  "id": "todoist-day-plan",
+  "title": "Todoist Day Plan",
+  "prompt": "Create a read-only plan from the selected project’s tasks due today or overdue. Order by urgency and available time, and identify tasks missing due dates or owners.",
+  "instructions": "List only the selected project and the supplied Todoist filter. Treat the stated date as the as-of date and use only returned tasks. Do not close, reopen, move, edit, or comment on tasks. Priority and due date are facts; recommended ordering is a suggestion. Do not assume unreturned project tasks are absent.",
+  "fixture_summary": "Synthetic Todoist filter result for 2026-11-14 includes two overdue tasks, two due today, and one task without a due date in the selected project.",
+  "inputs": {
+    "projectId": "todoist-project-demo",
+    "filter": "today | overdue",
+    "limit": 10,
+    "as_of_date": "2026-11-14"
+  },
+  "steps": [
+    {
+      "id": "list_today_overdue_tasks",
+      "alias": "personal_tasks",
+      "integration": "todoist",
+      "action": "list_tasks",
+      "tool": "personal_tasks__list_tasks",
+      "arguments": {
+        "projectId": "todoist-project-demo",
+        "filter": "today | overdue",
+        "limit": 10
+      },
+      "records": [
+        {
+          "id": "todo-task-1",
+          "app": "Todoist",
+          "title": "Confirm API retry test",
+          "detail": "Synthetic task overdue since 2026-11-13; priority 4, estimate 35 minutes.",
+          "url": "https://example.com/records/todo-task-1",
+          "task_id": "todo-task-1",
+          "due_date": "2026-11-13",
+          "task_state": "overdue",
+          "priority": 4,
+          "estimate_minutes": 35,
+          "assignee_present": true
+        },
+        {
+          "id": "todo-task-2",
+          "app": "Todoist",
+          "title": "Review support handoff",
+          "detail": "Synthetic task due today; priority 3, estimate 20 minutes.",
+          "url": "https://example.com/records/todo-task-2",
+          "task_id": "todo-task-2",
+          "due_date": "2026-11-14",
+          "task_state": "today",
+          "priority": 3,
+          "estimate_minutes": 20,
+          "assignee_present": true
+        },
+        {
+          "id": "todo-task-3",
+          "app": "Todoist",
+          "title": "Check docs navigation",
+          "detail": "Synthetic task overdue since 2026-11-12; priority 2, estimate 15 minutes.",
+          "url": "https://example.com/records/todo-task-3",
+          "task_id": "todo-task-3",
+          "due_date": "2026-11-12",
+          "task_state": "overdue",
+          "priority": 2,
+          "estimate_minutes": 15,
+          "assignee_present": true
+        },
+        {
+          "id": "todo-task-4",
+          "app": "Todoist",
+          "title": "Prepare review notes",
+          "detail": "Synthetic task due today; priority 1, estimate 25 minutes.",
+          "url": "https://example.com/records/todo-task-4",
+          "task_id": "todo-task-4",
+          "due_date": "2026-11-14",
+          "task_state": "today",
+          "priority": 1,
+          "estimate_minutes": 25,
+          "assignee_present": false
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "returned_tasks",
+      "op": "count"
+    },
+    {
+      "name": "overdue_tasks",
+      "op": "count",
+      "where": {
+        "task_state": "overdue"
+      }
+    },
+    {
+      "name": "estimated_minutes_in_sample",
+      "op": "sum",
+      "field": "estimate_minutes"
+    },
+    {
+      "name": "tasks_without_assignee",
+      "op": "count",
+      "where": {
+        "assignee_present": false
+      }
+    }
+  ],
+  "expected_metrics": {
+    "returned_tasks": 4,
+    "overdue_tasks": 2,
+    "estimated_minutes_in_sample": 95,
+    "tasks_without_assignee": 1
+  }
+}

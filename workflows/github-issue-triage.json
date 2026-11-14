@@ -1,0 +1,140 @@
+{
+  "id": "github-issue-triage",
+  "title": "GitHub Issue Triage",
+  "prompt": "Triage the bounded set of open bug issues returned for the selected repository. Group by severity and impact, flag stale or blocked reports, and suggest reading order without changing issue state.",
+  "instructions": "Search only the requested repository and issue filters. Read the full bodies of the returned sample issues with get_issue before proposing labels or priorities. Report the sample limit and do not imply complete repository coverage. Do not create comments, labels, branches, or edits; distinguish reporter facts from triage suggestions.",
+  "fixture_summary": "Synthetic repository search returns three open bug reports; full issue reads reveal one release blocker and one reproducible low-severity defect.",
+  "inputs": {
+    "repository": "example-org/demo-app",
+    "query": "repo:example-org/demo-app is:issue is:open label:bug",
+    "per_page": 3
+  },
+  "steps": [
+    {
+      "id": "search_open_bugs",
+      "alias": "repo_issues",
+      "integration": "github",
+      "action": "search_issues",
+      "tool": "repo_issues__search_issues",
+      "arguments": {
+        "query": "repo:example-org/demo-app is:issue is:open label:bug",
+        "per_page": 3
+      },
+      "records": [
+        {
+          "id": "issue-241",
+          "app": "GitHub",
+          "title": "Checkout retries duplicate confirmation",
+          "detail": "Synthetic report: retries can produce duplicate confirmation screens; reproducible on the latest release.",
+          "url": "https://example.com/records/issue-241",
+          "repository": "example-org/demo-app",
+          "issue_number": 241,
+          "severity": "high",
+          "blocked": true,
+          "updated_at": "2026-11-13"
+        },
+        {
+          "id": "issue-238",
+          "app": "GitHub",
+          "title": "Keyboard focus skips coupon field",
+          "detail": "Synthetic report: tab focus skips the coupon field on one checkout step.",
+          "url": "https://example.com/records/issue-238",
+          "repository": "example-org/demo-app",
+          "issue_number": 238,
+          "severity": "medium",
+          "blocked": false,
+          "updated_at": "2026-11-12"
+        },
+        {
+          "id": "issue-219",
+          "app": "GitHub",
+          "title": "Tooltip overlaps footer at narrow width",
+          "detail": "Synthetic report: tooltip overlaps the footer at 360 px width; workaround exists.",
+          "url": "https://example.com/records/issue-219",
+          "repository": "example-org/demo-app",
+          "issue_number": 219,
+          "severity": "low",
+          "blocked": false,
+          "updated_at": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "read_retry_issue",
+      "alias": "repo_issues",
+      "integration": "github",
+      "action": "get_issue",
+      "tool": "repo_issues__get_issue",
+      "arguments": {
+        "repository": "example-org/demo-app",
+        "issue_number": 241
+      },
+      "records": [
+        {
+          "id": "issue-241",
+          "app": "GitHub",
+          "title": "Checkout retries duplicate confirmation",
+          "detail": "Full synthetic issue: repeated retry after timeout can show two confirmation screens. Reporter supplied a screen recording and current release version; no data loss reported.",
+          "url": "https://example.com/records/issue-241",
+          "repository": "example-org/demo-app",
+          "issue_number": 241,
+          "severity": "high",
+          "blocked": true,
+          "updated_at": "2026-11-13",
+          "reproducible": true
+        }
+      ]
+    },
+    {
+      "id": "read_focus_issue",
+      "alias": "repo_issues",
+      "integration": "github",
+      "action": "get_issue",
+      "tool": "repo_issues__get_issue",
+      "arguments": {
+        "repository": "example-org/demo-app",
+        "issue_number": 238
+      },
+      "records": [
+        {
+          "id": "issue-238",
+          "app": "GitHub",
+          "title": "Keyboard focus skips coupon field",
+          "detail": "Full synthetic issue: keyboard users cannot focus the coupon input in step two. Browser/version details are still missing.",
+          "url": "https://example.com/records/issue-238",
+          "repository": "example-org/demo-app",
+          "issue_number": 238,
+          "severity": "medium",
+          "blocked": false,
+          "updated_at": "2026-11-12",
+          "reproducible": false
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "sampled_bug_count",
+      "op": "count"
+    },
+    {
+      "name": "high_severity_bugs",
+      "op": "count",
+      "where": {
+        "severity": "high"
+      }
+    },
+    {
+      "name": "blocked_bugs",
+      "op": "count",
+      "where": {
+        "blocked": true
+      }
+    }
+  ],
+  "expected_metrics": {
+    "sampled_bug_count": 3,
+    "high_severity_bugs": 1,
+    "blocked_bugs": 1
+  }
+}

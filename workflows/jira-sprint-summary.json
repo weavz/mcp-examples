@@ -1,0 +1,99 @@
+{
+  "id": "jira-sprint-summary",
+  "title": "Jira Sprint Summary",
+  "prompt": "Summarize issues returned for the active DEMO sprint by status and priority. Identify blockers and work that lacks an assignee, using only this bounded JQL result.",
+  "instructions": "Run the supplied JQL with its result cap and report the search scope. Do not claim sprint completion forecasts or include issues outside the response. Keep status, priority, and assignee facts distinct; do not assign, comment, transition, or edit issues.",
+  "fixture_summary": "Synthetic active sprint search returns four issues across in-progress, blocked, and review states; one issue has no assignee.",
+  "inputs": {
+    "jql": "project = DEMO AND sprint in openSprints() ORDER BY priority DESC",
+    "max_results": 4
+  },
+  "steps": [
+    {
+      "id": "search_active_sprint",
+      "alias": "sprint_board",
+      "integration": "jira-cloud",
+      "action": "search_issues",
+      "tool": "sprint_board__search_issues",
+      "arguments": {
+        "jql": "project = DEMO AND sprint in openSprints() ORDER BY priority DESC",
+        "max_results": 4
+      },
+      "records": [
+        {
+          "id": "DEMO-41",
+          "app": "Jira",
+          "title": "API pagination regression",
+          "detail": "Synthetic issue: in progress, high priority, assigned, test failure reproduced.",
+          "url": "https://example.com/records/DEMO-41",
+          "issue_key": "DEMO-41",
+          "status": "In Progress",
+          "priority": "High",
+          "blocked": true,
+          "assignee_present": true
+        },
+        {
+          "id": "DEMO-42",
+          "app": "Jira",
+          "title": "Update onboarding copy",
+          "detail": "Synthetic issue: in review, medium priority, assigned.",
+          "url": "https://example.com/records/DEMO-42",
+          "issue_key": "DEMO-42",
+          "status": "In Review",
+          "priority": "Medium",
+          "blocked": false,
+          "assignee_present": true
+        },
+        {
+          "id": "DEMO-43",
+          "app": "Jira",
+          "title": "Add keyboard shortcut hints",
+          "detail": "Synthetic issue: to do, low priority, unassigned.",
+          "url": "https://example.com/records/DEMO-43",
+          "issue_key": "DEMO-43",
+          "status": "To Do",
+          "priority": "Low",
+          "blocked": false,
+          "assignee_present": false
+        },
+        {
+          "id": "DEMO-44",
+          "app": "Jira",
+          "title": "Verify event retry behavior",
+          "detail": "Synthetic issue: in progress, medium priority, assigned.",
+          "url": "https://example.com/records/DEMO-44",
+          "issue_key": "DEMO-44",
+          "status": "In Progress",
+          "priority": "Medium",
+          "blocked": false,
+          "assignee_present": true
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "sampled_sprint_issues",
+      "op": "count"
+    },
+    {
+      "name": "blocked_sprint_issues",
+      "op": "count",
+      "where": {
+        "blocked": true
+      }
+    },
+    {
+      "name": "unassigned_sprint_issues",
+      "op": "count",
+      "where": {
+        "assignee_present": false
+      }
+    }
+  ],
+  "expected_metrics": {
+    "sampled_sprint_issues": 4,
+    "blocked_sprint_issues": 1,
+    "unassigned_sprint_issues": 1
+  }
+}
