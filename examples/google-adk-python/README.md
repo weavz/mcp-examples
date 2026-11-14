@@ -13,7 +13,7 @@ uv run python main.py --fixture --mode code
 uv run pytest
 ```
 
-The local fixture is an independent bearer-protected MCP SDK server with synthetic data. These checks call the ADK MCP transport and do not use a model or live Weavz.
+The local fixture is an independent bearer-protected MCP SDK server with synthetic data. A deterministic in-process ADK model drives the normal `Runner` and `McpTool` path, without a model provider or live Weavz.
 
 ## Weavz and optional model
 

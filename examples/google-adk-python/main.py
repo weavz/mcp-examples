@@ -10,6 +10,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from connection import validate_catalog, validate_live_connection
 from google.adk.agents import Agent
+from google.adk.models.base_llm import BaseLlm
+from google.adk.models.llm_response import LlmResponse
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.adk.tools.mcp_tool import McpToolset
@@ -22,8 +24,8 @@ def names_for(mode: str) -> set[str]:
     return {"demo__lookup_record"} if mode == "tools" else {"weavz_search", "weavz_read_api", "weavz_execute"}
 
 
-async def run_agent(prompt: str, toolset: McpToolset) -> str:
-    model = os.environ.get("WEAVZ_MODEL")
+async def run_agent(prompt: str, toolset: McpToolset, *, model_override: BaseLlm | None = None) -> str:
+    model: str | BaseLlm = model_override or os.environ.get("WEAVZ_MODEL", "")
     if not model:
         raise RuntimeError("Set WEAVZ_MODEL and the credentials required by your Google ADK model")
     agent = Agent(name="weavz_assistant", model=model, instruction="Use the connected Weavz MCP tools to complete the user's request.", tools=[toolset])
@@ -35,7 +37,61 @@ async def run_agent(prompt: str, toolset: McpToolset) -> str:
     async for event in runner.run_async(user_id="local_user", session_id=session.id, new_message=message):
         if event.is_final_response() and event.content and event.content.parts:
             final = "".join(part.text or "" for part in event.content.parts)
+    if not final:
+        raise RuntimeError("The ADK runner finished without a final text response")
     return final
+
+
+class FixtureModel(BaseLlm):
+    """Deterministic model responses that drive the real ADK tool runner."""
+
+    mode: str
+    turn: int = 0
+
+    async def generate_content_async(self, llm_request, stream: bool = False):
+        self.turn += 1
+        if self.turn == 1:
+            if self.mode == "tools":
+                requested = [("demo__lookup_record", {"recordId": "record-1"})]
+            else:
+                requested = [
+                    ("weavz_search", {"query": "record-1"}),
+                    ("weavz_read_api", {"alias": "demo", "action": "lookup_record"}),
+                    ("weavz_execute", {"code": CODE_EXAMPLE}),
+                ]
+            parts = [
+                types.Part(function_call=types.FunctionCall(name=name, args=args))
+                for name, args in requested
+            ]
+            yield LlmResponse(content=types.Content(role="model", parts=parts))
+            return
+
+        if self.turn != 2:
+            raise RuntimeError("FixtureModel expected one tool-call turn followed by one final response")
+        responses = [
+            part.function_response
+            for content in llm_request.contents
+            for part in content.parts or []
+            if part.function_response
+        ]
+        expected = {"demo__lookup_record"} if self.mode == "tools" else {
+            "weavz_search", "weavz_read_api", "weavz_execute"
+        }
+        response_names = {response.name for response in responses}
+        missing = expected - response_names
+        if missing:
+            raise AssertionError(f"ADK did not return fixture responses from {sorted(missing)}")
+        payloads = {response.name: response.response for response in responses}
+        serialized = json.dumps(payloads, default=str)
+        assert_fixture_result(self.mode, serialized)
+        if self.mode == "code" and "demo" not in json.dumps(payloads.get("weavz_read_api"), default=str):
+            raise AssertionError("Fixture read_api response did not identify the demo alias")
+        yield LlmResponse(
+            content=types.Content(
+                role="model",
+                parts=[types.Part(text="The deterministic fixture tools returned the expected synthetic record.")],
+            )
+        )
 
 
 async def exercise(mode: str, url: str, token: str, *, fixture: bool = False, prompt: str | None = None) -> None:
@@ -53,25 +109,20 @@ async def exercise(mode: str, url: str, token: str, *, fixture: bool = False, pr
         if prompt:
             print(await run_agent(prompt, toolset))
             return
-        # Reuse the session manager owned by the ADK MCP toolset. Public McpTool
-        # invocation needs a Runner-created CallbackContext; this path avoids a model.
-        session = await toolset._mcp_session_manager.create_session()
-        if mode == "tools":
-            result = await session.call_tool("demo__lookup_record", {"recordId": "record-1"})
-            assert_fixture_result(mode, result)
-            results = {"lookup": str(result)}
-        else:
-            search = await session.call_tool("weavz_search", {"query": "fixture"})
-            read_api = await session.call_tool("weavz_read_api", {"alias": "demo", "action": "lookup_record"})
-            result = await session.call_tool("weavz_execute", {"code": CODE_EXAMPLE})
-            assert_fixture_result(mode, search)
-            assert_fixture_result(mode, result)
-            structured = getattr(read_api, "structured_content", None) or getattr(read_api, "structuredContent", {})
-            aliases = structured.get("aliases", [])
-            if aliases != ["demo"]:
-                raise AssertionError(f"Unexpected demo API result: {read_api}")
-            results = {"search": str(search), "read_api": str(read_api), "execute": str(result)}
-        print(json.dumps({"proof": "local fixture ADK MCP session calls", "mode": mode, "tools": sorted(names), "results": results}))
+        if fixture:
+            result = await run_agent(
+                "Use the available tools to verify the synthetic record.",
+                toolset,
+                model_override=FixtureModel(model="fixture", mode=mode),
+            )
+            print(json.dumps({
+                "proof": "local fixture ADK Runner tool invocations",
+                "mode": mode,
+                "tools": sorted(names),
+                "result": result,
+            }))
+            return
+        raise RuntimeError("A live tool call requires --prompt; use --fixture for synthetic calls")
     finally:
         await toolset.close()
 
