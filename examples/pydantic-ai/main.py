@@ -7,6 +7,7 @@ import os
 import sys
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -75,6 +76,8 @@ async def main() -> None:
     parser.add_argument("--prompt", help="Optional live model run; requires WEAVZ_MODEL and provider credentials")
     args = parser.parse_args()
     if args.fixture:
+        if args.prompt:
+            raise SystemExit("--prompt uses a model provider; run without --fixture for a live model run")
         with FixtureServer(args.mode) as fixture:
             fixture.reject_bad_token()
             await exercise(args.mode, fixture.url, "local-fixture-token", fixture=True)
@@ -85,6 +88,9 @@ async def main() -> None:
             raise SystemExit("Set WEAVZ_MCP_URL and WEAVZ_MCP_TOKEN from your custom Weavz MCP setup")
         if token.startswith("wvz_"):
             raise SystemExit("WEAVZ_MCP_TOKEN must be an MCP access token, not a Weavz REST API key")
+        parsed = urlparse(url)
+        if parsed.scheme != "https" and parsed.hostname not in {"localhost", "127.0.0.1", "::1"}:
+            raise SystemExit("Use an HTTPS WEAVZ_MCP_URL except for a loopback development server")
         await exercise(args.mode, url, token, prompt=args.prompt)
 
 

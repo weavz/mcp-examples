@@ -13,7 +13,7 @@ from typing import Any, Iterator
 FIXTURE_PROJECT = Path(__file__).resolve().parent
 FIXTURE_SERVER = FIXTURE_PROJECT / "server.py"
 FIXTURE_TOKEN = "local-fixture-token"
-CODE_EXAMPLE = 'await weavz_search("fixture")'
+CODE_EXAMPLE = 'return await weavz.demo.lookup_record({recordId: "record-1"});'
 RECORD = {"recordId": "record-1", "title": "Synthetic fixture record", "status": "open"}
 
 
@@ -59,7 +59,16 @@ class FixtureServer:
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
         )
-        wait_for_health(self.url.rsplit("/mcp", 1)[0], self.process)
+        try:
+            wait_for_health(self.url.rsplit("/mcp", 1)[0], self.process)
+        except BaseException:
+            self.process.terminate()
+            try:
+                self.process.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                self.process.kill()
+                self.process.wait(timeout=5)
+            raise
         return self
 
     def __exit__(self, *_: object) -> None:

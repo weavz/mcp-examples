@@ -11,7 +11,7 @@ from starlette.responses import JSONResponse
 from starlette.types import ASGIApp, Receive, Scope, Send
 
 RECORD = {"recordId": "record-1", "title": "Synthetic fixture record", "status": "open"}
-CODE_EXAMPLE = 'await weavz_search("fixture")'
+CODE_EXAMPLE = 'return await weavz.demo.lookup_record({recordId: "record-1"});'
 
 
 class BearerOnly:
