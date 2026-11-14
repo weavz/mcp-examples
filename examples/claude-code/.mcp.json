@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "weavz": {
+      "type": "http",
+      "url": "https://platform.weavz.io/mcp/weavz"
+    }
+  }
+}

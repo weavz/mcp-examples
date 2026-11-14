@@ -1,0 +1,1 @@
+Use the configured Weavz MCP server when this task needs apps or accounts connected to my selected Weavz workspace. Discover current tools and aliases first. Never ask for pasted Weavz API keys, MCP bearer tokens, OAuth tokens, or app passwords. Before any external write or destructive action, describe the target and proposed change and wait for approval.

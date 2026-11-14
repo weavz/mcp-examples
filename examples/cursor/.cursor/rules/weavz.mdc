@@ -1,0 +1,6 @@
+---
+description: Safe use of the configured Weavz MCP server
+alwaysApply: true
+---
+
+Use Weavz tools only for the workspace selected during OAuth. Discover tool names and aliases first. Never request pasted API keys, bearer tokens, OAuth tokens, or app passwords. Before any external write or destructive action, identify the target and proposed change and wait for approval.

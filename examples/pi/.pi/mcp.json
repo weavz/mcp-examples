@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "weavz": {
+      "url": "https://platform.weavz.io/mcp/weavz",
+      "description": "Tools for apps connected to the selected Weavz workspace."
+    }
+  }
+}
