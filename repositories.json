@@ -6,401 +6,401 @@
       "id": "openai-agents-python",
       "repository": "weavz/weavz-openai-agents-python",
       "url": "https://github.com/weavz/weavz-openai-agents-python",
-      "head": "63250b1b0df7e4795b1d117016f4208bd9bd2adf",
+      "head": "ed6d2c62a69f6349b49f4d2855854503c0464e86",
       "createdAt": "2026-11-14T16:03:19Z",
-      "commits": 4
+      "commits": 5
     },
     {
       "id": "pydantic-ai",
       "repository": "weavz/weavz-pydantic-ai",
       "url": "https://github.com/weavz/weavz-pydantic-ai",
-      "head": "d52cf467f7fcf22eb3d1a33e89665f54ae989240",
+      "head": "966484ee189aa40eae3ad32bc653b54f676ca53b",
       "createdAt": "2026-11-14T16:03:35Z",
-      "commits": 4
+      "commits": 5
     },
     {
       "id": "google-adk-python",
       "repository": "weavz/weavz-google-adk-python",
       "url": "https://github.com/weavz/weavz-google-adk-python",
-      "head": "a1640f810365811b96da17906d8182f289bb9eae",
+      "head": "c6a9ad81d219831264ed6ac393aebf304f4a4024",
       "createdAt": "2026-11-14T16:03:49Z",
-      "commits": 4
+      "commits": 5
     },
     {
       "id": "langchain-python",
       "repository": "weavz/weavz-langchain-python",
       "url": "https://github.com/weavz/weavz-langchain-python",
-      "head": "e159975daabc87a87985485332627d044189eb9a",
+      "head": "44337ee914fc2dc208919a79ddf21317d5cc9622",
       "createdAt": "2026-11-14T16:04:05Z",
-      "commits": 4
+      "commits": 5
     },
     {
       "id": "langgraph-python",
       "repository": "weavz/weavz-langgraph-python",
       "url": "https://github.com/weavz/weavz-langgraph-python",
-      "head": "25053ea9c7a0e3626e44785b700f33c7a0c58ed8",
+      "head": "0a89a7ac664b90a16600fe047957628b3c325bd8",
       "createdAt": "2026-11-14T16:04:19Z",
-      "commits": 4
+      "commits": 5
     },
     {
       "id": "llamaindex",
       "repository": "weavz/weavz-llamaindex",
       "url": "https://github.com/weavz/weavz-llamaindex",
-      "head": "4a00f6a3ff6e81f181e2d75e96a112e45e8fce3f",
+      "head": "7e8deb5febfdf1a7176a74c45656282e63203a78",
       "createdAt": "2026-11-14T16:04:34Z",
-      "commits": 4
+      "commits": 5
     },
     {
       "id": "crewai",
       "repository": "weavz/weavz-crewai",
       "url": "https://github.com/weavz/weavz-crewai",
-      "head": "3d0530c66e9a1a42caf93a5f909901a90617038e",
+      "head": "ce096a633eca6a7bdae3ff988b1b37a7e3940817",
       "createdAt": "2026-11-14T16:49:24Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "agno",
       "repository": "weavz/weavz-agno",
       "url": "https://github.com/weavz/weavz-agno",
-      "head": "f58dfe7414a4b5a438e621770f87a8ea76f3bc78",
+      "head": "46c2bf92084bc2e6f576e16013775c523da7e82f",
       "createdAt": "2026-11-14T16:49:45Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "strands",
       "repository": "weavz/weavz-strands",
       "url": "https://github.com/weavz/weavz-strands",
-      "head": "80bf2d4bc19aed12bd47667d6d3214591da4e647",
+      "head": "b671ecde5a984dae91204c71755703550d619514",
       "createdAt": "2026-11-14T16:04:50Z",
-      "commits": 4
+      "commits": 5
     },
     {
       "id": "smolagents",
       "repository": "weavz/weavz-smolagents",
       "url": "https://github.com/weavz/weavz-smolagents",
-      "head": "c619ea6ed1cbcec5a6d72fddea344ef6b7a7c037",
+      "head": "22a47e8b18fd535966369b4677b7773661628dcc",
       "createdAt": "2026-11-14T16:05:07Z",
-      "commits": 4
+      "commits": 5
     },
     {
       "id": "autogen",
       "repository": "weavz/weavz-autogen",
       "url": "https://github.com/weavz/weavz-autogen",
-      "head": "32d2d36899f28405abd113a930b055bfead4adce",
+      "head": "1bb0452147b167be7d63fe25d920209e97cd5bd8",
       "createdAt": "2026-11-14T16:50:01Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "semantic-kernel",
       "repository": "weavz/weavz-semantic-kernel",
       "url": "https://github.com/weavz/weavz-semantic-kernel",
-      "head": "c5769a92dafd22cde3cdc909e07ed82bcb87eb78",
+      "head": "71fe136f597f11419b5d969dd8b65e2759dd7917",
       "createdAt": "2026-11-14T16:50:17Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "vercel-ai-sdk",
       "repository": "weavz/weavz-vercel-ai-sdk",
       "url": "https://github.com/weavz/weavz-vercel-ai-sdk",
-      "head": "18211c28a2f3143d498693c7c04c5e4ff9cac545",
+      "head": "9c859fd55ea85215df83215551a2cc543e692ebb",
       "createdAt": "2026-11-14T15:59:31Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "mastra",
       "repository": "weavz/weavz-mastra",
       "url": "https://github.com/weavz/weavz-mastra",
-      "head": "38c2ecf6c517cc76e65d5e26e7eb2857947e89db",
+      "head": "721b0abc6b96e1ab7fc3bbbe856e4b94fcc30ed4",
       "createdAt": "2026-11-14T15:59:45Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "langchain-js",
       "repository": "weavz/weavz-langchain-js",
       "url": "https://github.com/weavz/weavz-langchain-js",
-      "head": "d2c96d85c56e8e312a5ea0ec3600e5feb7c755dc",
+      "head": "cc489a3f922e2e77296dfda32abbbb3e3af933bc",
       "createdAt": "2026-11-14T15:59:59Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "langgraph-js",
       "repository": "weavz/weavz-langgraph-js",
       "url": "https://github.com/weavz/weavz-langgraph-js",
-      "head": "8840dec12b3b9b533e9da7634e6f4fa19afa5b6a",
+      "head": "08b6428cc32ced9e2319b27576b9a3a990a6579b",
       "createdAt": "2026-11-14T16:00:13Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "openai-agents-js",
       "repository": "weavz/weavz-openai-agents-js",
       "url": "https://github.com/weavz/weavz-openai-agents-js",
-      "head": "6a324125de3bf8397c4fcef8fe5e82d2394d522a",
+      "head": "0821a0788cae85f729e4905e878d09a4bc52f38f",
       "createdAt": "2026-11-14T16:00:27Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "google-adk-js",
       "repository": "weavz/weavz-google-adk-js",
       "url": "https://github.com/weavz/weavz-google-adk-js",
-      "head": "b7cf4a0fa92da76ce08708add7f6bc25e3a1cdf8",
+      "head": "3e5bbaa3f30c8fbcc1498392f4eb0ec94918f96d",
       "createdAt": "2026-11-14T16:00:42Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "opencode",
       "repository": "weavz/weavz-opencode",
       "url": "https://github.com/weavz/weavz-opencode",
-      "head": "71c099dff0d2b153a2f9d01dc496a069b143efdf",
+      "head": "1cda1aede5cc3833e7b110ca5882a3170733e552",
       "createdAt": "2026-11-14T16:00:56Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "hermes",
       "repository": "weavz/weavz-hermes",
       "url": "https://github.com/weavz/weavz-hermes",
-      "head": "4e8f2863737628eeb2cd9cba56b23152b13cfe34",
+      "head": "e823c2c8d20861ff4bfdbb9b9c428d5a4d1b036f",
       "createdAt": "2026-11-14T16:01:10Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "openclaw",
       "repository": "weavz/weavz-openclaw",
       "url": "https://github.com/weavz/weavz-openclaw",
-      "head": "a78e3d1c6f53478790afc8da6470376258868bd7",
+      "head": "c83d62981beff9b55ee72f54bd5e252911921048",
       "createdAt": "2026-11-14T16:01:25Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "pi",
       "repository": "weavz/weavz-pi",
       "url": "https://github.com/weavz/weavz-pi",
-      "head": "7eecb2cc5288afdcec64a2535409b0dccef22d9d",
+      "head": "ddd6c33118068bc55fb3bf30a52dffc094f61c03",
       "createdAt": "2026-11-14T16:01:39Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "claude-code",
       "repository": "weavz/weavz-claude-code",
       "url": "https://github.com/weavz/weavz-claude-code",
-      "head": "5eb38b18ef56b9df9a976ce8246cc1500ba8ca05",
+      "head": "2711d2b908cd14f42008601fceae66fa0e4599fa",
       "createdAt": "2026-11-14T16:01:53Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "codex",
       "repository": "weavz/weavz-codex",
       "url": "https://github.com/weavz/weavz-codex",
-      "head": "3d610b470761f6c6cdd187b1b0a227add091fd06",
+      "head": "b6b7e779e13113840ea01aacfee040f64f4a6a74",
       "createdAt": "2026-11-14T16:02:07Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "cursor",
       "repository": "weavz/weavz-cursor",
       "url": "https://github.com/weavz/weavz-cursor",
-      "head": "9266ffa83914a7a38493408c91449efa3f759af5",
+      "head": "4a48cdc7b9b855fdd9cb33b9f80b302b51bd450a",
       "createdAt": "2026-11-14T16:02:22Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "morning-brief",
       "repository": "weavz/weavz-morning-brief",
       "url": "https://github.com/weavz/weavz-morning-brief",
-      "head": "f352ef2b17532e80e18923a2f9137e43fb9dc057",
+      "head": "bb8861d6a43314d53d56f6c8b859a87888387081",
       "createdAt": "2026-11-14T16:05:47Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "gmail-inbox-briefing",
       "repository": "weavz/weavz-gmail-inbox-briefing",
       "url": "https://github.com/weavz/weavz-gmail-inbox-briefing",
-      "head": "f0aa1eb25d062066d2426295330916b59a22500c",
+      "head": "f760ed3e50de8f8b7137c0e3b2aac276b79a1a88",
       "createdAt": "2026-11-14T16:06:02Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "meeting-prep",
       "repository": "weavz/weavz-meeting-prep",
       "url": "https://github.com/weavz/weavz-meeting-prep",
-      "head": "2e03cb5d2e90f40c36a424388f1d6f0c905c072a",
+      "head": "4a9b926d9357a952880a5a046ef8caae28ea75eb",
       "createdAt": "2026-11-14T16:06:16Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "slack-channel-digest",
       "repository": "weavz/weavz-slack-channel-digest",
       "url": "https://github.com/weavz/weavz-slack-channel-digest",
-      "head": "4783874ada658bd9cb24d62a4669319d56406774",
+      "head": "42a6567bd641a896f85d4ba4b47cf1550cf822c8",
       "createdAt": "2026-11-14T16:06:32Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "github-issue-triage",
       "repository": "weavz/weavz-github-issue-triage",
       "url": "https://github.com/weavz/weavz-github-issue-triage",
-      "head": "da01eca4d20c749075e13df9e32dcbff96c08855",
+      "head": "f57444807c240b6b9b288521fd4490a1af679ce2",
       "createdAt": "2026-11-14T16:06:46Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "notion-knowledge-research",
       "repository": "weavz/weavz-notion-knowledge-research",
       "url": "https://github.com/weavz/weavz-notion-knowledge-research",
-      "head": "910398e985d0f8905dfa00921c303b02d4ba07f6",
+      "head": "64d2bf28b60a530cc53f773dafbbcabf37052d92",
       "createdAt": "2026-11-14T16:07:00Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "drive-document-finder",
       "repository": "weavz/weavz-drive-document-finder",
       "url": "https://github.com/weavz/weavz-drive-document-finder",
-      "head": "7a14fabb4fd8cd35911453ff03b3f9e8eff76ca9",
+      "head": "23a1472f853f8f600ee03f96244f97eac53c7320",
       "createdAt": "2026-11-14T16:07:16Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "sheets-sales-report",
       "repository": "weavz/weavz-sheets-sales-report",
       "url": "https://github.com/weavz/weavz-sheets-sales-report",
-      "head": "0c97dc1e1383f69c026eb901703dd502d14ee865",
+      "head": "124e07033141d1135e5af3fcb98aaf631b079572",
       "createdAt": "2026-11-14T16:07:35Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "hubspot-pipeline-review",
       "repository": "weavz/weavz-hubspot-pipeline-review",
       "url": "https://github.com/weavz/weavz-hubspot-pipeline-review",
-      "head": "5a2f06ceb1de8af7976b24b32e50bbf2ffe5dc51",
+      "head": "c749371439fec6c7af18cad38a323719ccc47596",
       "createdAt": "2026-11-14T16:07:49Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "salesforce-account-brief",
       "repository": "weavz/weavz-salesforce-account-brief",
       "url": "https://github.com/weavz/weavz-salesforce-account-brief",
-      "head": "93876e90d54ab0739dd8cefdee393d1bf54139ae",
+      "head": "e02b0485138065a6455f8a456fb8f32303af8f8a",
       "createdAt": "2026-11-14T16:08:03Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "linear-backlog-review",
       "repository": "weavz/weavz-linear-backlog-review",
       "url": "https://github.com/weavz/weavz-linear-backlog-review",
-      "head": "39cfc16c5b8289bb6f2a8a310fef7f2e9a0a4d35",
+      "head": "1987ce6b67eed35133315b0c43d78746f0cc3f91",
       "createdAt": "2026-11-14T16:08:18Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "jira-sprint-summary",
       "repository": "weavz/weavz-jira-sprint-summary",
       "url": "https://github.com/weavz/weavz-jira-sprint-summary",
-      "head": "2f1ea88c78b11bcc355cfeb0d1378d7648c83376",
+      "head": "26f2199b813a74836024ff8ae8b9c57ff4bd2bcd",
       "createdAt": "2026-11-14T16:08:35Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "zendesk-ticket-handoff",
       "repository": "weavz/weavz-zendesk-ticket-handoff",
       "url": "https://github.com/weavz/weavz-zendesk-ticket-handoff",
-      "head": "4e86aaccd99b9e0fcd4c23b375e77afd681a3b68",
+      "head": "c07ab074ea05e1f059bf2d65660fe4988798a034",
       "createdAt": "2026-11-14T16:08:49Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "intercom-conversation-brief",
       "repository": "weavz/weavz-intercom-conversation-brief",
       "url": "https://github.com/weavz/weavz-intercom-conversation-brief",
-      "head": "a052c88802e10258632aa5dcc48f49e1266fa2ff",
+      "head": "9b53bbc750e1c166b02384138f2cb8a8b26ec6fd",
       "createdAt": "2026-11-14T16:09:04Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "airtable-inventory-report",
       "repository": "weavz/weavz-airtable-inventory-report",
       "url": "https://github.com/weavz/weavz-airtable-inventory-report",
-      "head": "2098d8188ddc553a9a652a17802f4342d2f89a28",
+      "head": "f02bb1b75fe86584820d18726441cf082bdf1e5b",
       "createdAt": "2026-11-14T16:09:18Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "trello-project-health",
       "repository": "weavz/weavz-trello-project-health",
       "url": "https://github.com/weavz/weavz-trello-project-health",
-      "head": "eb64f34a34b0ff462c9bbbf8533aabcb949064f9",
+      "head": "afdf6801cfa65d3496e30b1a8e3aecffbdf1fc6a",
       "createdAt": "2026-11-14T16:09:34Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "asana-weekly-status",
       "repository": "weavz/weavz-asana-weekly-status",
       "url": "https://github.com/weavz/weavz-asana-weekly-status",
-      "head": "8643f51a988df2981c10486e3e906c7f1e1cd6a9",
+      "head": "374c847a88b1ea7d4b5105295ddf9cf7542b46d7",
       "createdAt": "2026-11-14T16:09:48Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "figma-design-review",
       "repository": "weavz/weavz-figma-design-review",
       "url": "https://github.com/weavz/weavz-figma-design-review",
-      "head": "49570e907053c0219183e00e4b92cc1d37eb7c98",
+      "head": "a2004a0f10f8b1c74c170c7ecef729bb866fba19",
       "createdAt": "2026-11-14T16:10:03Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "stripe-subscription-review",
       "repository": "weavz/weavz-stripe-subscription-review",
       "url": "https://github.com/weavz/weavz-stripe-subscription-review",
-      "head": "45dfc99656077b9f57350e6e44a1b91c38977ea7",
+      "head": "7023b25d9ba7456a4f96c8c88368b417050d2ba0",
       "createdAt": "2026-11-14T16:10:18Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "shopify-orders-report",
       "repository": "weavz/weavz-shopify-orders-report",
       "url": "https://github.com/weavz/weavz-shopify-orders-report",
-      "head": "e80528d39731606b736854f0b143bdddb09c8186",
+      "head": "94169b6c3fabed906cea8cdd52f6d9b4fec401de",
       "createdAt": "2026-11-14T16:10:34Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "support-knowledge-assistant",
       "repository": "weavz/weavz-support-knowledge-assistant",
       "url": "https://github.com/weavz/weavz-support-knowledge-assistant",
-      "head": "f65c7b2e268da407c60240b62c2e25e21ddc3c9c",
+      "head": "6a44ab1125783e40bc0906a005b2135784b28139",
       "createdAt": "2026-11-14T16:10:49Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "files-research-notebook",
       "repository": "weavz/weavz-files-research-notebook",
       "url": "https://github.com/weavz/weavz-files-research-notebook",
-      "head": "13840b02369e0d1fd992ba12fd584fa7920332e5",
+      "head": "ddbfa7172d157ef8d28019e1ecd44abb02ccb664",
       "createdAt": "2026-11-14T16:11:03Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "todoist-day-plan",
       "repository": "weavz/weavz-todoist-day-plan",
       "url": "https://github.com/weavz/weavz-todoist-day-plan",
-      "head": "0622266211c24d70561237428353163462c6682d",
+      "head": "fb01f5c04090918e9f76b3f473914437df043cf5",
       "createdAt": "2026-11-14T16:11:17Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "google-docs-document-review",
       "repository": "weavz/weavz-google-docs-document-review",
       "url": "https://github.com/weavz/weavz-google-docs-document-review",
-      "head": "8131163b79a1afb4c54db0a27e94ecf9712f6be8",
+      "head": "9fd0b62403d1e0e0710d9ef54dd8df9085a52363",
       "createdAt": "2026-11-14T16:11:31Z",
-      "commits": 3
+      "commits": 4
     },
     {
       "id": "github-pull-request-review",
       "repository": "weavz/weavz-github-pull-request-review",
       "url": "https://github.com/weavz/weavz-github-pull-request-review",
-      "head": "63c4422dc383d161dc8a5c086d548f6ae291a6f5",
+      "head": "2bcea1761d2115486d9db84ac60fbdca6d17db5b",
       "createdAt": "2026-11-14T16:11:45Z",
-      "commits": 3
+      "commits": 4
     }
   ]
 }
