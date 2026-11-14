@@ -1,0 +1,11 @@
+[project]
+name = "weavz-llamaindex-mcp-example"
+version = "0.1.0"
+description = "LlamaIndex agent connected to Weavz over MCP"
+requires-python = ">=3.11,<3.14"
+dependencies = ["llama-index-tools-mcp==0.7.0", "llama-index-llms-openai>=0.6,<1", "pytest>=8,<9"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+[tool.uv]
+package = false

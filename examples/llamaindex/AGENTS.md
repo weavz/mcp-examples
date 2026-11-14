@@ -1,0 +1,4 @@
+- Use `BasicMCPClient` and `aget_tools_from_mcp_url` from `llama_index.tools.mcp`.
+- Keep the async client context open while the FunctionAgent uses returned tools.
+- Fixture evidence is local synthetic adapter proof only.
+- Never commit credentials.

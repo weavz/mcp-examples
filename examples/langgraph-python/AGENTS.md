@@ -1,0 +1,4 @@
+- Use LangGraph's graph runtime with tools returned by `MultiServerMCPClient`.
+- The MCP adapter manages stateless tool invocation; don't claim a persistent session.
+- Fixture checks are synthetic local proof only.
+- Never commit credentials.

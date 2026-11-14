@@ -1,0 +1,4 @@
+- Use `google.adk.tools.mcp_tool.McpToolset` with `StreamableHTTPConnectionParams`.
+- ADK public tool invocation requires framework context; don't invent `ToolContext` objects for a demo.
+- Fixture checks are synthetic adapter evidence, not live Weavz or model proof.
+- Never commit credentials.

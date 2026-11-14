@@ -17,6 +17,6 @@ This starts a separate local MCP SDK fixture, calls it through the OpenAI Agents
 
 ## Your Weavz server
 
-Copy `.env.example` to `.env`, set values from your custom server setup, then run `uv run python main.py --mode tools` or `--mode code` to discover and call one tool through the adapter.
+Copy `.env.example` to `.env`, set values from your custom server setup, then run `uv run --env-file .env python main.py --mode tools` or `--mode code` to discover the server's actual tools through the adapter. No demo alias is assumed on a live server.
 
-For an optional agent run, set `WEAVZ_MODEL` and `OPENAI_API_KEY`, then run `uv run python main.py --mode tools --prompt "Look up record-1"`. The server connection stays open through the run and closes afterward.
+For an optional agent run, connect an app containing records for your task, set `WEAVZ_MODEL` and `OPENAI_API_KEY`, then run `uv run --env-file .env python main.py --mode tools --prompt "Find the latest record matching the task you connected"`. The server connection stays open through the run and closes afterward.

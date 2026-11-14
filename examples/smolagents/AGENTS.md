@@ -1,0 +1,4 @@
+- Use `smolagents.MCPClient` and its returned Tool objects.
+- Keep the client context open while its tools are used by CodeAgent.
+- Fixture tests use synthetic local data only.
+- Never commit credentials.

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import signal
 import socket
 import subprocess
 import time
@@ -58,27 +59,33 @@ class FixtureServer:
             env=env,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
+            start_new_session=True,
         )
         try:
             wait_for_health(self.url.rsplit("/mcp", 1)[0], self.process)
         except BaseException:
-            self.process.terminate()
-            try:
-                self.process.wait(timeout=5)
-            except subprocess.TimeoutExpired:
-                self.process.kill()
-                self.process.wait(timeout=5)
+            self._stop_process_tree()
             raise
         return self
 
     def __exit__(self, *_: object) -> None:
+        self._stop_process_tree()
+
+    def _stop_process_tree(self) -> None:
         if self.process is not None:
-            self.process.terminate()
+            try:
+                os.killpg(self.process.pid, signal.SIGTERM)
+            except ProcessLookupError:
+                pass
             try:
                 self.process.wait(timeout=5)
             except subprocess.TimeoutExpired:
-                self.process.kill()
+                try:
+                    os.killpg(self.process.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
                 self.process.wait(timeout=5)
+            self.process = None
 
     def reject_bad_token(self) -> None:
         body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {}}).encode()
